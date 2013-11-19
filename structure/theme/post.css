@@ -1,0 +1,53 @@
+* {
+  border: 1px solid #f00;
+}
+
+a:link {text-decoration:none;}
+a:visited {text-decoration:none;}
+a:hover {
+  text-decoration: none;
+  color: #387BBF;
+  -moz-transition: color 0.2s ease-out;
+}
+
+#body {
+  background-color: #eee;
+  font-size: 100%;
+}
+
+#logo_header {
+  height: 10%;
+  margin-left: auto;
+  margin-right: auto;
+  
+  text-align: center;
+}
+
+#post {
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#post_title {  
+  font-family: sans-serif;
+  font-weight: bold;
+  font-size: 3em;
+}
+
+#post_text {
+  font-size: 1.25em;
+}
+
+#share {
+  height: 10%;
+  
+  font-family: sans-serif;
+  text-align: center;
+}
+
+#logo_footer {
+  height: 10%;
+
+  text-align: center;
+}
