@@ -1,6 +1,6 @@
 * {
   font-family: "Droid Sans", sans-serif;
-  /*border: 1px solid #f00;*/
+  border: 1px solid #f00;
 }
 
 #headerlogo {
