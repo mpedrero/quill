@@ -1,25 +1,32 @@
 <html>
-  <link rel="stylesheet" href="post.css">
   <head>
+    <title>Page title</title>
+    <link rel="stylesheet" href="post.css">
 
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="MobileOptimized" content="320" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   </head>
 
   <body>
   <div id="body">
     <div id="logo_header">
-      <p><a href="post.html">Logo</a></p>
+      <a id="blog-logo" href="post.html">
+        <img src="logo.png" alt="Blog logo"/>
+      </a>
     </div>
     
     <div id="post">    
-    <div id="post_date">
-      <p>01 January 2000</p>
-    </div>
+    
     <div id="post_title">
-      <p>Post title</p>
+      <p class="post_title_text">Post title</p>
+    </div>
+    <div id="post_date">
+      <p class="post_date_text">01 January 2000</p>
     </div>
 
     <div id="post_text">
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis quis mauris vel elit varius cursus vitae at felis. Aenean nunc nisi, imperdiet et sem sit amet, aliquet consequat libero. Quisque in dolor nec ante aliquet suscipit. Duis viverra, massa sit amet tristique commodo, urna purus tincidunt est, vitae fermentum turpis quam malesuada neque. Donec commodo, felis et bibendum commodo, diam risus egestas lorem, vel porttitor metus lacus ac quam. Nulla facilisi. Sed mattis, sem fringilla tempus dictum, urna ipsum lobortis odio, ut rhoncus mi est vestibulum mauris. Aenean lobortis blandit ultricies. Sed ullamcorper lorem quam, at sodales nisl rutrum sed. Nam iaculis laoreet tempor. Pellentesque urna enim, porttitor eget libero quis, placerat aliquam massa. Vivamus suscipit lacus arcu, eget scelerisque odio sodales nec. Nullam nisl ligula, placerat sit amet commodo nec, gravida non sapien. Nulla sed dolor a est egestas aliquam. Fusce placerat massa ac sem fermentum, id rhoncus eros eleifend. Curabitur quis mi lorem.</p>
+      <p>LYoWAT ff fi fl ffl Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis quis mauris vel elit varius cursus vitae at felis. Aenean nunc nisi, imperdiet et sem sit amet, aliquet consequat libero. Quisque in dolor nec ante aliquet suscipit. Duis viverra, massa sit amet tristique commodo, urna purus tincidunt est, vitae fermentum turpis quam malesuada neque. Donec commodo, felis et bibendum commodo, diam risus egestas lorem, vel porttitor metus lacus ac quam. Nulla facilisi. Sed mattis, sem fringilla tempus dictum, urna ipsum lobortis odio, ut rhoncus mi est vestibulum mauris. Aenean lobortis blandit ultricies. Sed ullamcorper lorem quam, at sodales nisl rutrum sed. Nam iaculis laoreet tempor. Pellentesque urna enim, porttitor eget libero quis, placerat aliquam massa. Vivamus suscipit lacus arcu, eget scelerisque odio sodales nec. Nullam nisl ligula, placerat sit amet commodo nec, gravida non sapien. Nulla sed dolor a est egestas aliquam. Fusce placerat massa ac sem fermentum, id rhoncus eros eleifend. Curabitur quis mi lorem.</p>
       <p>Praesent congue lobortis lacus, vitae suscipit diam mollis id. Integer non ligula vel nisl suscipit eleifend sollicitudin in odio. Donec blandit nec est a rutrum. Vestibulum imperdiet fringilla elit, nec molestie nulla volutpat in. Donec ultrices nisi porttitor nunc sollicitudin, sed tempus tortor suscipit. Aenean dapibus consequat auctor. Maecenas in nisi id erat lobortis pharetra. Praesent eget lacus mi. Donec ut ornare nulla. Nunc accumsan imperdiet risus. Nam nec dictum enim, id rutrum massa. Praesent vitae lorem pharetra, convallis velit eget, posuere ipsum. Etiam ipsum turpis, congue a lectus eu, suscipit rhoncus est. Vestibulum mi magna, auctor a nisl ac, rhoncus pharetra ligula.</p>
       <p>Vestibulum nec lacus quis urna tempor sollicitudin at ut ante. Maecenas iaculis, neque at eleifend pretium, velit sapien lobortis nibh, at ullamcorper arcu neque sit amet risus. Aliquam in nisi vel ante tincidunt tincidunt non volutpat urna. Curabitur condimentum lectus quis augue posuere eleifend. Interdum et malesuada fames ac ante ipsum primis in faucibus. Fusce laoreet in erat ac sodales. Quisque ullamcorper ante condimentum, iaculis diam vehicula, imperdiet turpis. Cras a nisi velit. Donec a metus ullamcorper, faucibus nunc nec, semper est. Donec ac arcu tortor. Suspendisse commodo fermentum dui at sodales.</p>
       <p>Etiam leo ligula, tincidunt id tortor vitae, tincidunt vestibulum risus. In in congue metus. Aliquam nec risus convallis, egestas dui ac, ornare urna. Nunc sit amet ultricies lacus. Praesent nec eleifend purus, quis fermentum lacus. Sed posuere vestibulum risus. Nulla facilisi. Proin sed ante ut urna placerat ultricies. In scelerisque fringilla scelerisque. Donec posuere commodo placerat.</p>
@@ -28,11 +35,13 @@
     </div>
 
     <div id="share">
-      <p>twitter|rss|email</p>
+      <p class="share_text">twitter | rss | email</p>
     </div>
 
     <div id="logo_footer">
-      <p>Logo</p>
+      <a id="blog-logo" href="post.html">
+        <img src="logo.png" alt="Blog logo"/>
+      </a>
     </div>
   </div id="body">
   </body>
