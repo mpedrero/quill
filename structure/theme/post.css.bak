@@ -54,7 +54,6 @@ a:hover {
   margin-bottom: 1em;
   max-width: 100%;
   width: 600px;
-  height: 400px;
 }
 
 #post_date {
