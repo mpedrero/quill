@@ -22,7 +22,15 @@ a:hover {
 }
 
 
-.blog-logo img, a{
+.blog-logo img{
+    display: block;
+    max-height: 75px;
+    width: 75px;
+    margin: 0 auto;
+    line-height: 0;
+}
+
+.blog-logo a{
     display: block;
     max-height: 75px;
     width: 75px;
