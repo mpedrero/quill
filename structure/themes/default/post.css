@@ -2,17 +2,18 @@
  * Fonts
  ******************************************************************************/
  
-@font-face
+/*@font-face
 {
   font-family: textFont;
   src: url('fonts/Lato-Reg.ttf');
-} 
+} */
 
 @font-face
 {
   font-family: codeFont;
   src: url('fonts/SourceCodePro-Regular.ttf');
 }
+
 
 @font-face
 {
@@ -25,47 +26,71 @@
  * Styles
  ******************************************************************************/
  
+ 
+/*******************************************************************************
+ * General styles to apply on all elements
+ ******************************************************************************/
+ 
+ 
+/* Page background */
 * {
   /*border: 1px solid #f00;*/
   background-color: #eee;
 }
+
 
 /* Selection background color */
 ::selection
 {
   background-color:#a8d1ff;;
 }
+
 ::-moz-selection
 {
   background-color:#a8d1ff;;
 } 
 
+
+/* Subtle decoration for links */
 a:link {
 	text-decoration:underline;
-}
-
-a:visited {
-	/*text-decoration:none;*/
 	color: #000;
 }
 
+
+/* Same decoration for visited links */
+a:visited {
+	color: #000;
+}
+
+
+/* Nice transition in Firefox */
 a:hover {
-  /*text-decoration: none;*/
   color: #387BBF;
   -moz-transition: color 0.2s ease-out;
 }
 
+
+/*******************************************************************************
+ * Specific styles to apply on certains sections
+ ******************************************************************************/
+
+ 
+/* Affects to all relevant content in the post (title, date, main text, etc.) */
 #content {
   font-size: 100%;
   text-rendering: optimizeLegibility;
 }
 
+
+/* Margins for header */
 #header {
   margin-top: 2em;
   margin-bottom: 3em;
 }
 
 
+/* Resizing hearder and footer logo */
 .blog-logo img{
     display: block;
     max-height: 75px;
@@ -74,6 +99,8 @@ a:hover {
     line-height: 0;
 }
 
+
+/* Adapt link to adopt the logo size */
 .blog-logo a{
     display: block;
     max-height: 75px;
@@ -82,6 +109,16 @@ a:hover {
     line-height: 0;
 }
 
+
+a.logo{
+    display:block;
+    margin:auto;
+    max-width:75px;
+    max-height:75px;  
+}
+
+
+/* Add a nice border to post with white background to enhance legibility */
 #post {
   max-width: 800px;
   margin-left: auto;
@@ -95,11 +132,15 @@ a:hover {
   border-radius: 10px;
 }
 
+
+/* Add white background to all elements inside post (replaces general grey
+ * background) */
 #post * {
 	background-color: #fff;
 }
 
 
+/* Control image size to adapt post div */
 #post img {
   display: block;
   margin-left: auto;
@@ -110,6 +151,8 @@ a:hover {
   border: 1px solid #000;
 }
 
+
+/* Control embed content (ie: YouTube links for now) */
 #post embed {
   display: block;
   margin-left: auto;
@@ -121,60 +164,14 @@ a:hover {
   height: 400px;
 }
 
+
+/* Center date in the post and add a nice dotted line at the bottom */
 #post_date {
   text-align: center;
   padding-bottom: 1.5em;
   border-bottom: 1px dotted #ccc;
 }
 
-#post_title {  
-  margin-top: 0.6em;
-  margin-bottom: 0.5em;
-
-  font-family: titleFont, sans-serif;
-  /*font-weight: bold;*/
-  font-size: 3em;
-  
-  text-align: center;
-  
-  background-color: #fff;
-}
-
-#post_text {
-  
-  margin-top: 1.5em;
-  font-family: textFont,'Dejavu Serif',Constantia, serif;
-  font-size: 1.25em;
-  
-  background-color: #fff;
-}
-
-#post_text code{
-  /*font-size: 1.25em;*/
-  font-family: codeFont;
-}
-
-#share {
-  margin-top: 5em;
-  font-family: sans-serif;
-  text-align: center;
-}
-
-#footer {
-  margin-top: 4em;
-  margin-bottom: 3em;
-
-  text-align: center;
-}
-
-
-
-p.post_title_text {
-  margin-top: 0px;
-  margin-bottom: 0px;
-  
-  background-color: #fff;
-}
 
 p.post_date_text {
   font-family:  textFont;
@@ -186,16 +183,117 @@ p.post_date_text {
   background-color: #fff;
 }
 
+
+/* Center title and choose a custom font (now is Leto-Bold) */
+#post_title {  
+  margin-top: 0.6em;
+  margin-bottom: 0.5em;
+
+  font-family: titleFont, sans-serif;
+  font-size: 2.5em;
+  
+  text-align: center;
+}
+
+
+p.post_title_text {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  
+  background-color: #fff;
+}
+
+
+/* Main text of the post. Currently uses Open Sans font from Google Fonts */
+#post_text {
+  margin-top: 1.5em;
+  
+  font-family: 'Open Sans', 'Dejavu Serif', Constantia, serif;
+  font-size: 1em;
+}
+
+
+/* Not used in the template yet. Contains links to Email, Twitter, etc. */
+#share {
+  margin-top: 5em;
+  font-family: sans-serif;
+  text-align: center;
+}
+
+
 p.share_text {
   margin-top: 0px;
   margin-bottom: 0px;
 }
 
-a.logo{
-    display:block;
-    margin:auto;
-    max-width:75px;
-    max-height:75px;  
+
+/* Footer. Currently only contains the logo */
+#footer {
+  margin-top: 4em;
+  margin-bottom: 3em;
+
+  text-align: center;
+}
+
+
+/*******************************************************************************
+ * Code Styles: Inline code, block code (class .block_code) and blockquote
+ ******************************************************************************/
+ 
+ 
+/* Inline code. In Markdown is `hello world` */
+#post_text code{
+  font-family: codeFont;
+  font-size: 0.9em;
+  
+  border: solid 1px #bbb;
+  background-color: #eee;
+  
+  padding: 2px;
+  padding-left: 5px;
+  padding-right: 5px;
+  
+  border-radius: 4px;
+}
+
+
+/* Block code. In Markdown is a tabbed text or +4 spaces at line beginning. This
+ * rules cancel the more general #post_text code rules above, because they'll be
+ * redefined in pre.block_code below */
+#post_text code.block_code {
+  font-family: codeFont;
+  font-size: 1.25em;  
+  
+  border: none;
+  background-color: inherit;
+  
+  padding: 0px;
+  padding-left: 0px;
+  padding-right: 0px;
+  
+  border-radius: 0px;
+}
+
+
+/* Block code. This is the block containing the code. The rules add a nice 
+ * border like inline code */
+#post_text pre.block_code {
+  border: solid 1px #bbb;
+  background-color: #eee;
+  
+  padding-left: 1em;
+  padding-right: 1em;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  
+  border-radius: 4px;
+}
+
+
+/* Blockquote. Add a gray leftborder and slightlt pad the content */
+#post_text blockquote {
+  padding-left: 1em;
+  border-left: 3px solid #ccc;
 }
 
 
@@ -203,6 +301,35 @@ a.logo{
 
 
 
+
+/*******************************************************************************
+ * Header styles
+ ******************************************************************************/
+ 
+/*#post_text h1 {
+  font-family: titleFont;
+}
+
+#post_text h2 {
+  font-family: titleFont;
+}
+
+#post_text h3 {
+  font-family: titleFont;
+}
+
+#post_text h4 {
+  font-family: titleFont;
+}
+
+#post_text h5 {
+  font-family: titleFont;
+}
+
+#post_text h6 {
+  font-family: titleFont;
+}
+*/
 
 
 /* ==========================================================================

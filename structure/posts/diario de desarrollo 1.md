@@ -72,17 +72,17 @@ entrada está escrita íntegramente en Markdown). Estos lenguajes permiten escri
 el texto directamente en cualquier editor y especificar las diferentes secciones
 de la entrada mediante *marcas*. Por ejemplo, si escribiésemos algo como:
 
-```
+
     # Entrada de prueba
     Esta es una entrada con un [enlace a Google](www.google.es) 
     y con **este texto en negrita**
-```
+
 
 Obtendríamos:
 
-# Entrada de prueba
-Esta es una entrada con un [enlace a Google](www.google.es) 
-y con **este texto en negrita**
+> # Entrada de prueba
+> Esta es una entrada con un [enlace a Google](http://www.google.es) 
+> y con **este texto en negrita**
 
 Las ventajas de usar Markdown son variadas. Además de ser muy sencillo de aprender,
 es suficientemente variado para poder escribir un blog (se pueden usar listas, imágenes, 

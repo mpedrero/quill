@@ -1,4 +1,4 @@
-title:   Desarrollando Quill
+title:   Desarrollando Quill (I) - Introducción
 author:  Manuel Pedrero
 date:    2013-11-25
 tags:    quill

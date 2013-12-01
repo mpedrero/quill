@@ -23,11 +23,14 @@ class MarkdownReader:
 			postData.tags.append(tag[0])
 
 		postData.title = md.Meta["title"][0]
-		postData.mainText = mainText
-		
+		# Mediante este reemplazo anadimos una clase a los bloques de codigo para poderles
+		# aplicar un estilo determinado. Hay que comprobar si es error prone
+		postData.mainText = mainText.replace("<pre><code>",'<pre class="block_code"><code class="block_code">')
+		 
 		postData.url = slugify.slugify(filename.replace(self.postsFolder,"",1).rstrip('.md'))+".html"
 		
 		return postData
+		
 		
 		
 		

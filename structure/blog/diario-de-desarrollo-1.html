@@ -2,6 +2,7 @@
   <head>
     <title>¿Es necesario OTRO servicio de blogs hoy en día?</title>
     <link rel="stylesheet" href="post.css">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,400italic' rel='stylesheet' type='text/css'>
 
 	<meta charset="UTF-8"> 
     <meta name="HandheldFriendly" content="True" />
@@ -81,13 +82,16 @@ elijamos otras <em>reglas</em> y acabemos con un formato diferente en cada entra
 entrada está escrita íntegramente en Markdown). Estos lenguajes permiten escribir
 el texto directamente en cualquier editor y especificar las diferentes secciones
 de la entrada mediante <em>marcas</em>. Por ejemplo, si escribiésemos algo como:</p>
-<p><code># Entrada de prueba
-    Esta es una entrada con un [enlace a Google](www.google.es) 
-    y con **este texto en negrita**</code></p>
+<pre class="block_code"><code class="block_code"># Entrada de prueba
+Esta es una entrada con un [enlace a Google](www.google.es) 
+y con **este texto en negrita**
+</code></pre>
 <p>Obtendríamos:</p>
+<blockquote>
 <h1>Entrada de prueba</h1>
-<p>Esta es una entrada con un <a href="www.google.es">enlace a Google</a> 
+<p>Esta es una entrada con un <a href="http://www.google.es">enlace a Google</a> 
 y con <strong>este texto en negrita</strong></p>
+</blockquote>
 <p>Las ventajas de usar Markdown son variadas. Además de ser muy sencillo de aprender,
 es suficientemente variado para poder escribir un blog (se pueden usar listas, imágenes, 
 6 niveles de títulos, código fuente...), por otro lado te permite usar código html por 
