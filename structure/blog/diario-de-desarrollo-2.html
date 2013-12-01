@@ -35,14 +35,22 @@ que permitiese ampliarla más adelante.</p>
 <p>De cara a la versión 0.1, fijé los siguientes objetivos:</p>
 <p><strong>Versión 0.1</strong></p>
 <ul>
-<li>Desarrollar un conversor que permita leer un fichero Markdown y generar el código
-  HTML equivalente.</li>
-<li>Diseñar una estructura de ficheros y directorios clara y coherente tanto para el
-  programa como para el blog generado.</li>
-<li>Diseñar un tema básico para las entradas del blog y para la página principal, que
-  contendrá el índice de entradas.</li>
-<li>Desarrollar un parseador para el fichero de configuración, que seguirá el formato <em>.ini</em>
-  por ser sencillo de entender, sencillo de editar y sencillo de parsear.</li>
+<li>
+<p>Desarrollar un conversor que permita leer un fichero Markdown y generar el código
+  HTML equivalente.</p>
+</li>
+<li>
+<p>Diseñar una estructura de ficheros y directorios clara y coherente tanto para el
+  programa como para el blog generado.</p>
+</li>
+<li>
+<p>Diseñar un tema básico para las entradas del blog y para la página principal, que
+  contendrá el índice de entradas.</p>
+</li>
+<li>
+<p>Desarrollar un parseador para el fichero de configuración, que seguirá el formato <em>.ini</em>
+  por ser sencillo de entender, sencillo de editar y sencillo de parsear.</p>
+</li>
 </ul>
 <p>A día de hoy, estos objetivos están prácticamente cubiertos. En su estado actual,
 el engine carga la configuración desde el fichero <code>quill.cfg</code>, accede al directorio
@@ -59,25 +67,33 @@ más básica, ya que la entrada ha sido generada a partir de un fichero Markdown
 <p>Aunque el aspecto del blog todavía es bastante tosco, sí que se ha conseguido una
 buena arquitectura, ya que permite extender el engine fácilmente y a la vez mantiene un diseño muy simple. Si hablamos de posibilidades de ampliación, a día de hoy el engine permite:</p>
 <ul>
-<li>Crear nuevos temas y cargarlos al vuelo a la hora de generar el blog, o especificándolo
-  manualmente en el fichero <code>quill.cfg</code></li>
-<li>Crear nuevas estructuras de páginas para las entradas, el índice o cualquier otro
+<li>
+<p>Crear nuevos temas y cargarlos al vuelo a la hora de generar el blog, o especificándolo
+  manualmente en el fichero <code>quill.cfg</code></p>
+</li>
+<li>
+<p>Crear nuevas estructuras de páginas para las entradas, el índice o cualquier otro
   tipo de página que se desee generar. Esto ha sido posible gracias a permitir el uso
   de templates. En concreto, Quill es compatible con el sistema de templates <a href="http://mustache.github.io/">Mustache</a>,
   que sigue la filosofía de diseño simple del engine. Mediante el uso de templates y 
   la modificación de ficheros CSS es muy sencillo crear nuevos temas para personalizar
   el blog. Para crear un nuevo tema basta con crear una nueva carpeta en el nuevo directorio de
   temas, copiar los archivos CSS y HTML de los templates y cargar el tema en el fichero
-  <code>quill.cfg</code>.</li>
-<li>Es muy sencillo ampliar el soporte de Quill a otros formatos de entrada como Textile, Rdoc
+  <code>quill.cfg</code>.</p>
+</li>
+<li>
+<p>Es muy sencillo ampliar el soporte de Quill a otros formatos de entrada como Textile, Rdoc
   o RST. Quill utiliza un formato intermedio para transformar los ficheros Markdown en el blog (PostData).
   Se ha modularizado el conversor de Markdown a PostData, por lo que para añadir soporte a otro
   formato de entrada, sólo hay que implementar otro <em>reader</em> que transforme el texto de entrada
-  a PostData. Una vez hecho esto, el engine se encargaría del resto de operaciones.</li>
-<li>Asimismo, es sencillo implementar nuevos tipos de página (como un About Me), ya que los generadores
+  a PostData. Una vez hecho esto, el engine se encargaría del resto de operaciones.</p>
+</li>
+<li>
+<p>Asimismo, es sencillo implementar nuevos tipos de página (como un About Me), ya que los generadores
   de contenido, que se encargan de transformar el formato intermedio PostData a un conjunto de 
   ficheros HTML también están encapsulados en el módulo <em>generators</em>, lo que permite implementar
-  nuevos generadores que añadan nuevas funcionalidades.</li>
+  nuevos generadores que añadan nuevas funcionalidades.</p>
+</li>
 </ul>
 <p>La estructura seguida por Quill está inspirada en la usada en <a href="http://docs.getpelican.com/en/3.3.0/report.html#design-process">Pelican</a> aunque con un diseño bastante más simple (Pelican tiene muchísimas más funcionalidades disponibles). </p>
 <p>Un problema que por ahora no ha sido solventado es el uso de imágenes locales a la hora de
@@ -87,12 +103,24 @@ dicha carpeta y el generador simplemente copie la carpeta y su contenido al blog
 haya problemas con la generación de referencias a imágenes si se usan subdirectorios. Es probable
 que el sistema se mejore en un futuro para corregir estos errores.</p>
 <p>De cara a versiones posteriores, se barajan características como:
-<em> RSS/Atom
-</em> Integración con Dropbox
-<em> Integración con Disqus (o similar)
-</em> Integración con redes sociales
-<em> Tags
-</em> Categorías</p>
+* RSS/Atom</p>
+<ul>
+<li>
+<p>Integración con Dropbox</p>
+</li>
+<li>
+<p>Integración con Disqus (o similar)</p>
+</li>
+<li>
+<p>Integración con redes sociales</p>
+</li>
+<li>
+<p>Tags</p>
+</li>
+<li>
+<p>Categorías</p>
+</li>
+</ul>
 <p>Sin embargo, no es seguro que finalmente se implementen todas estas funciones. Quill pretende
 ser un engine <strong>simple, ligero y elegante</strong>, por lo que habrá que estudiar cuando llegue el momento
 qué características son realmente compatibles con esta filosofía.</p>

@@ -1,14 +1,58 @@
+/*******************************************************************************
+ * Fonts
+ ******************************************************************************/
+ 
+@font-face
+{
+  font-family: textFont;
+  src: url('fonts/Lato-Reg.ttf');
+} 
+
+@font-face
+{
+  font-family: codeFont;
+  src: url('fonts/SourceCodePro-Regular.ttf');
+}
+
+@font-face
+{
+  font-family: titleFont;
+  src: url('fonts/Lato-Bol.ttf');
+}
+
+
+/*******************************************************************************
+ * Styles
+ ******************************************************************************/
+ 
 * {
   /*border: 1px solid #f00;*/
   background-color: #eee;
 }
 
-a:link {text-decoration:none;}
-a:visited {text-decoration:none;}
+/* Selection background color */
+::selection
+{
+  background-color:#a8d1ff;;
+}
+::-moz-selection
+{
+  background-color:#a8d1ff;;
+} 
+
+a:link {
+	text-decoration:underline;
+}
+
+a:visited {
+	/*text-decoration:none;*/
+	color: #000;
+}
+
 a:hover {
-  text-decoration: none;
-  /*color: #387BBF;
-  -moz-transition: color 0.2s ease-out;*/
+  /*text-decoration: none;*/
+  color: #387BBF;
+  -moz-transition: color 0.2s ease-out;
 }
 
 #content {
@@ -18,7 +62,7 @@ a:hover {
 
 #header {
   margin-top: 2em;
-  margin-bottom: 1em;
+  margin-bottom: 3em;
 }
 
 
@@ -42,7 +86,19 @@ a:hover {
   max-width: 800px;
   margin-left: auto;
   margin-right: auto;
+  padding-left: 2em;
+  padding-right: 2em;
+  padding-bottom: 1em;
+  padding-top: 1em;
+  background-color: #fff;
+  box-shadow: 0px 0px 10px 3px #777777;
+  border-radius: 10px;
 }
+
+#post * {
+	background-color: #fff;
+}
+
 
 #post img {
   display: block;
@@ -67,23 +123,35 @@ a:hover {
 
 #post_date {
   text-align: center;
+  padding-bottom: 1.5em;
+  border-bottom: 1px dotted #ccc;
 }
 
 #post_title {  
-  margin-top: 2em;
+  margin-top: 0.6em;
   margin-bottom: 0.5em;
 
-  font-family: sans-serif;
-  font-weight: bold;
+  font-family: titleFont, sans-serif;
+  /*font-weight: bold;*/
   font-size: 3em;
   
   text-align: center;
+  
+  background-color: #fff;
 }
 
 #post_text {
-  margin-top: 2.5em;
-  font: 'Dejavu Serif',Constantia, serif;
+  
+  margin-top: 1.5em;
+  font-family: textFont,'Dejavu Serif',Constantia, serif;
   font-size: 1.25em;
+  
+  background-color: #fff;
+}
+
+#post_text code{
+  /*font-size: 1.25em;*/
+  font-family: codeFont;
 }
 
 #share {
@@ -104,13 +172,18 @@ a:hover {
 p.post_title_text {
   margin-top: 0px;
   margin-bottom: 0px;
+  
+  background-color: #fff;
 }
 
 p.post_date_text {
+  font-family:  textFont;
   margin-top: 0px;
   margin-bottom: 0px;
   font-size: 0.9em;
   color: #777;
+  
+  background-color: #fff;
 }
 
 p.share_text {
@@ -124,6 +197,7 @@ a.logo{
     max-width:75px;
     max-height:75px;  
 }
+
 
 
 
@@ -145,6 +219,33 @@ a.logo{
 
 
 @media only screen and (max-width: 500px) {
+
+#post {
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  padding-bottom: 1em;
+  padding-top: 1em;
+  background-color: #fff;
+  box-shadow: 0px 0px 10px 3px #777777;
+  border-radius: 10px;
+  word-wrap: break-word;
+}
+
+#post_title {  
+  margin-top: 0.6em;
+  margin-bottom: 0.5em;
+
+  font-family: sans-serif;
+  font-weight: bold;
+  font-size: 2em;
+  
+  text-align: center;
+  
+  background-color: #fff;
+}
    
 }
 

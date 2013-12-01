@@ -1,0 +1,57 @@
+<html>
+  <head>
+    <title>Desarrollando Quill (II) - Gestión de temas</title>
+    <link rel="stylesheet" href="post.css">
+
+	<meta charset="UTF-8"> 
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="MobileOptimized" content="320" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+
+  <body>
+  <div id="content">
+    <div id="header">
+      <a class="blog-logo" href="index.html">
+        <img src="logo.png" alt="Blog logo"/>
+      </a>
+    </div>
+    
+    <div id="post">    
+    
+    <div id="post_title">
+      <p class="post_title_text">Desarrollando Quill (II) - Gestión de temas</p>
+    </div>
+	
+    <div id="post_date">
+      <p class="post_date_text">2013-12-01</p>
+    </div>
+
+    <div id="post_text">
+    <p>Aunque Quill está pensado para que el usuario pueda empezar a utilizarlo simplemente escribiendo su primera entrada en Markdown, la primera versión soportará temas personalizados, permitiendo a cualquier persona que sepa un poco de CSS modificar la apariencia de Quill y dejarla a su gusto.</p>
+<p>Quill incluye un tema por defecto pensado para verse en todos los navegadores mayoritarios (aún estoy pensando si considerar IE6 mayoritario ;). Los temas en Quill se componen de un par de ficheros CSS y, opcionalmente, un par de ficheros plantilla:</p>
+<h2>Ficheros plantilla</h2>
+<p>Existen dos ficheros plantilla por defecto: <code>indexTemplate.html</code> y <code>postTemplate.html</code>. Quill utiliza el sistema de plantillas <a href="http://mustache.github.io/">Mustache</a>, que es bastante simple y cumple sobradamente con su propósito. Si cambiamos estos archivos podremos modificar la estructura de las entradas del blog o del índice de entradas. Por ejemplo, si queremos eliminar la fecha de nuestras entradas en nuestro tema, bastará con eliminar <code>{{date}}</code> del fichero correspondiente, o si queremos incluir las etiquetas antes del texto de la entrada, simplemente eliminaremos <code>{{tags}}</code> de su ubicación actual y lo incluiremos justo encima de la etiqueta <code>{{{post_text}}}</code>. Es una forma muy sencilla y al mismo tiempo potente de definir la estructura general de los elementos del blog.</p>
+<h2>Ficheros CSS</h2>
+<p>Los ficheros CSS definirán los estilos a aplicar en la página principal del blog y en cada una de las entradas. En el tema por defecto, se han utilizado algunos constructores de CSS3, como <em>media queries</em> para optimizar el estilo del blog en dispositivos móviles o bordes y sombras para estilizar las entradas.</p>
+<h2>Ficheros opcionales</h2>
+<p>Quill permite personalizar la fuente haciendo uso del constructor <code>@font-face</code> de CSS3. Si bien es posible utilizar alguna fuente web como <a href="http://www.google.com/fonts">Google Fonts</a>, se puede utilizar una fuente del propio servidor. Para ello, basta con crear un directorio <code>fonts</code> en la carpeta del tema e incluir dentro todas las fuentes que vayan a utilizarse. Cuando Quill detecte ese directorio en el tema, lo copiará al blog final, posibilitando el uso de fuentes personalizadas locales.</p>
+<p>Es importante que el directorio se llame exactamente <code>fonts</code>, ya que Quill busca específicamente ese nombre en el directorio del tema durante la generación del blog.</p>
+<h2>Creación de nuevos temas para Quill</h2>
+<p>Crear un nuevo tema para Quill es bastante sencillo. Simplemente se debe crear un directorio con el nombre del tema en la carpeta <code>themes</code> e incluir al menos los dos ficheros plantilla (indexTemplate.html y postTemplate.html) y los dos ficheros CSS base (index.css y post.css). Para activar el tema en el blog bastará con escribir su nombre en el fichero <code>quill.cfg</code>. La próxima vez que se genere el blog se utilizarán las plantillas del nuevo tema y se les aplicarán los estilos CSS correspondientes.</p>
+    </div>
+    </div>
+
+    <div id="share">
+      <p class="share_text"></p>
+    </div>
+
+    <div id="footer">
+      <a class="blog-logo" href="index.html">
+        <img src="logo.png" alt="Blog logo"/>
+      </a>
+    </div>
+  </div id="body">
+  </body>
+
+</html>

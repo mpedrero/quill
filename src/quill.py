@@ -15,6 +15,7 @@ class BlogMetadata():
 		self.postsFolder = str()
 		self.draftsFolder = str()
 		self.themesFolder = str()
+		self.imagesFolder = str()
 		self.blogFolder = str()
 
 		self.authorName = str()
@@ -31,6 +32,7 @@ class BlogMetadata():
 		self.postsFolder = config.get("Folders", "PostsFolder")
 		self.draftsFolder = config.get("Folders", "DraftsFolder")
 		self.themesFolder = config.get("Folders", "ThemesFolder")
+		self.imagesFolder = config.get("Folders", "ImgsFolder")
 		self.blogFolder = config.get("Folders", "BlogFolder")
 		self.authorName = config.get("Author", "Name")
 		self.authorEmail = config.get("Author", "EMail")
@@ -42,20 +44,17 @@ def main():
 	postList = list()
 	postDataList = list()
 	
-
-	# 1. Read config file to load the metadata
+	# 0. Display program and version
 	print "quill - v0.01a"
 	print
+
+	# 1. Read config file to load the metadata
 	print "Reading config file...",
-	
 	blogSettings = BlogMetadata()
-	
-	blogSettings.loadConfig("quill.cfg")
-	
+	blogSettings.loadConfig("quill.cfg")	
 	print "[OK]"
 	
 
-	
 	# 2. Analyse postsFolder and search *.md files to process
 	print "Processing posts...",
 
@@ -76,17 +75,16 @@ def main():
 	
 	print "[OK]"
 		
-#for post in postDataList:
-#	print repr(post.title).decode("unicode-escape")
 		
-	
-	
 	# 4. Generate blog from Post
-	print "Generating blog..."
+	print "Generating blog...",
 	
 	# 4.1. Initialise generator and set theme
 	generator = BlogPostGenerator.BlogPostGenerator(blogSettings)
 	generator.loadTheme("default")
+	
+	# 4.2. Copy images
+	generator.loadImages()
 	
 	# 4.2. Generate blog entries
 	for post in postDataList:

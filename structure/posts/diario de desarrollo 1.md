@@ -89,7 +89,7 @@ es suficientemente variado para poder escribir un blog (se pueden usar listas, i
 6 niveles de títulos, código fuente...), por otro lado te permite usar código html por 
 si quieres añadir algo muy específico sin usar el lenguaje. Es compatible con muchos
 editores de texto que incluso te van generando el resultado final del documento en tiempo real:
-![Usando Geany](imgs/geany1.png)
+![Usando Geany](images/geany1.png)
 Aunque puedes usar simplemente el bloc de notas de Windows para escribir una entrada.
 
 ## ¿Y para qué molestarse en aprender Markdown cuando puedo utilizar un editor convencional? 

@@ -15,10 +15,13 @@ De cara a la versión 0.1, fijé los siguientes objetivos:
 
 * Desarrollar un conversor que permita leer un fichero Markdown y generar el código
   HTML equivalente.
+  
 * Diseñar una estructura de ficheros y directorios clara y coherente tanto para el
   programa como para el blog generado.
+  
 * Diseñar un tema básico para las entradas del blog y para la página principal, que
   contendrá el índice de entradas.
+  
 * Desarrollar un parseador para el fichero de configuración, que seguirá el formato *.ini*
   por ser sencillo de entender, sencillo de editar y sencillo de parsear.
 
@@ -41,6 +44,7 @@ buena arquitectura, ya que permite extender el engine fácilmente y a la vez man
 
 * Crear nuevos temas y cargarlos al vuelo a la hora de generar el blog, o especificándolo
   manualmente en el fichero `quill.cfg`
+  
 * Crear nuevas estructuras de páginas para las entradas, el índice o cualquier otro
   tipo de página que se desee generar. Esto ha sido posible gracias a permitir el uso
   de templates. En concreto, Quill es compatible con el sistema de templates [Mustache](http://mustache.github.io/),
@@ -49,11 +53,13 @@ buena arquitectura, ya que permite extender el engine fácilmente y a la vez man
   el blog. Para crear un nuevo tema basta con crear una nueva carpeta en el nuevo directorio de
   temas, copiar los archivos CSS y HTML de los templates y cargar el tema en el fichero
   `quill.cfg`.
+  
 * Es muy sencillo ampliar el soporte de Quill a otros formatos de entrada como Textile, Rdoc
   o RST. Quill utiliza un formato intermedio para transformar los ficheros Markdown en el blog (PostData).
   Se ha modularizado el conversor de Markdown a PostData, por lo que para añadir soporte a otro
   formato de entrada, sólo hay que implementar otro *reader* que transforme el texto de entrada
   a PostData. Una vez hecho esto, el engine se encargaría del resto de operaciones.
+  
 * Asimismo, es sencillo implementar nuevos tipos de página (como un About Me), ya que los generadores
   de contenido, que se encargan de transformar el formato intermedio PostData a un conjunto de 
   ficheros HTML también están encapsulados en el módulo *generators*, lo que permite implementar
@@ -70,10 +76,15 @@ que el sistema se mejore en un futuro para corregir estos errores.
 
 De cara a versiones posteriores, se barajan características como:
 * RSS/Atom
+
 * Integración con Dropbox
+
 * Integración con Disqus (o similar)
+
 * Integración con redes sociales
+
 * Tags
+
 * Categorías
 
 Sin embargo, no es seguro que finalmente se implementen todas estas funciones. Quill pretende
