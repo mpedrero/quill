@@ -78,7 +78,8 @@ a:hover {
  
 /* Affects to all relevant content in the post (title, date, main text, etc.) */
 #content {
-  font-size: 100%;
+  /* font-size neccessary for unifying base font size among different browsers*/
+  font-size: 12pt;
   text-rendering: optimizeLegibility;
 }
 
@@ -208,6 +209,8 @@ p.post_title_text {
 #post_text {
   margin-top: 1.5em;
   
+  line-height: 1.5em;
+  
   font-family: 'Open Sans', 'Dejavu Serif', Constantia, serif;
   font-size: 1em;
 }
@@ -246,12 +249,18 @@ p.share_text {
   font-family: codeFont;
   font-size: 0.9em;
   
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  
   border: solid 1px #bbb;
   background-color: #eee;
   
-  padding: 2px;
-  padding-left: 5px;
-  padding-right: 5px;
+  margin-bottom:1px;
+  margin-left:2px;
+  margin-right:2px;
+  padding-bottom: 1px;
+  padding-left: 3px;
+  padding-right: 3px;
   
   border-radius: 4px;
 }
@@ -262,7 +271,9 @@ p.share_text {
  * redefined in pre.block_code below */
 #post_text code.block_code {
   font-family: codeFont;
-  font-size: 1.25em;  
+  font-size: 1em;  
+  
+  line-height: 1.2em;
   
   border: none;
   background-color: inherit;
@@ -281,6 +292,9 @@ p.share_text {
   border: solid 1px #bbb;
   background-color: #eee;
   
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  
   padding-left: 1em;
   padding-right: 1em;
   padding-top: 0.5em;
@@ -292,6 +306,7 @@ p.share_text {
 
 /* Blockquote. Add a gray leftborder and slightlt pad the content */
 #post_text blockquote {
+  word-wrap: break-word;
   padding-left: 1em;
   border-left: 3px solid #ccc;
 }
