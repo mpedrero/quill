@@ -15,7 +15,10 @@ class BlogPostGenerator:
 		shutil.copy2(os.path.join(self.templateFolder,"post.css"), self.outputFolder)
 		shutil.copy2(os.path.join(self.templateFolder,"index.css"), self.outputFolder)
 		shutil.copy2(os.path.join(self.templateFolder,"logo.png"), self.outputFolder)
-		shutil.rmtree(os.path.join(self.outputFolder,"fonts"))
+		try:
+			shutil.rmtree(os.path.join(self.outputFolder,"fonts"))
+		except:
+			pass
 		shutil.copytree(os.path.join(self.templateFolder,"fonts"), os.path.join(self.outputFolder,"fonts"))
 		
 	def loadImages(self):

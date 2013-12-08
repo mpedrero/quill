@@ -321,10 +321,10 @@ p.share_text {
  * Header styles
  ******************************************************************************/
  
-/*#post_text h1 {
-  font-family: titleFont;
+#post_text h1 {
+  line-height: 1.2em;
 }
-
+/*
 #post_text h2 {
   font-family: titleFont;
 }
