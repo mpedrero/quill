@@ -4,6 +4,7 @@ class PostData(object):
 		self.author = unicode()
 		self.date = unicode()
 		self.tags = list()
+		self.tagsURL = unicode() # tags with href and ready to display
 		self.title = unicode()
 		self.mainText = unicode()
 		

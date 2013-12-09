@@ -1,0 +1,37 @@
+<html>
+  <head>
+    <title>{{title}}</title>
+    <link rel="stylesheet" href="../index.css">
+
+	<meta charset="UTF-8"> 
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="MobileOptimized" content="320" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+
+  <body>
+  <div id="content">
+    <div id="header">
+      <a class="blog-logo" href="{{index}}">
+        <img src="../logo.png" alt="Blog logo"/>
+      </a>
+    </div>
+    <h1>{{title}}</h1>
+	<h2>{{tag-name}}<h2>
+    <div id="entries">    
+    {{{entries}}}
+    </div>
+
+    <div id="share">
+      <p class="share_text">{{{share}}}</p>
+    </div>
+
+    <div id="footer">
+      <a class="blog-logo" href="{{index}}">
+        <img src="../logo.png" alt="Blog logo"/>
+      </a>
+    </div>
+  </div id="body">
+  </body>
+
+</html>

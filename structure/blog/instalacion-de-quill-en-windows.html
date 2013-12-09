@@ -1,0 +1,72 @@
+<html>
+  <head>
+    <title>Desarrollando Quill (III) - Instalando Quill en 		 Windows</title>
+    <link rel="stylesheet" href="post.css">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,400italic' rel='stylesheet' type='text/css'>
+
+	<meta charset="UTF-8"> 
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="MobileOptimized" content="320" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+
+  <body>
+  <div id="content">
+    <div id="header">
+      <a class="blog-logo" href="index.html">
+        <img src="logo.png" alt="Blog logo"/>
+      </a>
+    </div>
+    
+    <div id="post">    
+    
+    <div id="post_title">
+      <p class="post_title_text">Desarrollando Quill (III) - Instalando Quill en 		 Windows</p>
+    </div>
+	
+    <div id="post_date">
+      <p class="post_date_text">2013-12-01</p>
+    </div>
+
+    <div id="post_text">
+    <p>Hasta ahora, todo el desarrollo de Quill se ha realizado bajo Linux, ya que resulta mucho más cómodo a la hora de instalar las bibliotecas necesarias, probar las páginas en un servidor, acceder por ftp directamente desde el sistema de ficheros, etc. </p>
+<p>Sin embargo, la mayoría de personas, entre las que me incluyo, utilizan Windows como sistema principal, por lo que la compatibilidad con Windows de Quill es esencial. Afortunadamente, por el momento Quill está programado únicamente en Python, por lo que la compatibilidad con Windows, Linux y MacOS está prácticamente garantizada.</p>
+<p>Si puedes leer esta entrada, quiere decir que la versión de Windows funciona perfectamente. De todas formas, a modo de manual de instrucciones, veremos cómo <em>instalar</em> Quill en Windows.</p>
+<h1>Paso 1: Instalando Python</h1>
+<p>Como he comentado, Quill está íntegramente programado en Python (por lo menos por ahora). A diferencia de otros lenguajes como C++, Python es un <a href="http://es.wikipedia.org/wiki/Python">lenguaje interpretado</a>, lo que quiere decir que debemos descargar un intérprete para poder ejecutar nuestro programa. En Linux el intérprete de Python suele venir preinstalado en la mayoría de distribuciones. Para instalarlo en Windows bastará con ir a la <a href="http://www.python.org/download/">página de descargas de Python</a> y elegir el instalador correspondiente (32bits o 64bits) según nuestra versión de Windows. Quill se ha programado en Python 2.X, por lo que se debe descargar la versión 2 (en este momento la versión es 2.7.6). Para instalarlo basta con hacer doble clic y seguir los pasos.</p>
+<h1>Paso 2: Añadiendo Python al path de Windows</h1>
+<p>Este paso es completamente opcional, pero nos facilitará bastante la vida a la hora de usar Python. Suponiendo que estemos en Windows 7 o superior, pulsamos inicio y tecleamos <code>variables de entorno</code> en el buscador. Aparecerá una opción llamada <code>Editar las variables de entorno del sistema</code>, que nos llevará a una ventana como ésta:</p>
+<p><img alt="Propiedades del sistema" src="images/propiedades-sistema.png" /></p>
+<p>Pulsaremos en el botón <code>variables de entorno</code> y en la lista de variables del sistema buscaremos la variable <code>Path</code> y haremos doble click para editarla. Nos iremos al final del valor, y añadiremos el directorio donde se instaló Python, que normalmente será <code>C:\Python27</code></p>
+<p><img alt="Editando Path" src="images/editando-path.png" /></p>
+<p>Con esto conseguiremos que cuando queramos abrir el intérprete de Python desde la línea de comandos, no tengamos que escribir la ruta completa, sino simplemente <code>python</code>, ya que Windows buscará en los directorios del Path intentando encontrar el intérprete.</p>
+<h1>Paso 3: Instalando librerías adicionales</h1>
+<p>Quill utiliza algunas librerías de Python para funcionar, las cuales hay que instalar. En el directorio <code>windows-libs</code> de la carpeta de Quill se incluyen todas las librerías utilizadas. Para instalarlas en Windows, el procedimiento es bastante sencillo: Se abre una línea de comandos (escribiendo <code>cmd</code> en el menú de Inicio), se accede al directorio de la librería en cuestión y se escribe <code>python setup.py install</code>. Si no hemos hecho el segundo paso, seguramente habrá que especificar la ruta completa de Python, escribiendo, por ejemplo <code>C:\Python27\python.exe setup.py install</code>.</p>
+<p>Una vez instaladas las librerías adicionales, Quill estará listo para funcionar. Para comprobarlo, bastará con escribir una entrada de prueba (yo estoy utilizando para ésta el editor <a href="http://markdownpad.com/">MarkdownPad</a> que es gratuito y permite previsualizar el formato a la vez que se escribe:</p>
+<p><img alt="MarkdownPad" src="images/markdown-pad.png" /></p>
+<p>Una vez terminada la entrada, bastará con hacer click en el programa <code>quill.py</code> y debería salir algo parecido a la siguiente imagen:</p>
+<p><img alt="Quill funcionando en Windows" src="images/quill-windows.png" /></p>
+<p>Si todo ha ido bien, el blog debe estar en el directorio <code>blog</code> (aunque recordemos que podemos cambiarlo, por ejemplo a un directorio dentro de la carpeta <code>public</code> de Dropbox y tendremos nuestro blog online).</p>
+<p>Los siguientes pasos a seguir es pulir la generación del índice del blog con la lista de entradas ordenadas por fecha, y corregir posibles bugs de cara a lanzar la primera versión beta (v0.1). Una vez lanzada, será la hora de añadir etiquetas y más funcionalidad.</p>
+<h1>¿Habrá alguna manera más sencilla de usar Quill?</h1>
+<p>Las instrucciones de instalación anteriores pueden parecer bastante más tediosas que un simple instalador (de hecho lo son). Esto se debe a que Quill es todavía un <em>engine</em> que está a comienzos de su desarrollo. Cuando llegue a una versión estable, seguramente crearé instaladores (o directamente ejecutables) que serán mucho más sencillos de utilizar: los descargarás, escribirás tu primera entrada y harás doble clic en el programa. Sin embargo, por ahora me estoy centrando en que todo funcione como debe, por lo que de momento habrá que seguir los pasos de arriba.</p>
+    </div>
+
+	<div id="tags">
+	Etiquetas <a class="tag" href="tags/quill.html">quill</a> <a class="tag" href="tags/development.html">development</a> 
+	</div>
+	</div>
+
+    <div id="share">
+      <p class="share_text"></p>
+    </div>
+
+    <div id="footer">
+      <a class="blog-logo" href="index.html">
+        <img src="logo.png" alt="Blog logo"/>
+      </a>
+    </div>
+  </div id="body">
+  </body>
+
+</html>

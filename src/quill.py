@@ -22,6 +22,8 @@ class BlogMetadata():
 		self.authorEmail = str()
 		self.authorTwitter = str()
 		
+		self.tagName = str()
+		
 	''' Reads quill.cfg file to load blog settings '''
 	def loadConfig(self,filename):
 		config = ConfigParser.RawConfigParser()
@@ -37,6 +39,7 @@ class BlogMetadata():
 		self.authorName = config.get("Author", "Name")
 		self.authorEmail = config.get("Author", "EMail")
 		self.authorTwitter = config.get("Author", "Twitter")
+		self.tagName = config.get("Misc", "TagName")
 		
 
 def main():
@@ -93,6 +96,13 @@ def main():
 	# 4.3. Generate index
 	generator.generateIndex(postDataList)
 		
+	print "[OK]"
+	
+	# 5. Generate tags (if necessary)
+	print "Generating tags...",
+	
+	generator.generateTags(postDataList)
+	
 	print "[OK]"
 
 

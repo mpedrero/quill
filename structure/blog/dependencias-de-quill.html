@@ -1,0 +1,63 @@
+<html>
+  <head>
+    <title>Dependencias de Quill</title>
+    <link rel="stylesheet" href="post.css">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,400italic' rel='stylesheet' type='text/css'>
+
+	<meta charset="UTF-8"> 
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="MobileOptimized" content="320" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+
+  <body>
+  <div id="content">
+    <div id="header">
+      <a class="blog-logo" href="index.html">
+        <img src="logo.png" alt="Blog logo"/>
+      </a>
+    </div>
+    
+    <div id="post">    
+    
+    <div id="post_title">
+      <p class="post_title_text">Dependencias de Quill</p>
+    </div>
+	
+    <div id="post_date">
+      <p class="post_date_text">2013-12-08</p>
+    </div>
+
+    <div id="post_text">
+    <p>Quill depende de las siguientes librerías externas de Python:</p>
+<ul>
+<li><strong>python-markdown</strong>: se utiliza para convertir los posts de Markdown a código HTML. Está disponible en los repositorios de la mayoría de distribuciones Linux.</li>
+<li><strong>pystache</strong>: es un <em>wrapper</em> de la librería <a href="http://mustache.github.io/">Mustache</a> que se usa para definir plantillas y poder configurar el aspecto de las distintas secciones del blog (página principal, about, posts, etc). Esta librería se puede obtener de su <a href="https://github.com/defunkt/pystache">repositorio en GitHub</a></li>
+<li><strong>slugify</strong>: se utiliza para generar direcciones web legibles. Con esto conseguimos direcciones como <code>miblog/tutorial-markdown</code>en lugar de <code>miblog/article/213833</code>. Los nombres se generan a partir del nombre del archivo del post original escrito en Markdown. Esta librería se puede obtener de su <a href="https://github.com/un33k/python-slugify">repositorio en GitHub</a></li>
+</ul>
+<p>Además de éstas, Quill hace uso de las siguientes librerías internas de Python:</p>
+<ul>
+<li><strong>os</strong>: se utiliza sobre todo para realizar operaciones sobre los archivos (crear nuevos archivos para los posts, copiar los ficheros CSS y las imágenes, crear directorios si es necesario, etc).</li>
+<li><strong>codecs</strong>: se utiliza para poder aceptar de forma transparente distintos <em>encodings</em> de texto como <code>latin-1</code>, que suele usarse por defecto en Windows o <code>utf-8</code>, que se suele usar en Linux. Gracias a esta clase evitamos problemas con acentos o caracteres no ASCII.</li>
+<li><strong>shutil</strong>: se utiliza para algunas operaciones sobre archivos y directorios que no cubre el paquete <strong>os</strong>. específicamente la copia y eliminación recursiva de directorios.</li>
+</ul>
+    </div>
+
+	<div id="tags">
+	Etiquetas <a class="tag" href="tags/quill.html">quill</a> <a class="tag" href="tags/development.html">development</a> 
+	</div>
+	</div>
+
+    <div id="share">
+      <p class="share_text"></p>
+    </div>
+
+    <div id="footer">
+      <a class="blog-logo" href="index.html">
+        <img src="logo.png" alt="Blog logo"/>
+      </a>
+    </div>
+  </div id="body">
+  </body>
+
+</html>

@@ -20,8 +20,9 @@ class MarkdownReader:
 		postData.date = md.Meta["date"][0]
 
 		for tag in md.Meta["tags"]:
-			postData.tags.append(tag[0])
-
+			postData.tags.append(tag)
+			postData.tagsURL = postData.tagsURL + '<a class="tag" href="tags/'+slugify.slugify(tag)+'.html">'+tag+'</a> '
+			
 		postData.title = md.Meta["title"][0]
 		# Mediante este reemplazo anadimos una clase a los bloques de codigo para poderles
 		# aplicar un estilo determinado. Hay que comprobar si es error prone

@@ -215,6 +215,43 @@ p.post_title_text {
   font-size: 1em;
 }
 
+/* Tags of the post (if are enabled) */
+#tags {
+  font-family: 'Open Sans', 'Dejavu Serif', serif;
+  font-size: 0.9em;
+  /*text-align: center;*/
+  margin-top: 2em;
+  padding-top: 1em;
+  border-top: 1px dotted #ccc;
+}
+
+#post a.tag {
+  
+  color: #444;
+  text-decoration: none;
+  
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  
+  border: solid 1px #bbb;
+  background-color: #eee;
+  
+  margin-bottom:1px;
+  margin-left:2px;
+  margin-right:2px;
+  padding-bottom: 1px;
+  padding-left: 3px;
+  padding-right: 3px;
+  
+  border-radius: 4px;
+}
+
+/* Nice transition in Firefox */
+#post a.tag:hover {
+  color: #387BBF;
+  -moz-transition: color 0.2s ease-out;
+}
+
 
 /* Not used in the template yet. Contains links to Email, Twitter, etc. */
 #share {
