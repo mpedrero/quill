@@ -23,6 +23,7 @@ class BlogMetadata():
 		self.authorTwitter = str()
 		
 		self.tagName = str()
+		self.tagHeader = str()
 		
 	''' Reads quill.cfg file to load blog settings '''
 	def loadConfig(self,filename):
@@ -40,6 +41,7 @@ class BlogMetadata():
 		self.authorEmail = config.get("Author", "EMail")
 		self.authorTwitter = config.get("Author", "Twitter")
 		self.tagName = config.get("Misc", "TagName")
+		self.tagHeader = config.get("Misc", "TagHeader")
 		
 
 def main():

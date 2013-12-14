@@ -1,7 +1,8 @@
 <html>
   <head>
     <title>Quill Blog</title>
-    <link rel="stylesheet" href="../index.css">
+    <link rel="stylesheet" href="../tag.css">
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,400italic' rel='stylesheet' type='text/css'>
 
 	<meta charset="UTF-8"> 
     <meta name="HandheldFriendly" content="True" />
@@ -12,14 +13,16 @@
   <body>
   <div id="content">
     <div id="header">
-      <a class="blog-logo" href="">
+      <a class="blog-logo" href="../index.html">
         <img src="../logo.png" alt="Blog logo"/>
       </a>
     </div>
     <h1>Quill Blog</h1>
-	<h2>markdown<h2>
+	<div id="tag-header">
+		<span id="tag-header-text">Entradas con la etiqueta</span> <span id="tag-name-text"> markdown</span>
+	</div>
     <div id="entries">    
-    <p><a class="entry" href="../markdown-syntax.html">Tutorial de Markdown</a></p>
+    <div class="last-entry"><a class="entry-link" href="../markdown-syntax.html">Tutorial de Markdown</a></div>
 
     </div>
 
@@ -28,7 +31,7 @@
     </div>
 
     <div id="footer">
-      <a class="blog-logo" href="">
+      <a class="blog-logo" href="../index.html">
         <img src="../logo.png" alt="Blog logo"/>
       </a>
     </div>

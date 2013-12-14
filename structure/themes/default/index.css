@@ -1,46 +1,122 @@
+/*******************************************************************************
+ * Fonts
+ ******************************************************************************/
+ 
+/*@font-face
+{
+  font-family: textFont;
+  src: url('fonts/Lato-Reg.ttf');
+} */
+
+@font-face
+{
+  font-family: codeFont;
+  src: url('fonts/SourceCodePro-Regular.ttf');
+}
+
+
+@font-face
+{
+  font-family: titleFont;
+  src: url('fonts/Lato-Bol.ttf');
+}
+
+
+/*******************************************************************************
+ * Styles
+ ******************************************************************************/
+ 
+ 
+/*******************************************************************************
+ * General styles to apply on all elements
+ ******************************************************************************/
+ 
+ 
+/* Page background */
 * {
   /*border: 1px solid #f00;*/
   background-color: #eee;
 }
 
-a:link {text-decoration:none;}
-a:visited {text-decoration:none;}
-a:hover {
-  text-decoration: none;
+
+/* Selection background color */
+::selection
+{
+  background-color:#a8d1ff;;
 }
+
+::-moz-selection
+{
+  background-color:#a8d1ff;;
+} 
+
+
+/* Subtle decoration for links */
+a:link {
+	text-decoration:underline;
+	color: #000;
+}
+
+
+/* Same decoration for visited links */
+a:visited {
+	color: #000;
+}
+
+
+/* Nice transition in Firefox */
+a:hover {
+  color: #387BBF;
+  -moz-transition: color 0.2s ease-out;
+}
+
+
+/*******************************************************************************
+ * Specific styles to apply on certains sections
+ ******************************************************************************/
+
+
+/* Blog title (h1) */
 
 h1 {
+	line-height: 1.2em;
 	text-align: center;
+	text-decoration: none;
+	font-family: titleFont;
+	font-size: 2.5em;
 }
 
-.entry a:hover {
-	color: #387BBF;
-    -moz-transition: color 0.2s ease-out;
+/* Tag header */
+
+#tag-header {
+	margin-bottom: 2.5em;
+
+	text-rendering: optimizeLegibility;
+	text-align: center;
+	font-size: 1.2em;
+	font-family:  'Open Sans', 'Dejavu Serif', Constantia, serif;
 }
 
-#entries {
-	margin-top: 2em;
-	text-align: center;
-	font-family: sans-serif;
+#tag-name-text {
 	font-weight: bold;
-	font-size: 2em;
-	
 }
-
+ 
+/* Affects to all relevant content in the post (title, date, main text, etc.) */
 #content {
-  font-size: 100%;
+  /* font-size neccessary for unifying base font size among different browsers*/
+  font-size: 12pt;
   text-rendering: optimizeLegibility;
-  max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
 }
 
+
+/* Margins for header */
 #header {
   margin-top: 2em;
-  margin-bottom: 1em;
+  margin-bottom: 3em;
 }
 
 
+/* Resizing hearder and footer logo */
 .blog-logo img{
     display: block;
     max-height: 75px;
@@ -49,6 +125,8 @@ h1 {
     line-height: 0;
 }
 
+
+/* Adapt link to adopt the logo size */
 .blog-logo a{
     display: block;
     max-height: 75px;
@@ -57,12 +135,76 @@ h1 {
     line-height: 0;
 }
 
-#post {
+
+a.logo{
+    display:block;
+    margin:auto;
+    max-width:75px;
+    max-height:75px;  
+}
+
+
+/* Add a nice border to post with white background to enhance legibility */
+#entries {
   max-width: 800px;
   margin-left: auto;
   margin-right: auto;
+  padding-left: 2em;
+  padding-right: 2em;
+  padding-bottom: 1em;
+  padding-top: 1em;
+  background-color: #fff;
+  box-shadow: 0px 0px 10px 3px #777777;
+  border-radius: 10px;
 }
 
+/* Each entry containing a href to the post */
+.entry {
+
+	padding-top: 1em;
+	padding-bottom: 1em;
+
+	border-bottom: 1px dotted #CCCCCC;
+
+	text-decoration:none;
+	font-weight: bold;
+
+	background-color: #fff;
+}
+
+.last-entry {
+
+	padding-top: 1em;
+	padding-bottom: 1em;
+
+
+	text-decoration:none;
+	font-weight: bold;
+
+	background-color: #fff;
+}
+
+
+.entry-link {
+	background-color: #fff;
+	font-size: 1.4em;
+	font-family:  'Open Sans', 'Dejavu Serif', Constantia, serif;
+		
+}
+
+.entry-link:link {
+	text-decoration: none;
+}
+
+
+/* Add white background to all elements inside post (replaces general grey
+ * background) */
+#post * {
+	background-color: #fff;
+}
+
+
+/* Control image size to adapt post div */
 #post img {
   display: block;
   margin-left: auto;
@@ -73,6 +215,8 @@ h1 {
   border: 1px solid #000;
 }
 
+
+/* Control embed content (ie: YouTube links for now) */
 #post embed {
   display: block;
   margin-left: auto;
@@ -84,33 +228,109 @@ h1 {
   height: 400px;
 }
 
+
+/* Center date in the post and add a nice dotted line at the bottom */
 #post_date {
   text-align: center;
+  padding-bottom: 1.5em;
+  border-bottom: 1px dotted #ccc;
 }
 
+
+p.post_date_text {
+  font-family:  textFont;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  font-size: 0.9em;
+  color: #777;
+  
+  background-color: #fff;
+}
+
+
+/* Center title and choose a custom font (now is Leto-Bold) */
 #post_title {  
-  margin-top: 2em;
+  margin-top: 0.6em;
   margin-bottom: 0.5em;
 
-  font-family: sans-serif;
-  font-weight: bold;
-  font-size: 3em;
+  font-family: titleFont, sans-serif;
+  font-size: 2.5em;
   
   text-align: center;
 }
 
-#post_text {
-  margin-top: 2.5em;
-  font: 'Dejavu Serif',Constantia, serif;
-  font-size: 1.25em;
+
+p.post_title_text {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  
+  background-color: #fff;
 }
 
+
+/* Main text of the post. Currently uses Open Sans font from Google Fonts */
+#post_text {
+  margin-top: 1.5em;
+  
+  line-height: 1.5em;
+  
+  font-family: 'Open Sans', 'Dejavu Serif', Constantia, serif;
+  font-size: 1em;
+}
+
+/* Tags of the post (if are enabled) */
+#tags {
+  font-family: 'Open Sans', 'Dejavu Serif', serif;
+  font-size: 0.9em;
+  /*text-align: center;*/
+  margin-top: 2em;
+  padding-top: 1em;
+  border-top: 1px dotted #ccc;
+}
+
+#post a.tag {
+  
+  color: #444;
+  text-decoration: none;
+  
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  
+  border: solid 1px #bbb;
+  background-color: #eee;
+  
+  margin-bottom:1px;
+  margin-left:2px;
+  margin-right:2px;
+  padding-bottom: 1px;
+  padding-left: 3px;
+  padding-right: 3px;
+  
+  border-radius: 4px;
+}
+
+/* Nice transition in Firefox */
+#post a.tag:hover {
+  color: #387BBF;
+  -moz-transition: color 0.2s ease-out;
+}
+
+
+/* Not used in the template yet. Contains links to Email, Twitter, etc. */
 #share {
   margin-top: 5em;
   font-family: sans-serif;
   text-align: center;
 }
 
+
+p.share_text {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+
+/* Footer. Currently only contains the logo */
 #footer {
   margin-top: 4em;
   margin-bottom: 3em;
@@ -119,35 +339,112 @@ h1 {
 }
 
 
-
-p.post_title_text {
-  margin-top: 0px;
-  margin-bottom: 0px;
-}
-
-p.post_date_text {
-  margin-top: 0px;
-  margin-bottom: 0px;
+/*******************************************************************************
+ * Code Styles: Inline code, block code (class .block_code) and blockquote
+ ******************************************************************************/
+ 
+ 
+/* Inline code. In Markdown is `hello world` */
+#post_text code{
+  font-family: codeFont;
   font-size: 0.9em;
-  color: #777;
+  
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  
+  border: solid 1px #bbb;
+  background-color: #eee;
+  
+  margin-bottom:1px;
+  margin-left:2px;
+  margin-right:2px;
+  padding-bottom: 1px;
+  padding-left: 3px;
+  padding-right: 3px;
+  
+  border-radius: 4px;
 }
 
-p.share_text {
-  margin-top: 0px;
-  margin-bottom: 0px;
+
+/* Block code. In Markdown is a tabbed text or +4 spaces at line beginning. This
+ * rules cancel the more general #post_text code rules above, because they'll be
+ * redefined in pre.block_code below */
+#post_text code.block_code {
+  font-family: codeFont;
+  font-size: 1em;  
+  
+  line-height: 1.2em;
+  
+  border: none;
+  background-color: inherit;
+  
+  padding: 0px;
+  padding-left: 0px;
+  padding-right: 0px;
+  
+  border-radius: 0px;
 }
 
-a.logo{
-    display:block;
-    margin:auto;
-    max-width:75px;
-    max-height:75px;  
+
+/* Block code. This is the block containing the code. The rules add a nice 
+ * border like inline code */
+#post_text pre.block_code {
+  border: solid 1px #bbb;
+  background-color: #eee;
+  
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  
+  padding-left: 1em;
+  padding-right: 1em;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  
+  border-radius: 4px;
+}
+
+
+/* Blockquote. Add a gray leftborder and slightlt pad the content */
+#post_text blockquote {
+  word-wrap: break-word;
+  padding-left: 1em;
+  border-left: 3px solid #ccc;
 }
 
 
 
 
 
+
+
+/*******************************************************************************
+ * Header styles
+ ******************************************************************************/
+ 
+#post_text h1 {
+  line-height: 1.2em;
+}
+/*
+#post_text h2 {
+  font-family: titleFont;
+}
+
+#post_text h3 {
+  font-family: titleFont;
+}
+
+#post_text h4 {
+  font-family: titleFont;
+}
+
+#post_text h5 {
+  font-family: titleFont;
+}
+
+#post_text h6 {
+  font-family: titleFont;
+}
+*/
 
 
 /* ==========================================================================
@@ -164,6 +461,33 @@ a.logo{
 
 
 @media only screen and (max-width: 500px) {
+
+#entries {
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  padding-bottom: 1em;
+  padding-top: 1em;
+  background-color: #fff;
+  box-shadow: 0px 0px 10px 3px #777777;
+  border-radius: 10px;
+  word-wrap: break-word;
+}
+
+#post_title {  
+  margin-top: 0.6em;
+  margin-bottom: 0.5em;
+
+  font-family: sans-serif;
+  font-weight: bold;
+  font-size: 2em;
+  
+  text-align: center;
+  
+  background-color: #fff;
+}
    
 }
 

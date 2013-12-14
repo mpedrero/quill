@@ -16,6 +16,7 @@ class BlogPostGenerator:
 		self.templateFolder = os.path.join(self.templateFolder,themeName)
 		shutil.copy2(os.path.join(self.templateFolder,"post.css"), self.outputFolder)
 		shutil.copy2(os.path.join(self.templateFolder,"index.css"), self.outputFolder)
+		shutil.copy2(os.path.join(self.templateFolder,"tag.css"), self.outputFolder)
 		shutil.copy2(os.path.join(self.templateFolder,"logo.png"), self.outputFolder)
 		try:
 			shutil.rmtree(os.path.join(self.outputFolder,"fonts"))
@@ -53,7 +54,10 @@ class BlogPostGenerator:
 		f = codecs.open(os.path.join(self.outputFolder, "index.html"),'w','utf-8')
 		
 		for post in postList:
-			listOfEntries = listOfEntries + '<p><a class="entry" href="'+post.url+'">'+post.title+'</a></p>'+'\n'
+			if post is postList[-1]:
+				listOfEntries = listOfEntries + '<div class="last-entry"><a class="entry-link" href="../blog/'+post.url+'">'+post.title+'</a></div>'+'\n'
+			else:
+				listOfEntries = listOfEntries + '<div class="entry"><a class="entry-link" href="../blog/'+post.url+'">'+post.title+'</a></div>'+'\n'
 		
 		
 		# Generate dict
@@ -94,11 +98,14 @@ class BlogPostGenerator:
 			f = codecs.open(os.path.join(self.tagsFolder, tag.url),'w','utf-8')
 		
 			for post in tag.postList:
-				listOfEntries = listOfEntries + '<p><a class="entry" href="../'+post.url+'">'+post.title+'</a></p>'+'\n'
+				if post is tag.postList[-1]:
+					listOfEntries = listOfEntries + '<div class="last-entry"><a class="entry-link" href="../'+post.url+'">'+post.title+'</a></div>'+'\n'
+				else:
+					listOfEntries = listOfEntries + '<div class="entry"><a class="entry-link" href="../'+post.url+'">'+post.title+'</a></div>'+'\n'
 			
 			
 			# Generate dict
-			content = {"title": self.blogMetadata.blogName, "tag-name": tag.name, "entries": listOfEntries}
+			content = {"title": self.blogMetadata.blogName, "tag-name": tag.name, "tag-header": self.blogMetadata.tagHeader, "entries": listOfEntries}
 			f.write(renderer.render_path(os.path.join(self.templateFolder, "tagTemplate.html"),content))
 			
 			

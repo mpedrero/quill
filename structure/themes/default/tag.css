@@ -75,6 +75,31 @@ a:hover {
  * Specific styles to apply on certains sections
  ******************************************************************************/
 
+
+/* Blog title (h1) */
+
+h1 {
+	line-height: 1.2em;
+	text-align: center;
+	text-decoration: none;
+	font-family: titleFont;
+	font-size: 2.5em;
+}
+
+/* Tag header */
+
+#tag-header {
+	margin-bottom: 2.5em;
+
+	text-rendering: optimizeLegibility;
+	text-align: center;
+	font-size: 1.2em;
+	font-family:  'Open Sans', 'Dejavu Serif', Constantia, serif;
+}
+
+#tag-name-text {
+	font-weight: bold;
+}
  
 /* Affects to all relevant content in the post (title, date, main text, etc.) */
 #content {
@@ -120,7 +145,7 @@ a.logo{
 
 
 /* Add a nice border to post with white background to enhance legibility */
-#post {
+#entries {
   max-width: 800px;
   margin-left: auto;
   margin-right: auto;
@@ -131,6 +156,44 @@ a.logo{
   background-color: #fff;
   box-shadow: 0px 0px 10px 3px #777777;
   border-radius: 10px;
+}
+
+/* Each entry containing a href to the post */
+.entry {
+
+	padding-top: 1em;
+	padding-bottom: 1em;
+
+	border-bottom: 1px dotted #CCCCCC;
+
+	text-decoration:none;
+	font-weight: bold;
+
+	background-color: #fff;
+}
+
+.last-entry {
+
+	padding-top: 1em;
+	padding-bottom: 1em;
+
+
+	text-decoration:none;
+	font-weight: bold;
+
+	background-color: #fff;
+}
+
+
+.entry-link {
+	background-color: #fff;
+	font-size: 1.4em;
+	font-family:  'Open Sans', 'Dejavu Serif', Constantia, serif;
+		
+}
+
+.entry-link:link {
+	text-decoration: none;
 }
 
 
@@ -149,10 +212,7 @@ a.logo{
   max-width: 100%;
   margin-top: 1em;
   margin-bottom: 1em;
-  /*border: 1px solid #000;*/
-	font-style: italic;
-	color: #ccc;
-	background: #fff;
+  border: 1px solid #000;
 }
 
 

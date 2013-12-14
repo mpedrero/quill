@@ -149,7 +149,10 @@ a.logo{
   max-width: 100%;
   margin-top: 1em;
   margin-bottom: 1em;
-  border: 1px solid #000;
+  /*border: 1px solid #000;*/
+	font-style: italic;
+	color: #ccc;
+	background: #fff;
 }
 
 

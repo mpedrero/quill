@@ -1,12 +1,18 @@
 Quill - A (very) simple blog engine
 ===================================
+**TODO for now**
+
+* Correct bug in tag html file logo redirection (now redirects to same file, and must redirect to blog index)
+* User Manual
+* Developer Manual
 
 **TODO for version 0.1:**
 
-* MarkDown -> HTML converter
-* Folder structure
-* Simple CSS sample
-* Config via .ini or similar
+* [DONE] MarkDown -> HTML converter
+* [DONE] Folder structure
+* [IN PROGRESS] Simple CSS sample
+* [DONE] Config via .ini or similar
+* [DONE] Tag support
 * Local file downloading
 
 **TODO for version 0.2**
