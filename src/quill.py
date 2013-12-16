@@ -78,6 +78,8 @@ def main():
 	for post in postList:
 		postDataList.append(reader.read(post))
 	
+	# 3.1. Order PostData files by date (newest posts first)
+	postDataList.sort(key=lambda PostData: PostData.date, reverse=True) 
 	print "[OK]"
 		
 		

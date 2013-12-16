@@ -178,13 +178,13 @@ a.logo{
 
 
 p.post_date_text {
-  font-family:  textFont;
-  margin-top: 0px;
-  margin-bottom: 0px;
-  font-size: 0.9em;
-  color: #777;
+	font-family: 'Open Sans', 'Dejavu Serif', Constantia, serif;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	font-size: 0.9em;
+	color: #777;
   
-  background-color: #fff;
+	background-color: #fff;
 }
 
 

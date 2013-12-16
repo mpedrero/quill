@@ -55,9 +55,9 @@ class BlogPostGenerator:
 		
 		for post in postList:
 			if post is postList[-1]:
-				listOfEntries = listOfEntries + '<div class="last-entry"><a class="entry-link" href="../blog/'+post.url+'">'+post.title+'</a></div>'+'\n'
+				listOfEntries = listOfEntries + '<div class="last-entry"><p class="entry-date">'+post.date+'</p><a class="entry-link" href="../blog/'+post.url+'">'+post.title+'</a></div>'+'\n'
 			else:
-				listOfEntries = listOfEntries + '<div class="entry"><a class="entry-link" href="../blog/'+post.url+'">'+post.title+'</a></div>'+'\n'
+				listOfEntries = listOfEntries + '<div class="entry"><p class="entry-date">'+post.date+'</p><a class="entry-link" href="../blog/'+post.url+'">'+post.title+'</a></div>'+'\n'
 		
 		
 		# Generate dict
@@ -86,8 +86,11 @@ class BlogPostGenerator:
 					
 				# Dirty method, don't judge me :(
 				listOfTags[listOfTagNames.index(tag)].postList.append(post)
-					
-	
+			
+		# Order posts by date, descending
+		for tag in listOfTags:
+			tag.postList.sort(key=lambda PostData: PostData.date, reverse=True)		
+
 		# For each tag, generate list of entries (currently only title)
 		for tag in listOfTags:
 			listOfEntries = str()
@@ -99,9 +102,9 @@ class BlogPostGenerator:
 		
 			for post in tag.postList:
 				if post is tag.postList[-1]:
-					listOfEntries = listOfEntries + '<div class="last-entry"><a class="entry-link" href="../'+post.url+'">'+post.title+'</a></div>'+'\n'
+					listOfEntries = listOfEntries + '<div class="last-entry"><p class="entry-date">'+post.date+'</p><a class="entry-link" href="../'+post.url+'">'+post.title+'</a></div>'+'\n'
 				else:
-					listOfEntries = listOfEntries + '<div class="entry"><a class="entry-link" href="../'+post.url+'">'+post.title+'</a></div>'+'\n'
+					listOfEntries = listOfEntries + '<div class="entry"><p class="entry-date">'+post.date+'</p><a class="entry-link" href="../'+post.url+'">'+post.title+'</a></div>'+'\n'
 			
 			
 			# Generate dict

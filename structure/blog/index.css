@@ -2,11 +2,11 @@
  * Fonts
  ******************************************************************************/
  
-/*@font-face
+@font-face
 {
   font-family: textFont;
   src: url('fonts/Lato-Reg.ttf');
-} */
+}
 
 @font-face
 {
@@ -77,6 +77,15 @@ a:hover {
 
 
 /* Blog title (h1) */
+
+h1.blog-title {
+	line-height: 1.2em;
+	text-align: center;
+	text-decoration: none;
+	font-family: titleFont;
+	font-size: 2.5em;
+	margin-bottom: 1em;
+}
 
 h1 {
 	line-height: 1.2em;
@@ -194,6 +203,15 @@ a.logo{
 
 .entry-link:link {
 	text-decoration: none;
+}
+
+p.entry-date {
+	font-family: 'Open Sans', 'Dejavu Serif', Constantia, serif;
+	font-weight: normal;
+	font-size: 0.9em;
+	color: #777;  
+	background-color: #fff;
+	margin-bottom: 0.2em;
 }
 
 

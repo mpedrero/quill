@@ -196,6 +196,15 @@ a.logo{
 	text-decoration: none;
 }
 
+p.entry-date {
+	font-family: 'Open Sans', 'Dejavu Serif', Constantia, serif;
+	font-weight: normal;
+	font-size: 0.9em;
+	color: #777;  
+	background-color: #fff;
+	margin-bottom: 0.2em;
+}
+
 
 /* Add white background to all elements inside post (replaces general grey
  * background) */
@@ -266,6 +275,8 @@ p.post_title_text {
   
   background-color: #fff;
 }
+
+
 
 
 /* Main text of the post. Currently uses Open Sans font from Google Fonts */
