@@ -2,7 +2,8 @@ Quill - A (very) simple blog engine
 ===================================
 **TODO for now**
 
-* Correct bug in tag html file logo redirection (now redirects to same file, and must redirect to blog index)
+* Multipagination in index pages (neccessary?)
+* Show a text snippet in index pages
 * User Manual
 * Developer Manual
 
