@@ -67,7 +67,7 @@ class BlogPostGenerator:
 		# Generate link to about page if present
 		if blogSettings.displayAboutMe.lower() == "yes":
 			about = unicode()
-			about = '<a class="about" href="./about.html" >'+self.blogMetadata.aboutHeader+'</a>'
+			about = u'<a class="about" href="./about.html" >'+self.blogMetadata.aboutHeader+u'</a>'
 			content = {"title": self.blogMetadata.blogName, "entries": listOfEntries, "about": about}
 			f.write(renderer.render_path(os.path.join(self.templateFolder, "indexTemplate.html"),content))
 		else:

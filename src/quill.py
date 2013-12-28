@@ -1,4 +1,5 @@
 import markdown
+import codecs
 import ConfigParser
 import readers.MarkdownReader as MarkdownReader
 import containers.PostData as PostData
@@ -8,25 +9,25 @@ import os
 
 class BlogMetadata():
 	def __init__(self):
-		self.blogName = str()
-		self.blogTheme = str()
+		self.blogName = unicode()
+		self.blogTheme = unicode()
 	
-		self.postsFolder = str()
-		self.draftsFolder = str()
-		self.themesFolder = str()
-		self.imagesFolder = str()
-		self.blogFolder = str()
+		self.postsFolder = unicode()
+		self.draftsFolder = unicode()
+		self.themesFolder = unicode()
+		self.imagesFolder = unicode()
+		self.blogFolder = unicode()
 
-		self.displayAboutMe = str()
+		self.displayAboutMe = unicode()
 		
-		self.tagName = str()
-		self.tagHeader = str()
-		self.aboutHeader = str()
+		self.tagName = unicode()
+		self.tagHeader = unicode()
+		self.aboutHeader = unicode()
 		
 	''' Reads quill.cfg file to load blog settings '''
 	def loadConfig(self,filename):
 		config = ConfigParser.RawConfigParser()
-		config.read(filename)
+		config.readfp(codecs.open(filename,'r','utf-8'))
 
 		self.blogName = config.get("Basic", "BlogName")
 		self.blogTheme = config.get("Basic", "Theme")
