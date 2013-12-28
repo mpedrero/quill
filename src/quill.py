@@ -9,7 +9,6 @@ import os
 class BlogMetadata():
 	def __init__(self):
 		self.blogName = str()
-		self.blogAddr = str()
 		self.blogTheme = str()
 	
 		self.postsFolder = str()
@@ -18,30 +17,31 @@ class BlogMetadata():
 		self.imagesFolder = str()
 		self.blogFolder = str()
 
-		self.authorName = str()
-		self.authorEmail = str()
-		self.authorTwitter = str()
+		self.displayAboutMe = str()
 		
 		self.tagName = str()
 		self.tagHeader = str()
+		self.aboutHeader = str()
 		
 	''' Reads quill.cfg file to load blog settings '''
 	def loadConfig(self,filename):
 		config = ConfigParser.RawConfigParser()
 		config.read(filename)
+
 		self.blogName = config.get("Basic", "BlogName")
-		self.blogAddr = config.get("Basic", "BlogAddr")
 		self.blogTheme = config.get("Basic", "Theme")
+
 		self.postsFolder = config.get("Folders", "PostsFolder")
 		self.draftsFolder = config.get("Folders", "DraftsFolder")
 		self.themesFolder = config.get("Folders", "ThemesFolder")
 		self.imagesFolder = config.get("Folders", "ImgsFolder")
 		self.blogFolder = config.get("Folders", "BlogFolder")
-		self.authorName = config.get("Author", "Name")
-		self.authorEmail = config.get("Author", "EMail")
-		self.authorTwitter = config.get("Author", "Twitter")
+
+		self.displayAboutMe = config.get("BlogContent", "AboutMe")
+
 		self.tagName = config.get("Misc", "TagName")
 		self.tagHeader = config.get("Misc", "TagHeader")
+		self.aboutHeader = config.get("Misc", "AboutHeader")
 		
 
 def main():
@@ -50,7 +50,7 @@ def main():
 	postDataList = list()
 	
 	# 0. Display program and version
-	print "quill - v0.01a"
+	print "quill - v0.1a"
 	print
 
 	# 1. Read config file to load the metadata
@@ -75,9 +75,25 @@ def main():
 	print "Generating post data...",
 	reader = MarkdownReader.MarkdownReader(blogSettings.postsFolder)
 	
-	for post in postList:
-		postDataList.append(reader.read(post))
-	
+	if blogSettings.displayAboutMe.lower() == "yes":
+		for post in postList:
+			if post.lower().endswith("about.md"):
+				aboutPost = reader.readNoMetadata(post)
+				aboutPost.title = blogSettings.aboutHeader
+			else:
+				postDataList.append(reader.read(post))
+	else:
+		try:
+			os.remove(os.path.join(blogSettings.blogFolder,"about.html"))
+		except:
+			pass
+			
+		for post in postList:
+			if post.lower().endswith("about.md"):
+				pass
+			else:
+				postDataList.append(reader.read(post))
+		
 	# 3.1. Order PostData files by date (newest posts first)
 	postDataList.sort(key=lambda PostData: PostData.date, reverse=True) 
 	print "[OK]"
@@ -98,7 +114,11 @@ def main():
 		generator.generatePost(post)
 		
 	# 4.3. Generate index
-	generator.generateIndex(postDataList)
+	generator.generateIndex(postDataList, blogSettings)
+		
+	# 4.4. Generate about page
+	if blogSettings.displayAboutMe.lower() == "yes":
+		generator.generateAbout(aboutPost)
 		
 	print "[OK]"
 	
@@ -108,13 +128,6 @@ def main():
 	generator.generateTags(postDataList)
 	
 	print "[OK]"
-
-
-
-
-	
-	
-
 
 
 

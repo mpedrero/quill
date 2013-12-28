@@ -1,8 +1,8 @@
-title:   ¿Es necesario OTRO servicio de blogs hoy en día?
+title:   Desarrollando Quill (I) - ¿Es necesario OTRO servicio de blogs hoy en día?
 author:  Manuel Pedrero
-date:    2013-11-25
+date:    2013-11-24
 tags:    quill
-         development
+         diario desarrollo
 
 ¿Tiene sentido ponerse a crear un *engine* para blogs hoy día? Existiendo
 gigantes como Wordpress, Blogger o Tumblr la respuesta obvia es no. De

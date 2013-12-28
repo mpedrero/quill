@@ -18,6 +18,8 @@ class BlogPostGenerator:
 		shutil.copy2(os.path.join(self.templateFolder,"index.css"), self.outputFolder)
 		shutil.copy2(os.path.join(self.templateFolder,"tag.css"), self.outputFolder)
 		shutil.copy2(os.path.join(self.templateFolder,"logo.png"), self.outputFolder)
+		shutil.copy2(os.path.join(self.templateFolder,"favicon.png"), self.outputFolder)
+		
 		try:
 			shutil.rmtree(os.path.join(self.outputFolder,"fonts"))
 		except:
@@ -43,7 +45,7 @@ class BlogPostGenerator:
 		f.write(renderer.render_path(os.path.join(self.templateFolder, "postTemplate.html"),content))
 		f.close()
 		
-	def generateIndex(self, postList):
+	def generateIndex(self, postList, blogSettings):
 		listOfEntries = str()
 	
 		# Instantiate Renderer
@@ -61,8 +63,16 @@ class BlogPostGenerator:
 		
 		
 		# Generate dict
-		content = {"title": self.blogMetadata.blogName, "entries": listOfEntries}
-		f.write(renderer.render_path(os.path.join(self.templateFolder, "indexTemplate.html"),content))
+		
+		# Generate link to about page if present
+		if blogSettings.displayAboutMe.lower() == "yes":
+			about = unicode()
+			about = '<a class="about" href="./about.html" >'+self.blogMetadata.aboutHeader+'</a>'
+			content = {"title": self.blogMetadata.blogName, "entries": listOfEntries, "about": about}
+			f.write(renderer.render_path(os.path.join(self.templateFolder, "indexTemplate.html"),content))
+		else:
+			content = {"title": self.blogMetadata.blogName, "entries": listOfEntries}
+			f.write(renderer.render_path(os.path.join(self.templateFolder, "indexTemplate.html"),content))
 		
 		
 		f.close()
@@ -109,10 +119,20 @@ class BlogPostGenerator:
 			
 			# Generate dict
 			content = {"title": self.blogMetadata.blogName, "tag-name": tag.name, "tag-header": self.blogMetadata.tagHeader, "entries": listOfEntries}
-			f.write(renderer.render_path(os.path.join(self.templateFolder, "tagTemplate.html"),content))
-			
-			
+			f.write(renderer.render_path(os.path.join(self.templateFolder, "tagTemplate.html"),content))		
 			f.close()
+			
+	def generateAbout(self,post):
+		# Instantiate Renderer
+		renderer = pystache.Renderer()
+		
+		# Generate dict
+		content = {"title": post.title, "post_text": post.mainText, "index": "index.html", }
+		
+		f = codecs.open(os.path.join(self.outputFolder, post.url),'w','utf-8')
+		f.write(renderer.render_path(os.path.join(self.templateFolder, "postTemplate.html"),content))
+		f.close()
+		
 			
 					
 		

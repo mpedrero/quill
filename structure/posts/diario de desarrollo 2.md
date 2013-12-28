@@ -1,8 +1,8 @@
-title:   Desarrollando Quill (I) - Introducción
+title:   Desarrollando Quill (II) - Introducción
 author:  Manuel Pedrero
 date:    2013-11-25
 tags:    quill
-         development
+         diario desarrollo
 
 A la hora de desarrollar Quill, he intentado fijarme unas metas plausibles y 
 alcanzables. Para ello, lo primero que hice fue establecer una serie de objetivos

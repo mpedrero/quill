@@ -1,8 +1,8 @@
-title:   Desarrollando Quill (II) - Gestión de temas
+title:   Desarrollando Quill (III) - Gestión de temas
 author:  Manuel Pedrero
 date:    2013-12-01
 tags:    quill
-         development
+         diario desarrollo
 
 Aunque Quill está pensado para que el usuario pueda empezar a utilizarlo simplemente escribiendo su primera entrada en Markdown, la primera versión soportará temas personalizados, permitiendo a cualquier persona que sepa un poco de CSS modificar la apariencia de Quill y dejarla a su gusto.
 

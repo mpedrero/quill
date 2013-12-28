@@ -6,6 +6,7 @@ Quill - A (very) simple blog engine
 * Show a text snippet in index pages
 * User Manual
 * Developer Manual
+* Favicon
 
 **TODO for version 0.1:**
 
@@ -19,7 +20,7 @@ Quill - A (very) simple blog engine
 **TODO for version 0.2**
 
 * Detecting changes in folders
-* SQLite database for entries and tags
+* SQLite database for entries and tags (neccesary?)
 * Choose webserver (lighttpd?, custom?)
 
 

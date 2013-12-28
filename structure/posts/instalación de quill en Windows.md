@@ -1,4 +1,4 @@
-title:   Desarrollando Quill (III) - Instalando Quill en 		 Windows
+title:   Instalando Quill en Windows
 author:  Manuel Pedrero
 date:    2013-12-01
 tags:    quill

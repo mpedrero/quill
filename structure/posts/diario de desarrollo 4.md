@@ -1,8 +1,8 @@
-title:   Etiquetas
+title:   Desarrollando Quill (IV) - Etiquetas
 author:  Manuel Pedrero
 date:    2013-12-09
 tags:    quill
-         development
+         diario desarrollo
 
 Aunque Quill pretende ser un engine para blog simple, sí que soportará etiquetas. Las etiquetas o *tags* son muy útiles para mantener organizados los distintos temas del blog, y permiten a su vez que el lector pueda descubrir artículos relacionados con una entrada interesante que acabe de leer: bastará con que pulse en una de las etiquetas del blog para que se muestre una lista de todas las entradas.
 
