@@ -1,0 +1,49 @@
+<html>
+	<head>
+		<title>{{title}}</title>
+		<link rel="stylesheet" href="post.css" />
+		<link rel="shortcut icon" href="favicon.png" />
+		<link href='http://fonts.googleapis.com/css?family=Droid+Serif:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans:700,700italic,400,400italic' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Source+Code+Pro' rel='stylesheet' type='text/css'>
+		
+		<meta charset="UTF-8"> 
+		<meta name="HandheldFriendly" content="True" />
+		<meta name="MobileOptimized" content="320" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	</head>
+
+	<body>
+		<div id="content">
+
+			<div id="header">
+				<a class="blog-logo" href="{{index}}">
+				<img src="logo.png" alt="Blog logo"/>
+				</a>
+			</div>
+
+			<div id="post">
+				<div id="post_date">
+					<p class="post_date_text">{{date}} {{{tags}}}</p>
+				</div>
+				
+				<div id="post_title">
+					<p class="post_title_text">{{title}}</p>
+				</div>
+
+				<div id="post_text">
+					{{{post_text}}}
+				</div>
+
+			</div>
+
+			
+			<div id="footer">
+				{{{footer}}}
+				<a class="blog-logo" href="{{index}}">
+				<img src="logo.png" alt="Blog logo"/>
+				</a>
+			</div>
+		</div>
+	</body>
+</html>

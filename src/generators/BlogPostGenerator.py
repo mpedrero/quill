@@ -19,6 +19,10 @@ class BlogPostGenerator:
 		shutil.copy2(os.path.join(self.templateFolder,"tag.css"), self.outputFolder)
 		shutil.copy2(os.path.join(self.templateFolder,"logo.png"), self.outputFolder)
 		shutil.copy2(os.path.join(self.templateFolder,"favicon.png"), self.outputFolder)
+		try:
+			shutil.copy2(os.path.join(self.templateFolder,"back.png"), self.outputFolder)
+		except:
+			pass
 		
 		try:
 			shutil.rmtree(os.path.join(self.outputFolder,"fonts"))
@@ -57,9 +61,9 @@ class BlogPostGenerator:
 		
 		for post in postList:
 			if post is postList[-1]:
-				listOfEntries = listOfEntries + '<div class="last-entry"><p class="entry-date">'+post.date+'</p><a class="entry-link" href="../blog/'+post.url+'">'+post.title+'</a></div>'+'\n'
+				listOfEntries = listOfEntries + '<div class="last-entry"><p class="entry-date">'+post.date+'</p><a class="entry-link" href="./'+post.url+'">'+post.title+'</a></div>'+'\n'
 			else:
-				listOfEntries = listOfEntries + '<div class="entry"><p class="entry-date">'+post.date+'</p><a class="entry-link" href="../blog/'+post.url+'">'+post.title+'</a></div>'+'\n'
+				listOfEntries = listOfEntries + '<div class="entry"><p class="entry-date">'+post.date+'</p><a class="entry-link" href="./'+post.url+'">'+post.title+'</a></div>'+'\n'
 		
 		
 		# Generate dict

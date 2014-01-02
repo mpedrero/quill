@@ -4,8 +4,14 @@
  
 @font-face
 {
-  font-family: textFont;
-  src: url('fonts/Lato-Reg.ttf');
+  font-family: 'Open Sans';
+  src: url('fonts/OpenSans-Regular.ttf');
+}
+
+@font-face
+{
+  font-family: 'Droid Serif';
+  src: url('fonts/DroidSerif.ttf');
 }
 
 @font-face
@@ -14,11 +20,10 @@
   src: url('fonts/SourceCodePro-Regular.ttf');
 }
 
-
 @font-face
 {
   font-family: titleFont;
-  src: url('fonts/Lato-Bol.ttf');
+  src: url('fonts/OpenSans-Bold.ttf');
 }
 
 
@@ -103,7 +108,7 @@ h1 {
 	text-rendering: optimizeLegibility;
 	text-align: center;
 	font-size: 1.2em;
-	font-family:  'Open Sans', 'Dejavu Serif', Constantia, serif;
+	font-family:  'Open Sans', serif;
 }
 
 #tag-name-text {
@@ -197,7 +202,7 @@ a.logo{
 .entry-link {
 	background-color: #fff;
 	font-size: 1.4em;
-	font-family:  'Open Sans', 'Dejavu Serif', Constantia, serif;
+	font-family:  'Open Sans', serif;
 		
 }
 
@@ -206,7 +211,7 @@ a.logo{
 }
 
 p.entry-date {
-	font-family: 'Open Sans', 'Dejavu Serif', Constantia, serif;
+	font-family: 'Open Sans', serif;
 	font-weight: normal;
 	font-size: 0.9em;
 	color: #777;  
@@ -256,7 +261,7 @@ p.entry-date {
 
 
 p.post_date_text {
-  font-family:  textFont;
+  font-family: 'Open Sans', serif;
   margin-top: 0px;
   margin-bottom: 0px;
   font-size: 0.9em;
@@ -292,13 +297,13 @@ p.post_title_text {
   
   line-height: 1.5em;
   
-  font-family: 'Open Sans', 'Dejavu Serif', Constantia, serif;
+  font-family: 'Open Sans', serif;
   font-size: 1em;
 }
 
 /* Tags of the post (if are enabled) */
 #tags {
-  font-family: 'Open Sans', 'Dejavu Serif', serif;
+  font-family: 'Open Sans', serif;
   font-size: 0.9em;
   /*text-align: center;*/
   margin-top: 2em;
@@ -508,8 +513,7 @@ p.share_text {
   margin-top: 0.6em;
   margin-bottom: 0.5em;
 
-  font-family: sans-serif;
-  font-weight: bold;
+  font-family: titleFont;
   font-size: 2em;
   
   text-align: center;

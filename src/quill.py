@@ -105,7 +105,7 @@ def main():
 	
 	# 4.1. Initialise generator and set theme
 	generator = BlogPostGenerator.BlogPostGenerator(blogSettings)
-	generator.loadTheme("default")
+	generator.loadTheme(blogSettings.blogTheme)
 	
 	# 4.2. Copy images
 	generator.loadImages()
@@ -129,6 +129,10 @@ def main():
 	generator.generateTags(postDataList)
 	
 	print "[OK]"
+	
+	print
+	print "Blog complete. Press ENTER key to exit"
+	raw_input()
 
 
 
