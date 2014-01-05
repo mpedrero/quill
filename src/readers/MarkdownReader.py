@@ -3,6 +3,8 @@ import codecs
 import containers.PostData as PostData
 import os
 import slugify # https://github.com/un33k/python-slugify
+import dateutil.parser # pip install python-dateutil
+
 
 class MarkdownReader:
 	def __init__(self,postsFolder):
@@ -46,6 +48,12 @@ class MarkdownReader:
 		except:
 			print "Missing date in post", filename
 			quit()
+
+		try:
+			dateParsed = dateutil.parser.parse(postData.date)
+			postData.date = dateParsed.strftime("%d %b %Y")
+		except:
+			print "Date not recognized. Try YYYY/MM/DD"
 
 		try:
 			for tag in md.Meta["tags"]:
