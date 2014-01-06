@@ -3,6 +3,8 @@ import codecs
 import shutil
 import pystache
 import containers.TagData as TagData
+import PyRSS2Gen as RSS2
+import datetime
 
 
 class BlogPostGenerator:
@@ -171,7 +173,28 @@ class BlogPostGenerator:
 		f.write(renderer.render_path(os.path.join(self.templateFolder, "postTemplate.html"),content))
 		f.close()
 		
-			
+	def generateRSS(self,postList):
+
+		# create items
+		rssItems = []
+
+		for post in postList:
+			rssItems.append(RSS2.RSSItem(
+				title = post.title,
+				link = self.blogMetadata.blogURL+'/'+post.url,
+				description = self.blogMetadata.blogURL+'/'+post.url,
+				guid = RSS2.Guid(post.url),
+				pubDate = post.dateParsed))
+
+		rss = RSS2.RSS2(
+			title = self.blogMetadata.blogName,
+			link = self.blogMetadata.blogURL+"/index.html", 
+			description = self.blogMetadata.blogDescription,
+			lastBuildDate = datetime.datetime.now(),
+			items = rssItems
+			)
+
+		rss.write_xml(open(os.path.join(self.outputFolder, "feed.xml"),'w'))
 					
 		
 		

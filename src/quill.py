@@ -10,6 +10,8 @@ import os
 class BlogMetadata():
 	def __init__(self):
 		self.blogName = unicode()
+		self.blogDescription = unicode()
+		self.blogURL = unicode()
 		self.blogTheme = unicode()
 	
 		self.postsFolder = unicode()
@@ -31,6 +33,8 @@ class BlogMetadata():
 		config.readfp(codecs.open(filename,'r','utf-8'))
 
 		self.blogName = config.get("Basic", "BlogName")
+		self.blogDescription = config.get("Basic", "BlogDescription")
+		self.blogURL = config.get("Basic", "BlogURL")
 		self.blogTheme = config.get("Basic", "Theme")
 
 		self.postsFolder = config.get("Folders", "PostsFolder")
@@ -133,6 +137,11 @@ def main():
 	
 	generator.generateTags(postDataList)
 	
+	print "[OK]"
+
+	# 6. Generate RSS (if necessary)
+	print "Generating RSS feed...",
+	generator.generateRSS(postDataList)
 	print "[OK]"
 	
 	print
