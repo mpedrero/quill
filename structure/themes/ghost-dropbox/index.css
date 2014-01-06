@@ -489,9 +489,17 @@ a.older-entries:hover, a.newer-entries:hover {
 }
 
 #about a {
+	color: #888;
+}
+
+#about a:link {
 	text-decoration: none;
 	font-size: 0.8em;
-	color: #888;
+}
+
+#about a:hover {
+  color: rgb(87, 163, 232);
+  transition: color 0.2s ease-out;
 }
 
 p.share_text {
@@ -514,7 +522,7 @@ p.share_text {
   font-family: 'Open Sans',sans-serif;
   font-size: 1em;
   line-height: 1.7em;
-  color: rgb(187, 199, 204);
+  /*color: rgb(187, 199, 204);*/
   text-align: center;
   background: none repeat scroll 0% 0% rgb(247, 250, 251);
   text-align: center;

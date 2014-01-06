@@ -137,7 +137,7 @@ class BlogPostGenerator:
 			
 		# Order posts by date, descending
 		for tag in listOfTags:
-			tag.postList.sort(key=lambda PostData: PostData.date, reverse=True)		
+			tag.postList.sort(key=lambda PostData: PostData.dateParsed, reverse=True)		
 
 		# For each tag, generate list of entries (currently only title)
 		for tag in listOfTags:

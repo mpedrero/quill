@@ -239,8 +239,6 @@ p.post_date_text {
 	margin-bottom: 0px;
 	font-size: 1em;
 	color: rgb(158, 171, 179);
-  
-	background-color: #fff;
 }
 
 
@@ -261,8 +259,6 @@ p.post_date_text {
 p.post_title_text {
   margin-top: 0px;
   margin-bottom: 0px;
-  
-  background-color: #fff;
 }
 
 
@@ -274,6 +270,10 @@ p.post_title_text {
   font-family: 'Droid Serif', serif;  
   font-size: 20px;
   color: rgb(58, 65, 69);
+}
+
+#post_text p{
+	margin: 1.6em 0px;
 }
 
 /* Tags of the post (if are enabled) */
