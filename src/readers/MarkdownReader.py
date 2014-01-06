@@ -50,8 +50,8 @@ class MarkdownReader:
 			quit()
 
 		try:
-			dateParsed = dateutil.parser.parse(postData.date)
-			postData.date = dateParsed.strftime("%d %b %Y")
+			postData.dateParsed = dateutil.parser.parse(postData.date)
+			postData.date = postData.dateParsed.strftime("%d %b %Y")
 		except:
 			print "Date not recognized. Try YYYY/MM/DD"
 
