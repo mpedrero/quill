@@ -57,7 +57,10 @@ class BlogPostGenerator:
 		lower = 0
 		upper = lower+inc
 		pageNum = 1
-		pageMax = lim/inc + 1
+		pageMax = lim/inc
+
+		if lim%inc != 0:
+			pageMax = pageMax + 1
 
 		while upper < lim:
 			self.generateIndexPage(postList[lower:upper],pageNum, pageMax, blogSettings)
@@ -65,8 +68,8 @@ class BlogPostGenerator:
 			upper = lower+inc
 			pageNum = pageNum+1
 
-		if upper != lim:
-			self.generateIndexPage(postList[lower:],pageNum, pageMax, blogSettings)
+		
+		self.generateIndexPage(postList[lower:],pageNum, pageMax, blogSettings)
 
 	def generateIndexPage(self, postList, pageNum, pageMax, blogSettings):
 		listOfEntries = str()
@@ -108,10 +111,10 @@ class BlogPostGenerator:
 		if blogSettings.displayAboutMe.lower() == "yes":
 			about = unicode()
 			about = u'<a class="about" href="./about.html" >'+self.blogMetadata.aboutHeader+u'</a>'
-			content = {"index": "./index.html", "title": self.blogMetadata.blogName, "entries": listOfEntries, "about": about, "pagination": pagination}
+			content = {"index": "./index.html", "rss": "<a href=feed.xml>rss</a>", "title": self.blogMetadata.blogName, "entries": listOfEntries, "about": about, "pagination": pagination}
 			f.write(renderer.render_path(os.path.join(self.templateFolder, "indexTemplate.html"),content))
 		else:
-			content = {"index": "./index.html", "title": self.blogMetadata.blogName, "entries": listOfEntries, "pagination": pagination}
+			content = {"index": "./index.html", "rss": "<a href=feed.xml>rss</a>", "title": self.blogMetadata.blogName, "entries": listOfEntries, "pagination": pagination}
 			f.write(renderer.render_path(os.path.join(self.templateFolder, "indexTemplate.html"),content))
 		
 		
@@ -179,21 +182,29 @@ class BlogPostGenerator:
 		rssItems = []
 
 		for post in postList:
-			rssItems.append(RSS2.RSSItem(
-				title = post.title,
-				link = self.blogMetadata.blogURL+'/'+post.url,
-				description = self.blogMetadata.blogURL+'/'+post.url,
-				guid = RSS2.Guid(post.url),
-				pubDate = post.dateParsed))
+			if self.blogMetadata.completeFeed.lower() == "yes":
+				rssItems.append(RSS2.RSSItem(
+					title = post.title,
+					link =  self.blogMetadata.blogURL+'/'+post.url,
+					description = post.mainText,
+					guid = RSS2.Guid(self.blogMetadata.blogURL+'/'+post.url),
+					pubDate = post.dateParsed))
+			else:
+				rssItems.append(RSS2.RSSItem(
+					title = post.title,
+					link =  self.blogMetadata.blogURL+'/'+post.url,
+					description = '<a href='+self.blogMetadata.blogURL+'/'+post.url+'>'+post.title+'</a>',
+					guid = RSS2.Guid(self.blogMetadata.blogURL+'/'+post.url),
+					pubDate = post.dateParsed))
 
 		rss = RSS2.RSS2(
 			title = self.blogMetadata.blogName,
 			link = self.blogMetadata.blogURL+"/index.html", 
 			description = self.blogMetadata.blogDescription,
 			lastBuildDate = datetime.datetime.now(),
-			items = rssItems
-			)
-
+			items = rssItems,
+			image = RSS2.Image(self.blogMetadata.blogURL+'/logo.png', self.blogMetadata.blogName, self.blogMetadata.blogURL+'/index.html')
+		)
 		rss.write_xml(open(os.path.join(self.outputFolder, "feed.xml"),'w'))
 					
 		

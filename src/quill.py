@@ -22,6 +22,7 @@ class BlogMetadata():
 
 		self.displayAboutMe = unicode()
 		self.postsPerPage = unicode()
+		self.completeFeed = unicode()
 		
 		self.tagName = unicode()
 		self.tagHeader = unicode()
@@ -45,6 +46,7 @@ class BlogMetadata():
 
 		self.displayAboutMe = config.get("BlogContent", "AboutMe")
 		self.postsPerPage = config.get("BlogContent", "PostsPerPage")
+		self.completeFeed = config.get("BlogContent", "CompleteFeed")
 
 		self.tagName = config.get("Misc", "TagName")
 		self.tagHeader = config.get("Misc", "TagHeader")

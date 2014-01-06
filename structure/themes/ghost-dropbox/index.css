@@ -502,6 +502,29 @@ a.older-entries:hover, a.newer-entries:hover {
   transition: color 0.2s ease-out;
 }
 
+/* RSS */
+
+#rss {
+	font-family: 'Open Sans', sans-serif;
+}
+
+#rss a {
+	color: #888;
+}
+
+#rss a:link {
+	text-decoration: none;
+	font-size: 0.8em;
+}
+
+#rss a:hover {
+  color: rgb(87, 163, 232);
+  transition: color 0.2s ease-out;
+}
+
+
+
+
 p.share_text {
   margin-top: 0px;
   margin-bottom: 0px;
