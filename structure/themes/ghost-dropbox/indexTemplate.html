@@ -11,7 +11,9 @@
 	</head>
 
 	<body>
+		<div class="wrapper">
 		<div id="content">
+			
 			<div id="header">
 				<a class="blog-logo" href="{{index}}">
 					<img src="logo.png" alt="Blog logo"/>
@@ -22,14 +24,20 @@
 			<div id="entries">    
 				{{{entries}}}
 			</div>
-
-			<div id="footer">
-				{{{footer}}}
-				<a class="blog-logo" href="{{index}}">
-				<img src="logo.png" alt="Blog logo"/>
-				</a>
-				<div id="about">{{{about}}}</div>
+			<nav class=pagination>{{{pagination}}}</nav>
 			</div>
+		<div class="push"></div>
 		</div>
+		
+			
+		<div id="footer">
+			{{{footer}}}
+			<a class="blog-logo" href="{{index}}">
+			<img src="logo.png" alt="Blog logo"/>
+			</a>
+			<div id="about">{{{about}}}</div>
+		</div>
+
+		
 	</body>
 </html>

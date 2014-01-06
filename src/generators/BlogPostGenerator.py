@@ -50,14 +50,32 @@ class BlogPostGenerator:
 		f.close()
 		
 	def generateIndex(self, postList, blogSettings):
+		lim = len(postList)+1
+		inc = int(self.blogMetadata.postsPerPage)
+		lower = 0
+		upper = lower+inc
+		pageNum = 1
+		pageMax = lim/inc + 1
+
+		while upper < lim:
+			self.generateIndexPage(postList[lower:upper],pageNum, pageMax, blogSettings)
+			lower = upper
+			upper = lower+inc
+			pageNum = pageNum+1
+
+		if upper != lim:
+			self.generateIndexPage(postList[lower:],pageNum, pageMax, blogSettings)
+
+	def generateIndexPage(self, postList, pageNum, pageMax, blogSettings):
 		listOfEntries = str()
 	
 		# Instantiate Renderer
 		renderer = pystache.Renderer()
 		
-		
-		
-		f = codecs.open(os.path.join(self.outputFolder, "index.html"),'w','utf-8')
+		if pageNum == 1:
+			f = codecs.open(os.path.join(self.outputFolder, "index.html"),'w','utf-8')
+		else: 
+			f = codecs.open(os.path.join(self.outputFolder, str("page" + str(pageNum) + ".html")),'w','utf-8')
 		
 		for post in postList:
 			if post is postList[-1]:
@@ -68,14 +86,30 @@ class BlogPostGenerator:
 		
 		# Generate dict
 		
+		# Generate pagination
+		pagination = unicode()
+
+		# Newer pages
+		if pageNum > 2:
+			pagination = pagination + u'<a class="newer-entries" href=' + 'page' + str(pageNum-1) + '.html>' + '&larr; ' + self.blogMetadata.newerPosts + '</a>'
+		elif pageNum == 2:
+			pagination = pagination + u'<a class="newer-entries" href=index.html>' + '&larr; ' + self.blogMetadata.newerPosts + '</a>'
+
+		# Page n of m
+		pagination = pagination + u'<span class="page-number">'+ self.blogMetadata.page + ' ' + str(pageNum) + ' ' + self.blogMetadata.of + ' ' + str(pageMax) + '</span>'
+
+		# Older pages
+		if pageNum < pageMax:
+			pagination = pagination + u'<a class="older-entries" href=' + 'page' + str(pageNum+1) + '.html>' + self.blogMetadata.olderPosts + ' &rarr;' + '</a>'
+		
 		# Generate link to about page if present
 		if blogSettings.displayAboutMe.lower() == "yes":
 			about = unicode()
 			about = u'<a class="about" href="./about.html" >'+self.blogMetadata.aboutHeader+u'</a>'
-			content = {"title": self.blogMetadata.blogName, "entries": listOfEntries, "about": about}
+			content = {"index": "./index.html", "title": self.blogMetadata.blogName, "entries": listOfEntries, "about": about, "pagination": pagination}
 			f.write(renderer.render_path(os.path.join(self.templateFolder, "indexTemplate.html"),content))
 		else:
-			content = {"title": self.blogMetadata.blogName, "entries": listOfEntries}
+			content = {"index": "./index.html", "title": self.blogMetadata.blogName, "entries": listOfEntries, "pagination": pagination}
 			f.write(renderer.render_path(os.path.join(self.templateFolder, "indexTemplate.html"),content))
 		
 		

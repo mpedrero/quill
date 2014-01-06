@@ -92,10 +92,38 @@
 * {
   /*border: 1px solid #f00;*/
   /*background-color: #eee;*/
+  margin: 0px;
 }
 
 #header {
 	
+}
+
+body {
+  margin: 0px;
+  line-height: 2.5em;
+}
+
+
+/* This lines keep the footer in place in all pages */
+
+* {
+  margin: 0;
+}
+
+html, body {
+  height: 100%;
+}
+
+.wrapper {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  margin: 0 auto -200px; /* the bottom margin is the negative value of the footer's height */
+}
+
+.footer, .push {
+  height: 200px; /* .push must be the same height as .footer */
 }
 
 /* Selection background color */
@@ -186,9 +214,6 @@ h1 {
   background-image: url('back.png');
   }
 
-body {
-margin: 0px;
-}
 
 
 /* Resizing hearder and footer logo */
@@ -235,19 +260,17 @@ a.logo{
 /* Each entry containing a href to the post */
 .entry {
 
-	padding-top: 3em;
+	padding-top: 2em;
 	padding-bottom: 3em;
 
 	border-bottom: 1px dotted #CCCCCC;
 
-	text-decoration:none;
+	text-decoration: none;
 	font-weight: bold;
 	
 	border-bottom: #EBF2F6 1px solid;
-    word-break: break-word;
-    hyphens: auto;
-
-	background-color: #fff;
+  word-break: break-word;
+  hyphens: auto;
 }
 
 
@@ -265,9 +288,13 @@ a.logo{
 
 
 .entry-link {
-	background-color: #fff;
 	font-size: 40px;
 	font-family:  'Open Sans', serif;
+  color: rgb(87, 163, 232)
+
+  line-height: 1.2em;
+  letter-spacing: -1px;
+  text-indent: -2px;
 }
 
 .entry-link:link {
@@ -403,6 +430,52 @@ p.post_title_text {
 }
 
 
+/* Pagination */
+
+.pagination {
+  position: relative;
+  width: 80%;
+  max-width: 700px;
+  margin: 4rem auto;
+  font-family: 'Open Sans',sans-serif;
+  font-size: 14px;
+  color: rgb(158, 171, 179);
+  text-align: center;
+  line-height: 2.5em;
+}
+
+.pagination a {
+  color: rgb(158, 171, 179);
+}
+
+
+.newer-entries {
+  left: 0px;
+}
+
+.older-entries {
+  right: 0px;
+}
+
+a.older-entries, a.newer-entries {
+    position: absolute;
+    display: inline-block;
+    padding: 0px 15px;
+    border: 2px solid rgb(235, 242, 246);
+    border-radius: 30px;
+    text-decoration: none;
+    transition: border 0.3s ease 0s;
+}
+
+a.older-entries:hover, a.newer-entries:hover {
+    border-color: rgb(158, 171, 179);
+}
+
+.page-number {
+  display: inline-block;
+  padding: 2px 0px;
+}
+
 /* Not used in the template yet. Contains links to Email, Twitter, etc. */
 #share {
   margin-top: 5em;
@@ -429,9 +502,21 @@ p.share_text {
 
 /* Footer. Currently only contains the logo */
 #footer {
-  margin-top: 4em;
-  margin-bottom: 3em;
-
+  position: relative;
+  /*clear: both;*/
+  /*bottom:0;*/
+  /*margin-bottom: 0px;*/
+  /*margin-top: 4em;*/
+  margin-left: auto;
+  margin-right: auto;
+  padding: 2em 0px;
+  border-top: 1px solid rgb(235, 242, 246);
+  font-family: 'Open Sans',sans-serif;
+  font-size: 1em;
+  line-height: 1.7em;
+  color: rgb(187, 199, 204);
+  text-align: center;
+  background: none repeat scroll 0% 0% rgb(247, 250, 251);
   text-align: center;
 }
 
@@ -559,6 +644,29 @@ p.share_text {
 
 @media only screen and (max-width: 500px) {
 
+.entry-link {
+    background-color: rgb(255, 255, 255);
+    font-size: 32px;
+    font-family: 'Open Sans',serif;
+}
+
+.entry {
+    padding-top: 1em;
+    padding-bottom: 1em;
+    text-decoration: none;
+    font-weight: bold;
+    border-bottom: 1px solid rgb(235, 242, 246);
+    background-color: rgb(255, 255, 255);
+}
+
+.last-entry {
+    padding-bottom: 1em;
+    text-decoration: none;
+    font-weight: bold;
+    background-color: rgb(255, 255, 255);
+    padding-top: 1em;
+}
+
 #entries {
   max-width: 700px;
   margin-left: auto;
@@ -569,6 +677,15 @@ p.share_text {
   padding-top: 1em;
   background-color: #fff;
   word-wrap: break-word;
+}
+
+a.newer-entries, a.older-entries {
+    position: static;
+    margin: 10px 0px;
+}
+
+.page-number {
+  display: block;
 }
 
 #post_title {  

@@ -19,6 +19,7 @@ class BlogMetadata():
 		self.blogFolder = unicode()
 
 		self.displayAboutMe = unicode()
+		self.postsPerPage = unicode()
 		
 		self.tagName = unicode()
 		self.tagHeader = unicode()
@@ -39,10 +40,15 @@ class BlogMetadata():
 		self.blogFolder = config.get("Folders", "BlogFolder")
 
 		self.displayAboutMe = config.get("BlogContent", "AboutMe")
+		self.postsPerPage = config.get("BlogContent", "PostsPerPage")
 
 		self.tagName = config.get("Misc", "TagName")
 		self.tagHeader = config.get("Misc", "TagHeader")
 		self.aboutHeader = config.get("Misc", "AboutHeader")
+		self.newerPosts = config.get("Misc", "NewerPosts")
+		self.olderPosts = config.get("Misc", "OlderPosts")
+		self.page = config.get("Misc", "Page")
+		self.of = config.get("Misc", "Of")
 		
 
 def main():

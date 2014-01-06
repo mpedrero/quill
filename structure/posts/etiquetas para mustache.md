@@ -32,6 +32,7 @@ La plantilla tagTemplate se aplica al índice general de entradas, que es la pá
 + `{{{entries}}}`: Contiene la lista de entradas ordenadas por fecha y comenzando por la más reciente. 
 + `{{{footer}}}`: Como en la etiqueta homónima de postTemplate, de momento no tiene funcionalidad, por lo que no se renderiza.
 + `{{{about}}}`: Contendrá un enlace a la página `About Me` del blog siempre que tenga habilitada dicha característica en `quill.cfg`. Si es así, el texto del enlace será el que el usuario configure en `quill.cfg` (AboutHeader)
++ `{{{pages}}}`: Contiene enlaces a las páginas Anterior y Siguiente, para la navegación en blogs con muchas entradas.
 
 El uso de un sistema de plantillas permite por ejemplo crear un tema donde la fecha esté antes del título del post, o las etiquetas se pongan al principio en lugar de al final... las posibilidades son infinitas. Prueba de ello es que he podido crear de forma bastante cómoda un tema alternativo basado en el tema por defecto de [ghost](http://blog.ghost.org/hosted-platform-open/), que me encanta.
 
