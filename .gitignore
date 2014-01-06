@@ -1,2 +1,7 @@
 # Linux temp files
 *~
+
+# Blog and posts
+structure/posts/*
+structure/drafts/*
+quill-web/
