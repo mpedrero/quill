@@ -148,7 +148,7 @@ def main():
 	
 	print
 	print "Blog complete. Press ENTER key to exit"
-	#raw_input()
+	raw_input()
 
 
 

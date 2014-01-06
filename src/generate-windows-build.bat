@@ -1,1 +1,1 @@
-cxfreeze quill.py --target-dir ..\windows-build --include-modules markdown.extensions.meta,slugify --icon=quill.ico
+cxfreeze quill.py --target-dir ..\windows-build --include-modules markdown.extensions.meta,slugify,PyRSS2Gen --icon=quill.ico
