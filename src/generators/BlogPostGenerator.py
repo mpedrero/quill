@@ -72,7 +72,7 @@ class BlogPostGenerator:
 		self.generateIndexPage(postList[lower:],pageNum, pageMax, blogSettings)
 
 	def generateIndexPage(self, postList, pageNum, pageMax, blogSettings):
-		listOfEntries = str()
+		listOfEntries = unicode()
 	
 		# Instantiate Renderer
 		renderer = pystache.Renderer()
@@ -84,9 +84,9 @@ class BlogPostGenerator:
 		
 		for post in postList:
 			if post is postList[-1]:
-				listOfEntries = listOfEntries + '<div class="last-entry"><p class="entry-date">'+post.date+'</p><a class="entry-link" href="./'+post.url+'">'+post.title+'</a></div>'+'\n'
+				listOfEntries = listOfEntries + u'<div class="last-entry"><p class="entry-date">'+post.date+u'</p><a class="entry-link" href="./'+post.url+u'">'+post.title+u'</a></div>'+u'\n'
 			else:
-				listOfEntries = listOfEntries + '<div class="entry"><p class="entry-date">'+post.date+'</p><a class="entry-link" href="./'+post.url+'">'+post.title+'</a></div>'+'\n'
+				listOfEntries = listOfEntries + u'<div class="entry"><p class="entry-date">'+post.date+u'</p><a class="entry-link" href="./'+post.url+u'">'+post.title+u'</a></div>'+u'\n'
 		
 		
 		# Generate dict
@@ -96,25 +96,25 @@ class BlogPostGenerator:
 
 		# Newer pages
 		if pageNum > 2:
-			pagination = pagination + u'<a class="newer-entries" href=' + 'page' + str(pageNum-1) + '.html>' + '&larr; ' + self.blogMetadata.newerPosts + '</a>'
+			pagination = pagination + u'<a class="newer-entries" href=' + u'page' + str(pageNum-1) + u'.html>' + u'&larr; ' + self.blogMetadata.newerPosts + u'</a>'
 		elif pageNum == 2:
-			pagination = pagination + u'<a class="newer-entries" href=index.html>' + '&larr; ' + self.blogMetadata.newerPosts + '</a>'
+			pagination = pagination + u'<a class="newer-entries" href=index.html>' + u'&larr; ' + self.blogMetadata.newerPosts + u'</a>'
 
 		# Page n of m
-		pagination = pagination + u'<span class="page-number">'+ self.blogMetadata.page + ' ' + str(pageNum) + ' ' + self.blogMetadata.of + ' ' + str(pageMax) + '</span>'
+		pagination = pagination + u'<span class="page-number">'+ self.blogMetadata.page + u' ' + str(pageNum) + u' ' + self.blogMetadata.of + u' ' + str(pageMax) + u'</span>'
 
 		# Older pages
 		if pageNum < pageMax:
-			pagination = pagination + u'<a class="older-entries" href=' + 'page' + str(pageNum+1) + '.html>' + self.blogMetadata.olderPosts + ' &rarr;' + '</a>'
+			pagination = pagination + u'<a class="older-entries" href=' + u'page' + str(pageNum+1) + u'.html>' + self.blogMetadata.olderPosts + u' &rarr;' + u'</a>'
 		
 		# Generate link to about page if present
 		if blogSettings.displayAboutMe.lower() == "yes":
 			about = unicode()
 			about = u'<a class="about" href="./about.html" >'+self.blogMetadata.aboutHeader+u'</a>'
-			content = {"index": "./index.html", "rss": "<a href=feed.xml>rss</a>", "title": self.blogMetadata.blogName, "entries": listOfEntries, "about": about, "pagination": pagination}
+			content = {"index": u"./index.html", "rss": u"<a href=feed.xml>rss</a>", "title": self.blogMetadata.blogName, "entries": listOfEntries, "about": about, "pagination": pagination}
 			f.write(renderer.render_path(os.path.join(self.templateFolder, "indexTemplate.html"),content))
 		else:
-			content = {"index": "./index.html", "rss": "<a href=feed.xml>rss</a>", "title": self.blogMetadata.blogName, "entries": listOfEntries, "pagination": pagination}
+			content = {"index": u"./index.html", "rss": u"<a href=feed.xml>rss</a>", "title": self.blogMetadata.blogName, "entries": listOfEntries, "pagination": pagination}
 			f.write(renderer.render_path(os.path.join(self.templateFolder, "indexTemplate.html"),content))
 		
 		
@@ -146,7 +146,7 @@ class BlogPostGenerator:
 
 		# For each tag, generate list of entries (currently only title)
 		for tag in listOfTags:
-			listOfEntries = str()
+			listOfEntries = unicode()
 			
 			# Instantiate Renderer
 			renderer = pystache.Renderer()
@@ -155,9 +155,9 @@ class BlogPostGenerator:
 		
 			for post in tag.postList:
 				if post is tag.postList[-1]:
-					listOfEntries = listOfEntries + '<div class="last-entry"><p class="entry-date">'+post.date+'</p><a class="entry-link" href="../'+post.url+'">'+post.title+'</a></div>'+'\n'
+					listOfEntries = listOfEntries + u'<div class="last-entry"><p class="entry-date">'+post.date+u'</p><a class="entry-link" href="../'+post.url+u'">'+post.title+u'</a></div>'+u'\n'
 				else:
-					listOfEntries = listOfEntries + '<div class="entry"><p class="entry-date">'+post.date+'</p><a class="entry-link" href="../'+post.url+'">'+post.title+'</a></div>'+'\n'
+					listOfEntries = listOfEntries + u'<div class="entry"><p class="entry-date">'+post.date+u'</p><a class="entry-link" href="../'+post.url+u'">'+post.title+u'</a></div>'+u'\n'
 			
 			
 			# Generate dict
@@ -170,7 +170,7 @@ class BlogPostGenerator:
 		renderer = pystache.Renderer()
 		
 		# Generate dict
-		content = {"title": post.title, "post_text": post.mainText, "index": "index.html", }
+		content = {"title": post.title, "post_text": post.mainText, "index": u"index.html", }
 		
 		f = codecs.open(os.path.join(self.outputFolder, post.url),'w','utf-8')
 		f.write(renderer.render_path(os.path.join(self.templateFolder, "postTemplate.html"),content))
@@ -199,11 +199,11 @@ class BlogPostGenerator:
 
 		rss = RSS2.RSS2(
 			title = self.blogMetadata.blogName,
-			link = self.blogMetadata.blogURL+"/index.html", 
+			link = self.blogMetadata.blogURL+u"/index.html", 
 			description = self.blogMetadata.blogDescription,
 			lastBuildDate = datetime.datetime.now(),
 			items = rssItems,
-			image = RSS2.Image(self.blogMetadata.blogURL+'/logo.png', self.blogMetadata.blogName, self.blogMetadata.blogURL+'/index.html')
+			image = RSS2.Image(self.blogMetadata.blogURL+u'/logo.png', self.blogMetadata.blogName, self.blogMetadata.blogURL+u'/index.html')
 		)
 		rss.write_xml(open(os.path.join(self.outputFolder, "feed.xml"),'w'))
 					

@@ -1,12 +1,15 @@
 Quill - A (very) simple blog engine
 ===================================
-**TODO for now**
+**TODO for ???**
 
-* [DONE] Multipagination in index pages (neccessary?)
+* [DONE] Multipagination in index pages 
 * Show a text snippet in index pages
 * User Manual
 * Developer Manual
 * [DONE] Favicon
+* Integrate Pygments for syntax highlighting
+* Estimated reading time optional in each post and index
+
 
 **TODO for version 0.1:**
 
@@ -15,6 +18,7 @@ Quill - A (very) simple blog engine
 * [IN PROGRESS] Simple CSS sample
 * [DONE] Config via .ini or similar
 * [DONE] Tag support
+* [BUG] Bad encoding sometimes ¿¿??
 
 **TODO for version 0.2**
 
@@ -25,7 +29,7 @@ Quill - A (very) simple blog engine
 
 **TODO for version 0.3:**
 
-* RSS/Atom
+* [DONE] RSS/Atom
 * [DONE] Dropbox Integration
 
 **TODO for version 0.4:**
