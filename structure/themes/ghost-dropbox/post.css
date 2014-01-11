@@ -154,7 +154,7 @@ a:hover {
 }
 
 
-/* Resizing hearder and footer logo */
+/* Resizing header and footer logo */
 .blog-logo img{
     display: block;
     max-height: 75px;
@@ -331,6 +331,9 @@ p.share_text {
   text-align: center;
 }
 
+#disqus_thread {
+  margin-bottom: 3em;
+}
 
 /*******************************************************************************
  * Code Styles: Inline code, block code (class .block_code) and blockquote
