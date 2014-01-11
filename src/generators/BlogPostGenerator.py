@@ -1,3 +1,6 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*- 
+
 import os
 import codecs
 import shutil
@@ -78,7 +81,7 @@ class BlogPostGenerator:
 		listOfEntries = unicode()
 	
 		# Instantiate Renderer
-		renderer = pystache.Renderer()
+		renderer = pystache.Renderer(file_encoding='utf-8', string_encoding='utf-8', decode_errors='utf-8')
 		
 		if pageNum == 1:
 			f = codecs.open(os.path.join(self.outputFolder, "index.html"),'w','utf-8')
@@ -87,10 +90,9 @@ class BlogPostGenerator:
 		
 		for post in postList:
 			if post is postList[-1]:
-				listOfEntries = listOfEntries + u'<div class="last-entry"><p class="entry-date">'+post.date+u'</p><a class="entry-link" href="./'+post.url+u'">'+post.title+u'</a></div>'+u'\n'
+				listOfEntries = listOfEntries + u'<div class="last-entry"><p class="entry-date">'+post.date+u'</p><a class="entry-link" href="./'+post.url+u'">'+unicode(post.title)+u'</a></div>'+u'\n'
 			else:
-				listOfEntries = listOfEntries + u'<div class="entry"><p class="entry-date">'+post.date+u'</p><a class="entry-link" href="./'+post.url+u'">'+post.title+u'</a></div>'+u'\n'
-		
+				listOfEntries = listOfEntries + u'<div class="entry"><p class="entry-date">'+post.date+u'</p><a class="entry-link" href="./'+post.url+u'">'+unicode(post.title)+u'</a></div>'+u'\n'
 		
 		# Generate dict
 		
@@ -109,11 +111,11 @@ class BlogPostGenerator:
 		# Older pages
 		if pageNum < pageMax:
 			pagination = pagination + u'<a class="older-entries" href=' + u'page' + str(pageNum+1) + u'.html>' + self.blogMetadata.olderPosts + u' &rarr;' + u'</a>'
-		
+
 		# Generate link to about page if present
 		if blogSettings.displayAboutMe.lower() == "yes":
 			about = unicode()
-			about = u'<a class="about" href="./about.html" >'+self.blogMetadata.aboutHeader+u'</a>'
+			about = u'<a class="about" href="./about.html" >'+unicode(self.blogMetadata.aboutHeader)+u'</a>'
 			content = {"index": u"./index.html", "rss": u"<a href=feed.xml>rss</a>", "title": self.blogMetadata.blogName, "entries": listOfEntries, "about": about, "pagination": pagination}
 			f.write(renderer.render_path(os.path.join(self.templateFolder, "indexTemplate.html"),content))
 		else:

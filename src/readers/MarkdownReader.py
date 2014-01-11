@@ -1,3 +1,6 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*- 
+
 import markdown
 import codecs
 import containers.PostData as PostData
