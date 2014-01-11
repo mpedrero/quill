@@ -141,6 +141,9 @@ a:hover {
   /* font-size neccessary for unifying base font size among different browsers*/
   font-size: 12pt;
   text-rendering: optimizeLegibility;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 

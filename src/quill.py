@@ -23,10 +23,16 @@ class BlogMetadata():
 		self.displayAboutMe = unicode()
 		self.postsPerPage = unicode()
 		self.completeFeed = unicode()
+		self.comments = unicode()
+		self.disqusCode = unicode()
 		
 		self.tagName = unicode()
 		self.tagHeader = unicode()
 		self.aboutHeader = unicode()
+		self.newerPosts = unicode()
+		self.olderPosts = unicode()
+		self.page = unicode()
+		self.of = unicode()
 		
 	''' Reads quill.cfg file to load blog settings '''
 	def loadConfig(self,filename):
@@ -47,6 +53,7 @@ class BlogMetadata():
 		self.displayAboutMe = config.get("BlogContent", "AboutMe")
 		self.postsPerPage = config.get("BlogContent", "PostsPerPage")
 		self.completeFeed = config.get("BlogContent", "CompleteFeed")
+		self.comments = config.get("BlogContent", "Comments")
 
 		self.tagName = config.get("Misc", "TagName")
 		self.tagHeader = config.get("Misc", "TagHeader")
@@ -72,6 +79,15 @@ def main():
 	blogSettings.loadConfig("quill.cfg")	
 	print "[OK]"
 	
+	# 1.1. If comments are enabled, load Disqus string to adding it to the posts
+	print "Comments?",
+	if blogSettings.comments.lower() == "yes":
+		print "Yes, loading Disqus.txt"
+		disqusFile = open("disqus.txt","r")
+		blogSettings.disqusCode = disqusFile.read()
+	else:
+		print "No, skipping..."
+
 
 	# 2. Analyse postsFolder and search *.md files to process
 	print "Processing posts...",

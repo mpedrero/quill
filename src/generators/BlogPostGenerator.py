@@ -45,14 +45,17 @@ class BlogPostGenerator:
 		renderer = pystache.Renderer()
 		
 		# Generate dict
-		content = {"title": post.title, "date": post.date, "post_text": post.mainText, "index": "index.html", "tags": post.tagsURL, "tagname": self.blogMetadata.tagName+" "}
-		
+		if self.blogMetadata.comments.lower() == "yes":
+			content = {"title": post.title, "date": post.date, "post_text": post.mainText, "index": "index.html", "tags": post.tagsURL, "tagname": self.blogMetadata.tagName+" ", "comments": self.blogMetadata.disqusCode}
+		else:
+			content = {"title": post.title, "date": post.date, "post_text": post.mainText, "index": "index.html", "tags": post.tagsURL, "tagname": self.blogMetadata.tagName+" "}
+
 		f = codecs.open(os.path.join(self.outputFolder, post.url),'w','utf-8')
 		f.write(renderer.render_path(os.path.join(self.templateFolder, "postTemplate.html"),content))
 		f.close()
 		
 	def generateIndex(self, postList, blogSettings):
-		lim = len(postList)+1
+		lim = len(postList)
 		inc = int(self.blogMetadata.postsPerPage)
 		lower = 0
 		upper = lower+inc
