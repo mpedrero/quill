@@ -40,7 +40,7 @@ If you are using **Windows**, the easiest way is to [download latest release](ht
 If you are using **Linux**, **MacOS** or you prefer to use Quill from source code:
 
 1. Install Python 2.X.
-2. Install Python `pip` and `setuptools`.
+2. Install Python `pip` and `setuptools`. If you are using Windows, you can install them [from here](http://www.lfd.uci.edu/~gohlke/pythonlibs/#setuptools).
 3. Install Quill dependencies using pip:
 		
 		pip install PyRRS2Gen

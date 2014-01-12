@@ -2,9 +2,7 @@
 *~
 
 # Blog and posts
-structure/posts/*
-structure/drafts/*
-quill-web/
+structure/
 
 # Windows libs
 windows-libs/
