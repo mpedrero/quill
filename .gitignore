@@ -1,8 +1,8 @@
-# Linux temp files
+# Linux
 *~
 
-# Blog and posts
-structure/
+# Windows
+Thumbs.db
 
-# Windows libs
-windows-libs/
+# Blog files in output folder
+blog-folders/blog/*

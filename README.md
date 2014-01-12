@@ -67,4 +67,4 @@ If you are using **Linux**, **MacOS** or you prefer to use Quill from source cod
 
 ## License
 
-See [LICENSE](https://github.com/jekyll/jekyll/blob/master/LICENSE).
+See [LICENSE](https://github.com/mpedrero/quill/blob/master/LICENSE.md).

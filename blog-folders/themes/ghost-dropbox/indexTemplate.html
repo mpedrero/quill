@@ -1,0 +1,46 @@
+<html>
+	<head>
+		<title>{{title}}</title>
+		<link rel="stylesheet" href="index.css" />
+		<link rel="shortcut icon" href="favicon.png" />
+		<link rel="alternate" type="application/rss+xml"  href="feed.xml" title="RSS Feed" />
+		
+		<meta name="utf8beacon" content="éçñøåá—" />
+		<meta charset="UTF-8"> 
+		<meta name="HandheldFriendly" content="True" />
+		<meta name="MobileOptimized" content="320" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	</head>
+
+	<body>
+		<div class="wrapper">
+		<div id="content">
+			
+			<div id="header">
+				<a class="blog-logo" href="{{index}}">
+					<img src="logo.png" alt="Blog logo"/>
+				</a>
+				<h1 class="blog-title">{{title}}</h1>
+			</div>
+
+			<div id="entries">    
+				{{{entries}}}
+			</div>
+			<nav class=pagination>{{{pagination}}}</nav>
+			</div>
+		<div class="push"></div>
+		</div>
+		
+			
+		<div id="footer">
+			{{{footer}}}
+			<a class="blog-logo" href="{{index}}">
+			<img src="logo.png" alt="Blog logo"/>
+			</a>
+			<div id="about">{{{about}}}</div>
+			<div id="rss">{{{rss}}}</div>
+		</div>
+
+		
+	</body>
+</html>
