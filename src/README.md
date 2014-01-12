@@ -26,6 +26,7 @@ Quill is a (very) simple blog generator. It takes a `posts` folder with blog ent
 * User manual (wiki?)
 * Developer manual (wiki?)
 * Better logo
+* Autonomous comment system
 
 
 ## Getting Started

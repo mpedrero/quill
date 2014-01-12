@@ -2,79 +2,67 @@
  * Fonts
  ******************************************************************************/
  
-@font-face
-{
+@font-face {
   font-family: 'Open Sans';
-  src: url('fonts/OpenSans-Regular.ttf');
+  font-style: normal;
+  font-weight: 400;
+  src: local('Open Sans'), local('OpenSans'), url(https://themes.googleusercontent.com/static/fonts/opensans/v7/cJZKeOuBrn4kERxqtaUH3T8E0i7KZn-EPnyo3HZu7kw.woff) format('woff');
 }
 
-@font-face
-{
+@font-face {
   font-family: 'Open Sans';
-  src: url('fonts/OpenSans-Italic.ttf');
-  font-style: italic;
+  font-style: normal;
+  font-weight: 700;
+  src: local('Open Sans Bold'), local('OpenSans-Bold'), url(https://themes.googleusercontent.com/static/fonts/opensans/v7/k3k702ZOKiLJc3WVjuplzHhCUOGz7vYGh680lGh-uXM.woff) format('woff');
 }
 
-@font-face
-{
+@font-face {
   font-family: 'Open Sans';
-  src: url('fonts/OpenSans-Bold.ttf');
-  font-weight: bold;
+  font-style: italic;
+  font-weight: 400;
+  src: local('Open Sans Italic'), local('OpenSans-Italic'), url(https://themes.googleusercontent.com/static/fonts/opensans/v7/xjAJXh38I15wypJXxuGMBobN6UDyHWBl620a-IRfuBk.woff) format('woff');
 }
 
-@font-face
-{
+@font-face {
   font-family: 'Open Sans';
-  src: url('fonts/OpenSans-BoldItalic.ttf');
   font-style: italic;
-  font-weight: bold;
+  font-weight: 700;
+  src: local('Open Sans Bold Italic'), local('OpenSans-BoldItalic'), url(https://themes.googleusercontent.com/static/fonts/opensans/v7/PRmiXeptR36kaC0GEAetxjqR_3kx9_hJXbbyU8S6IN0.woff) format('woff');
 }
 
-@font-face
-{
+@font-face {
   font-family: 'Droid Serif';
-  src: url('fonts/DroidSerif.ttf');
+  font-style: normal;
+  font-weight: 400;
+  src: local('Droid Serif'), local('DroidSerif'), url(https://themes.googleusercontent.com/static/fonts/droidserif/v4/0AKsP294HTD-nvJgucYTaIbN6UDyHWBl620a-IRfuBk.woff) format('woff');
 }
 
-@font-face
-{
+@font-face {
   font-family: 'Droid Serif';
-  src: url('fonts/DroidSerif-Italic.ttf');
+  font-style: normal;
+  font-weight: 700;
+  src: local('Droid Serif Bold'), local('DroidSerif-Bold'), url(https://themes.googleusercontent.com/static/fonts/droidserif/v4/QQt14e8dY39u-eYBZmppwTqR_3kx9_hJXbbyU8S6IN0.woff) format('woff');
+}
+
+@font-face {
+  font-family: 'Droid Serif';
   font-style: italic;
+  font-weight: 400;
+  src: local('Droid Serif Italic'), local('DroidSerif-Italic'), url(https://themes.googleusercontent.com/static/fonts/droidserif/v4/cj2hUnSRBhwmSPr9kS5899kZXW4sYc4BjuAIFc1SXII.woff) format('woff');
 }
 
-@font-face
-{
+@font-face {
   font-family: 'Droid Serif';
-  src: url('fonts/DroidSerif-Bold.ttf');
-  font-weight: bold;
-}
-
-@font-face
-{
-  font-family: 'Droid Serif';
-  src: url('fonts/DroidSerif-BoldItalic.ttf');
-  font-weight: bold;
   font-style: italic;
+  font-weight: 700;
+  src: local('Droid Serif Bold Italic'), local('DroidSerif-BoldItalic'), url(https://themes.googleusercontent.com/static/fonts/droidserif/v4/c92rD_x0V1LslSFt3-QEpgRV2F9RPTaqyJ4QibDfkzM.woff) format('woff');
 }
 
-@font-face
-{
-  font-family: codeFont;
-  src: url('fonts/SourceCodePro-Regular.ttf');
-}
-
-@font-face
-{
+@font-face {
   font-family: 'Source Code Pro';
-  src: url('fonts/SourceCodePro-Regular.ttf');
-}
-
-
-@font-face
-{
-  font-family: titleFont;
-  src: url('fonts/OpenSans-Bold.ttf');
+  font-style: normal;
+  font-weight: 400;
+  src: local('Source Code Pro'), local('SourceCodePro-Regular'), url(https://themes.googleusercontent.com/static/fonts/sourcecodepro/v4/mrl8jkM18OlOQN8JLgasDxM0YzuT7MdOe03otPbuUS0.woff) format('woff');
 }
 
 
@@ -151,7 +139,8 @@ h1 {
 	line-height: 1.2em;
 	text-align: center;
 	text-decoration: none;
-	font-family: titleFont;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: bold;
 	font-size: 2.5em;
 }
 
@@ -343,7 +332,8 @@ p.post_date_text {
   margin-top: 0.6em;
   margin-bottom: 0.5em;
 
-  font-family: titleFont, sans-serif;
+  font-family: 'Open Sans', sans-serif;
+	font-weight: bold;
   font-size: 2.5em;
   
   text-align: center;
@@ -446,7 +436,7 @@ p.share_text {
  
 /* Inline code. In Markdown is `hello world` */
 #post_text code{
-  font-family: codeFont;
+  font-family: 'Source Code Pro';
   font-size: 0.9em;
   
   white-space: pre-wrap;
@@ -470,7 +460,7 @@ p.share_text {
  * rules cancel the more general #post_text code rules above, because they'll be
  * redefined in pre.block_code below */
 #post_text code.block_code {
-  font-family: codeFont;
+  font-family: 'Source Code Pro';
   font-size: 1em;  
   
   line-height: 1.2em;
@@ -524,27 +514,6 @@ p.share_text {
 #post_text h1 {
   line-height: 1.2em;
 }
-/*
-#post_text h2 {
-  font-family: titleFont;
-}
-
-#post_text h3 {
-  font-family: titleFont;
-}
-
-#post_text h4 {
-  font-family: titleFont;
-}
-
-#post_text h5 {
-  font-family: titleFont;
-}
-
-#post_text h6 {
-  font-family: titleFont;
-}
-*/
 
 
 /* ==========================================================================
@@ -578,7 +547,8 @@ p.share_text {
   margin-top: 0.6em;
   margin-bottom: 0.5em;
 
-  font-family: titleFont;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: bold;
   font-size: 2em;
   
   text-align: center;
