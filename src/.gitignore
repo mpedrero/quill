@@ -1,0 +1,7 @@
+# Linux temp files
+*~
+
+# pyc files
+*.pyc
+disqus.txt
+myquill.cfg

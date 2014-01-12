@@ -1,12 +1,10 @@
 Quill - A (very) simple blog engine
 ===================================
-**TODO for ???**
+**TODO for future releases**
 
-* **[DONE]** Multipagination in index pages 
 * Show a text snippet in index pages
 * User Manual
 * Developer Manual
-* **[DONE]** Favicon
 * Integrate Pygments for syntax highlighting
 * Estimated reading time optional in each post and index
 
@@ -15,12 +13,14 @@ Quill - A (very) simple blog engine
 
 * **[DONE]** MarkDown -> HTML converter
 * **[DONE]** Folder structure
+* **[DONE]** Multipagination in index pages
+* **[DONE]** Favicon 
 * [IN PROGRESS] Simple CSS sample
 * **[DONE]** Config via .ini or similar
 * **[DONE]** Tag support
 * **[DONE]** RSS/Atom
 * **[DONE]** Dropbox Integration
-* [BUG] Bad encoding sometimes ¿¿?? Apparently, when I set 1 post per page, if title has no special characters, encoding fails. If not, encoding seems correct...
+* **[DONE]** Bad encoding sometimes ¿¿?? Apparently, when I set 1 post per page, if title has no special characters, encoding fails. If not, encoding seems correct...
 
 **TODO for version 0.2**
 

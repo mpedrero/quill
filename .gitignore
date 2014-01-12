@@ -5,3 +5,6 @@
 structure/posts/*
 structure/drafts/*
 quill-web/
+
+# Windows libs
+windows-libs/
