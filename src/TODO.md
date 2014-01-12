@@ -7,6 +7,8 @@ Quill - A (very) simple blog engine
 * Developer Manual
 * Integrate Pygments for syntax highlighting
 * Estimated reading time optional in each post and index
+* [BUG] Program fails when About Me = Yes and no about file
+* [BUG] Program fails when theme has not `fonts/` folder
 
 
 **TODO for version 0.1:**
