@@ -1,0 +1,15 @@
+[project]
+name=src
+description=
+base_path=./
+run_cmd=
+regenerate=false
+type=All
+
+[files]
+file0=containers/PostData.py
+file1=generators/BlogPostGenerator.py
+file2=quill.cfg
+file3=quill.py
+file4=readers/MarkdownReader.py
+file5=containers/TagData.py
