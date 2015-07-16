@@ -71,6 +71,28 @@ class MarkdownReader:
 			print "Missing title in post", filename
 			quit()
 			
+		# Calculate and generate wordcount
+		try:
+			numWords = 0
+			f.seek(0,0)
+			for line in f:
+				numWords += len(line.split())
+				
+			print "WORDS: ",numWords
+			ela = int(numWords/270)
+			
+			print "ELA: ",ela
+			if (ela == 0):
+				postData.timeToRead = "Less than a minute"
+			elif (ela == 1):
+				postData.timeToRead = str(ela)+" "+"minute"
+			else:
+				postData.timeToRead = str(ela)+" "+"minutes"
+			
+			# print "Total words for",postData.title,":",numWords
+		except:
+			print "Unable to estimate read time"
+			
 		# Mediante este reemplazo anadimos una clase a los bloques de codigo para poderles
 		# aplicar un estilo determinado. Hay que comprobar si es error prone
 		postData.mainText = mainText.replace("<pre><code>",'<pre class="block_code"><code class="block_code">')

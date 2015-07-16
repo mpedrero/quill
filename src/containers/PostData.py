@@ -13,6 +13,7 @@ class PostData(object):
 		self.tagsURL = unicode() # tags with href and ready to display
 		self.title = unicode()
 		self.mainText = unicode()
+		self.timeToRead = unicode() # estimated read time
 
 		
 		

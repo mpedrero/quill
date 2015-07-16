@@ -17,7 +17,7 @@ Quill - A (very) simple blog engine
 * **[DONE]** Folder structure
 * **[DONE]** Multipagination in index pages
 * **[DONE]** Favicon 
-* [IN PROGRESS] Simple CSS sample
+* **[DONE]** Simple CSS sample
 * **[DONE]** Config via .ini or similar
 * **[DONE]** Tag support
 * **[DONE]** RSS/Atom
@@ -31,4 +31,7 @@ Quill - A (very) simple blog engine
 * Detecting changes in folders
 * SQLite database for entries and tags (neccesary?)
 * Choose webserver (lighttpd?, custom?)
+* Better default theme
+* Display time to read
+
 
