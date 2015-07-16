@@ -2,7 +2,7 @@
 
 By Manuel Pedrero
 
-Quill is a (very) simple blog generator. It takes a `posts` folder with blog entries written in Markdown, processes them and builds an entire blog. Quill have not any server dependencies like PHP or databases, so you can host the blog in many servers, including  [NGINX](http://nginx.org/), [Apache](http://httpd.apache.org/), [Lighhtpd](http://www.lighttpd.net/)... even your Dropbox Public folder is OK.
+Quill is a (very) simple blog generator. It takes a `posts` folder with blog entries written in Markdown, processes them and builds an entire blog. Quill have not any server dependencies like PHP or databases, so you can host the blog in many servers, including  [NGINX](http://nginx.org/), [Apache](http://httpd.apache.org/), [Lighttpd](http://www.lighttpd.net/)... even your Dropbox Public folder is OK.
 
 ## Current features
 
@@ -42,13 +42,13 @@ If you are using **Linux**, **MacOS** or you prefer to use Quill from source cod
 1. Install Python 2.X.
 2. Install Python `pip` and `setuptools`. If you are using Windows, you can install them [from here](http://www.lfd.uci.edu/~gohlke/pythonlibs/#setuptools).
 3. Install Quill dependencies using pip:
-		
+
 		pip install PyRRS2Gen
 		pip install pystache
 		pip install python-dateutil
 		pip install python-markdown
 		pip install slugify
-    
+
 4. Download Quill source from GitHub.
 5. Execute Quill with `python quill.py` to create (or regenerate) your blog. It will be generated in `blog` subfolder.
 
