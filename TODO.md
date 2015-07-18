@@ -6,7 +6,6 @@ Quill - A (very) simple blog engine
 * User Manual
 * Developer Manual
 * Integrate Pygments for syntax highlighting
-* Estimated reading time optional in each post and index
 * [BUG] Program fails when About Me = Yes and no about file
 * [BUG] Program fails when theme has not `fonts/` folder
 
@@ -27,11 +26,40 @@ Quill - A (very) simple blog engine
 **TODO for version 0.2**
 
 * **[DONE]** Add comments
+* **[DONE]** Display time to read
+* **[DONE]** Author tag
+* **[DONE]** Permalink tag
+* **[DONE]** Author in config and use it by default in absence of metadata in post
+* **[DONE]** Theme with PT and PT Sans
+* **[DONE]** More specific tags to further customisation
+* **[DONE]** Smartypants support
+* Better default theme
+* Google Analytics Support
 * Social integration (twitter, facebook, g+?)
+
+**TODO for version 0.3**
 * Detecting changes in folders
 * SQLite database for entries and tags (neccesary?)
 * Choose webserver (lighttpd?, custom?)
-* Better default theme
-* Display time to read
 
 
+
+**Suitable Tags for templates**
+
+0. General tags
+  {{index}}        href to blog index page
+
+1. Tags related to article
+
+  {{title}}        Title of the article.                    No html element.
+  {{date}}         Date of the article.                     No html element.
+  {{{etime}}}      Estimated reading time of the article    <span class="etime" />
+  {{author}}       List of article author                   No html element.
+  {{{tags}}}       List of article tags                     <a href="..." class="tag">tag1</a> ...
+  {{{post_text}}}  Text of the article                      Html content. Should be inside a <div>
+  {{{comments}}}   Code to embed disqus comments            Html content. Should be inside a <div>
+  {{permalink}}    Permalink to current article             No html element.
+
+  {{{tagsURL}}} Tags with "<a href...>" ready to display
+  
+  

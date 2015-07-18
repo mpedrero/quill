@@ -7,3 +7,5 @@ Thumbs.db
 # Blog files in output folder
 blog-folders/blog/*
 !blog-folders/blog/README.md
+blog-folders/posts/*.md
+blog-folders/posts/images/*

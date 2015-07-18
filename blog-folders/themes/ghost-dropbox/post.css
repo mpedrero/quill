@@ -31,61 +31,21 @@
 }
 
 @font-face {
-  font-family: 'Droid Serif';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Droid Serif'), local('DroidSerif'), url(https://themes.googleusercontent.com/static/fonts/droidserif/v4/0AKsP294HTD-nvJgucYTaIbN6UDyHWBl620a-IRfuBk.woff) format('woff');
-}
-
-@font-face {
-  font-family: 'Droid Serif';
-  font-style: normal;
-  font-weight: 700;
-  src: local('Droid Serif Bold'), local('DroidSerif-Bold'), url(https://themes.googleusercontent.com/static/fonts/droidserif/v4/QQt14e8dY39u-eYBZmppwTqR_3kx9_hJXbbyU8S6IN0.woff) format('woff');
-}
-
-@font-face {
-  font-family: 'Droid Serif';
-  font-style: italic;
-  font-weight: 400;
-  src: local('Droid Serif Italic'), local('DroidSerif-Italic'), url(https://themes.googleusercontent.com/static/fonts/droidserif/v4/cj2hUnSRBhwmSPr9kS5899kZXW4sYc4BjuAIFc1SXII.woff) format('woff');
-}
-
-@font-face {
-  font-family: 'Droid Serif';
-  font-style: italic;
-  font-weight: 700;
-  src: local('Droid Serif Bold Italic'), local('DroidSerif-BoldItalic'), url(https://themes.googleusercontent.com/static/fonts/droidserif/v4/c92rD_x0V1LslSFt3-QEpgRV2F9RPTaqyJ4QibDfkzM.woff) format('woff');
-}
-
-@font-face {
   font-family: 'Source Code Pro';
   font-style: normal;
   font-weight: 400;
   src: local('Source Code Pro'), local('SourceCodePro-Regular'), url(https://themes.googleusercontent.com/static/fonts/sourcecodepro/v4/mrl8jkM18OlOQN8JLgasDxM0YzuT7MdOe03otPbuUS0.woff) format('woff');
 }
 
-/*******************************************************************************
- * Styles
- ******************************************************************************/
- 
+
  
 /*******************************************************************************
  * General styles to apply on all elements
  ******************************************************************************/
- 
- 
-/* Page background */
-* {
-  /*border: 1px solid #f00;*/
-  /*background-color: #eee;*/ 
-}
-
 
 /* Selection background color */
 ::selection
 {
-	color: #222;
     background: #D6EDFF;
     text-shadow: none;
 }
@@ -93,29 +53,33 @@
 
 ::-moz-selection
 {
-	color: #222;
     background: #D6EDFF;
     text-shadow: none;
 } 
 
 
-/* Subtle decoration for links */
-a:link {
-	text-decoration:underline;
-	color: #000;
+/* Page background color and default text color */
+* {
+	/*background: #EEEEEE;*/
+	/*color: #333;*/
+	color: rgb(58, 65, 69);
 }
 
+/* Subtle decoration for links */
+a:link {
+	color: #008CCF;
+	text-decoration: none;
+}
 
 /* Same decoration for visited links */
 a:visited {
-	color: #000;
+	color: #008CCF;
+	text-decoration: none;
 }
 
-
-/* Nice transition in Firefox */
+/* Underline links on hover */
 a:hover {
-  color: #387BBF;
-  transition: color 0.2s ease-out;
+  text-decoration: underline;
 }
 
 
@@ -179,14 +143,6 @@ a.logo{
   padding-right: 2em;
   padding-bottom: 1em;
   padding-top: 1em;
-  background-color: #fff;
-}
-
-
-/* Add white background to all elements inside post (replaces general grey
- * background) */
-#post * {
-	background-color: #fff;
 }
 
 
@@ -198,10 +154,8 @@ a.logo{
   max-width: 100%;
   margin-top: 1em;
   margin-bottom: 1em;
-  /*border: 1px solid #000;*/
-	font-style: italic;
-	color: #ccc;
-	background: #fff;
+  font-style: italic;
+  color: #ccc;
 }
 
 
@@ -218,14 +172,14 @@ a.logo{
 }
 
 
-/* Center date in the post and add a nice dotted line at the bottom */
+/* Center date in the post */
 #post_date {
   padding-top: 1.5em;
 }
 
 
 p.post_date_text {
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'PT Sans', sans-serif;
 	margin-top: 0px;
 	margin-bottom: 0px;
 	font-size: 1em;
@@ -237,78 +191,67 @@ p.post_date_text {
 #post_title {  
   margin-bottom: 0.5em;
 
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'PT Serif', sans-serif;
   font-weight: bold;
-  font-size: 50px;
+  font-size: 42px;
   line-height: 1.2em;
-  letter-spacing: -2px;
-  text-indent: -3px;
-  color: rgb(58, 65, 69);
 }
 
 
 p.post_title_text {
-  margin-top: 0px;
+  margin-top: 0.2em;
   margin-bottom: 0px;
 }
 
 
 /* Main text of the post. Currently uses Open Sans font from Google Fonts */
 #post_text {
-  line-height: 1.6em;
-  margin: 1.6em 0px;
+  line-height: 1.5em;
+  margin: 1.6em 0px 1.6em 0px;
   
-  font-family: 'Droid Serif', serif;  
+  font-family: 'PT Serif', serif;  
   font-size: 20px;
-  color: rgb(58, 65, 69);
 }
 
 #post_text p{
-	margin: 1.6em 0px;
+	margin: 0px 0px 1.6em 0px;
 }
 
-/* Tags of the post (if are enabled) */
-#tags {
-  font-family: 'Open Sans', 'Dejavu Serif', serif;
-  font-size: 0.9em;
-  /*text-align: center;*/
-  margin-top: 3em;
-  padding-top: 2em;
-  color: rgb(58, 65, 69);
-  border-top: 1px solid rgb(235, 242, 246);
+/* Post footer */
+#post_footer {
+	margin-top: 3.5em;
 }
 
-#post a.tag {
-  
-	font-family: 'Open Sans', sans-serif;
-	margin-top: 0px;
-	margin-bottom: 0px;
-	padding-left: 3px;
+/* Tags decoration and hover transitions */
+a.tag {
+	font-family: 'PT Sans', sans-serif;
+	margin: 0px 1px 0px 1px;
+	padding: 0px 15px 2px 15px;
+	line-height: 2em;
 	font-size: 1em;
-	color: rgb(158, 171, 179);
 	text-decoration:none;
-	background-color: #fff;
+    color: #555555;
+    background: #DDDDDD;
+    white-space:nowrap;
+    border-radius: 30px;
+    transition: border 0.3s ease 0s;
+	
 }
 
-/* Nice transition in Firefox */
-#post a.tag:hover {
-  color: #387BBF;
-  transition: color 0.2s ease-out;
+/* Nice transition */
+a.tag:hover {
+  color: #FFF;
+  background: #888;
+  transition: color 0.3s ease-out;
 }
 
-
-/* Not used in the template yet. Contains links to Email, Twitter, etc. */
-#share {
-  margin-top: 5em;
-  font-family: sans-serif;
-  text-align: center;
+/* Permalink */
+a.permalink {
+  display: inline-block;
+  float: right;
+  
 }
 
-
-p.share_text {
-  margin-top: 0px;
-  margin-bottom: 0px;
-}
 
 
 /* Footer. Currently only contains the logo */
@@ -321,6 +264,17 @@ p.share_text {
 
 #disqus_thread {
   margin-bottom: 3em;
+}
+
+/* Estimated read time should be floating right */
+span.etime {
+	float: right;
+	color: rgb(158, 171, 179);
+}
+
+/* Author */
+span.author {
+  font-family: 'PT Sans', sans-serif;
 }
 
 /*******************************************************************************
@@ -407,39 +361,48 @@ p.share_text {
  
 #post_text h1 {
   line-height: 1.2em;
-  font-family: 'Open Sans', sans-serif;
-  letter-spacing: -2px;
-  text-indent: -3px;
+  margin-top: 1.6em;
+  font-family: 'PT Serif', sans-serif;
+  font-weight: bold;
+  font-size: 36px;
 } 
 
 
 #post_text h2 {
   line-height: 1.2em;
-  font-family: 'Open Sans', sans-serif;
-  letter-spacing: -1px;
-  text-indent: -2px;
+  font-family: 'PT Serif', sans-serif;
+  font-weight: bold;
+  font-size: 32px;
 }
 
 #post_text h3 {
   line-height: 1.2em;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'PT Serif', sans-serif;
+  font-weight: bold;
+  font-size: 28px;
 }
 
 #post_text h4 {
   line-height: 1.2em;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'PT Serif', sans-serif;
+  font-weight: bold;
+  font-size: 24px;
 }
 
 #post_text h5 {
   line-height: 1.2em;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'PT Serif', sans-serif;
+  font-weight: bold;
+  font-style: italic;
+  font-size: 20px;
 }
 
 #post_text h6 {
   line-height: 1.2em;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'PT Serif', sans-serif;
+  font-style: italic;
+  font-size: 20px;
 }
-*/
 
 
 /* ==========================================================================
@@ -472,7 +435,7 @@ p.share_text {
 #post_title {  
   margin-bottom: 0.5em;
 
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'PT Sans', sans-serif;
   font-weight: bold;
   font-size: 40px;
     

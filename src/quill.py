@@ -16,6 +16,7 @@ class BlogMetadata():
 		self.blogDescription = unicode()
 		self.blogURL = unicode()
 		self.blogTheme = unicode()
+		self.blogAuthor = unicode()
 	
 		self.postsFolder = unicode()
 		self.draftsFolder = unicode()
@@ -46,6 +47,7 @@ class BlogMetadata():
 		self.blogDescription = config.get("Basic", "BlogDescription")
 		self.blogURL = config.get("Basic", "BlogURL")
 		self.blogTheme = config.get("Basic", "Theme")
+		self.blogAuthor = config.get("Basic", "BlogAuthor")
 
 		self.postsFolder = config.get("Folders", "PostsFolder")
 		self.draftsFolder = config.get("Folders", "DraftsFolder")
@@ -124,7 +126,7 @@ def main():
 			if post.lower().endswith("about.md"):
 				pass
 			else:
-				postDataList.append(reader.read(post))
+				postDataList.append(reader.read(post, blogSettings))
 		
 	# 3.1. Order PostData files by date (newest posts first)
 	postDataList.sort(key=lambda PostData: PostData.dateParsed, reverse=True) 
@@ -167,7 +169,7 @@ def main():
 	
 	print
 	print "Blog complete. Press ENTER key to exit"
-	raw_input()
+	#~ raw_input()
 
 
 

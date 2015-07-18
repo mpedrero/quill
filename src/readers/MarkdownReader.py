@@ -7,7 +7,7 @@ import containers.PostData as PostData
 import os
 import slugify # https://github.com/un33k/python-slugify
 import dateutil.parser # pip install python-dateutil
-
+from urlparse import urljoin
 
 class MarkdownReader:
 	def __init__(self,postsFolder):
@@ -32,10 +32,10 @@ class MarkdownReader:
 		return postData
 	
 	''' Read and process the Markdown file. Metadata is mandatory '''	
-	def read(self, filename):
+	def read(self, filename, blogSettings):
 		f = codecs.open(filename,'r',"utf-8")
 				
-		md = markdown.Markdown(extensions = ['meta'])	
+		md = markdown.Markdown(extensions = ['meta', 'smarty'])	
 		mainText = md.convert(f.read())
 		
 		postData = PostData.PostData()
@@ -43,8 +43,11 @@ class MarkdownReader:
 		try:
 			postData.author = md.Meta["author"][0]
 		except:
-			print "Missing author in post", filename
-			quit()
+			try:
+				postData.author = blogSettings.blogAuthor
+			except:
+				print "Missing author in post", filename
+				quit()
 			
 		try:
 			postData.date = md.Meta["date"][0]
@@ -78,18 +81,13 @@ class MarkdownReader:
 			for line in f:
 				numWords += len(line.split())
 				
-			print "WORDS: ",numWords
 			ela = int(numWords/270)
 			
-			print "ELA: ",ela
 			if (ela == 0):
-				postData.timeToRead = "Less than a minute"
-			elif (ela == 1):
-				postData.timeToRead = str(ela)+" "+"minute"
+				postData.timeToRead = u'<span class="etime">' + u'Less than a min read' + u'</span>'
 			else:
-				postData.timeToRead = str(ela)+" "+"minutes"
-			
-			# print "Total words for",postData.title,":",numWords
+				postData.timeToRead = u'<span class="etime">' + str(ela)+u" "+u"min read" + u"</span>"
+				
 		except:
 			print "Unable to estimate read time"
 			
@@ -98,7 +96,10 @@ class MarkdownReader:
 		postData.mainText = mainText.replace("<pre><code>",'<pre class="block_code"><code class="block_code">')
 		 
 		postData.url = slugify.slugify(filename.replace(self.postsFolder,"",1).rstrip('.md'))+".html"
-		
+		print "BLOGURL",blogSettings.blogURL
+		print "ARTICLE",postData.url
+		postData.permalink = '/'.join([x.strip('/') for x in [blogSettings.blogURL,postData.url]])
+		print "PERMALINK:",postData.permalink
 		return postData
 		
 		

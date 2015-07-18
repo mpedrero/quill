@@ -49,9 +49,28 @@ class BlogPostGenerator:
 		
 		# Generate dict
 		if self.blogMetadata.comments.lower() == "yes":
-			content = {"title": post.title, "date": post.date, "post_text": post.mainText, "index": "index.html", "tags": post.tagsURL, "tagname": self.blogMetadata.tagName+" ", "etime": post.timeToRead, "comments": self.blogMetadata.disqusCode}
+			content = {
+			"title": post.title, 
+			"date": post.date, 
+			"post_text": post.mainText, 
+			"index": "index.html", 
+			"tags": post.tagsURL, 
+			"tagname": self.blogMetadata.tagName+" ", 
+			"etime": post.timeToRead, 
+			"comments": self.blogMetadata.disqusCode,
+			"permalink": post.permalink,
+			"author": post.author}
 		else:
-			content = {"title": post.title, "date": post.date, "post_text": post.mainText, "index": "index.html", "tags": post.tagsURL, "tagname": self.blogMetadata.tagName+" ", "etime": post.timeToRead}
+			content = {
+			"title": post.title, 
+			"date": post.date, 
+			"post_text": post.mainText,
+			"index": "index.html", 
+			"tags": post.tagsURL, 
+			"tagname": self.blogMetadata.tagName+" ", 
+			"etime": post.timeToRead,
+			"permalink": post.permalink,
+			"author": post.author}
 
 		f = codecs.open(os.path.join(self.outputFolder, post.url),'w','utf-8')
 		f.write(renderer.render_path(os.path.join(self.templateFolder, "postTemplate.html"),content))
