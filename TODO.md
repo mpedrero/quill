@@ -52,17 +52,17 @@ Quill - A (very) simple blog engine
 
 1. Tags related to article
 
-  {{title}}        Title of the article.                    No html element.
-  {{date}}         Date of the article.                     No html element.
-  {{{etime}}}      Estimated reading time of the article    <span class="etime" />
-  {{author}}       List of article author                   No html element.
-  {{{tags}}}       List of article tags                     <a href="..." class="tag">tag1</a> ...
-  {{{post_text}}}  Text of the article                      Html content. Should be inside a <div>
-  {{{comments}}}   Code to embed disqus comments            Html content. Should be inside a <div>
-  {{permalink}}    Permalink to current article             No html element.
+		  {{title}}        Title of the article.                    No html element.
+		  {{date}}         Date of the article.                     No html element.
+		  {{{etime}}}      Estimated reading time of the article    <span class="etime" />
+		  {{author}}       List of article author                   No html element.
+		  {{{tags}}}       List of article tags                     <a href="..." class="tag">tag1</a> ...
+		  {{{post_text}}}  Text of the article                      Html content. Should be inside a <div>
+		  {{{comments}}}   Code to embed disqus comments            Html content. Should be inside a <div>
+		  {{permalink}}    Permalink to current article             No html element.
 
-  {{{tagsURL}}}    Tags with "<a href...>" ready to display
-  {{shTwitter}}    Custom link to share article on Twitter  No html element.
-  {{shFacebook}}   Custom link to share article on Facebook No html element.
-  {{shGplus}}      Custom link to share article on G+       No html element.
+		  {{{tagsURL}}}    Tags with "<a href...>" ready to display
+		  {{shTwitter}}    Custom link to share article on Twitter  No html element.
+		  {{shFacebook}}   Custom link to share article on Facebook No html element.
+		  {{shGplus}}      Custom link to share article on G+       No html element.
   
