@@ -428,18 +428,11 @@ span.author {
   padding-right: 0.5em;
   padding-bottom: 1em;
   padding-top: 1em;
-  background-color: #fff;
   word-wrap: break-word;
 }
 
 #post_title {  
   margin-bottom: 0.5em;
-
-  font-family: 'PT Sans', sans-serif;
-  font-weight: bold;
-  font-size: 40px;
-    
-  background-color: #fff;
 }
    
 }

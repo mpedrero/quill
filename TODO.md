@@ -35,7 +35,8 @@ Quill - A (very) simple blog engine
 * **[DONE]** Smartypants support
 * Better default theme
 * Google Analytics Support
-* Social integration (twitter, facebook, g+?)
+* **[DONE]** Social integration (twitter, facebook, g+?)
+
 
 **TODO for version 0.3**
 * Detecting changes in folders
@@ -60,6 +61,8 @@ Quill - A (very) simple blog engine
   {{{comments}}}   Code to embed disqus comments            Html content. Should be inside a <div>
   {{permalink}}    Permalink to current article             No html element.
 
-  {{{tagsURL}}} Tags with "<a href...>" ready to display
-  
+  {{{tagsURL}}}    Tags with "<a href...>" ready to display
+  {{shTwitter}}    Custom link to share article on Twitter  No html element.
+  {{shFacebook}}   Custom link to share article on Facebook No html element.
+  {{shGplus}}      Custom link to share article on G+       No html element.
   

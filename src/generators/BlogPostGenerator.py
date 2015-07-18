@@ -59,7 +59,10 @@ class BlogPostGenerator:
 			"etime": post.timeToRead, 
 			"comments": self.blogMetadata.disqusCode,
 			"permalink": post.permalink,
-			"author": post.author}
+			"author": post.author,
+			"shTwitter": post.twitterShare,
+			"shFacebook":post.facebookShare,
+			"shGplus": post.gplusShare}
 		else:
 			content = {
 			"title": post.title, 
@@ -70,7 +73,10 @@ class BlogPostGenerator:
 			"tagname": self.blogMetadata.tagName+" ", 
 			"etime": post.timeToRead,
 			"permalink": post.permalink,
-			"author": post.author}
+			"author": post.author,
+			"shTwitter": post.twitterShare,
+			"shFacebook":post.facebookShare,
+			"shGplus": post.gplusShare}
 
 		f = codecs.open(os.path.join(self.outputFolder, post.url),'w','utf-8')
 		f.write(renderer.render_path(os.path.join(self.templateFolder, "postTemplate.html"),content))

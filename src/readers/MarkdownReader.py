@@ -7,7 +7,8 @@ import containers.PostData as PostData
 import os
 import slugify # https://github.com/un33k/python-slugify
 import dateutil.parser # pip install python-dateutil
-from urlparse import urljoin
+import urlparse
+import urllib
 
 class MarkdownReader:
 	def __init__(self,postsFolder):
@@ -96,10 +97,24 @@ class MarkdownReader:
 		postData.mainText = mainText.replace("<pre><code>",'<pre class="block_code"><code class="block_code">')
 		 
 		postData.url = slugify.slugify(filename.replace(self.postsFolder,"",1).rstrip('.md'))+".html"
-		print "BLOGURL",blogSettings.blogURL
-		print "ARTICLE",postData.url
 		postData.permalink = '/'.join([x.strip('/') for x in [blogSettings.blogURL,postData.url]])
-		print "PERMALINK:",postData.permalink
+		# Generate sharing links
+		
+		#Twitter
+		getVars = {"text": postData.title.encode('utf-8'), "url": postData.permalink}
+		url = u"https://twitter.com/share?"
+		postData.twitterShare = (url + urllib.urlencode(getVars))
+		
+		#Facebook
+		getVars = {"u": postData.permalink}
+		url = u"http://www.facebook.com/sharer.php?"
+		postData.facebookShare = (url + urllib.urlencode(getVars))
+		
+		#Google+
+		getVars = {"url": postData.permalink}
+		url = u"https://plus.google.com/share?"
+		postData.gplusShare = (url + urllib.urlencode(getVars))
+		
 		return postData
 		
 		

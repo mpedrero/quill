@@ -15,6 +15,11 @@ class PostData(object):
 		self.title = unicode()
 		self.mainText = unicode()
 		self.timeToRead = unicode() # estimated read time
+		
+		# sharing services
+		self.twitterShare = unicode()
+		self.facebookShare = unicode()
+		self.gplusShare = unicode()
 
 		
 		
