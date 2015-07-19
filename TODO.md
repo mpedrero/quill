@@ -38,11 +38,15 @@ Quill - A (very) simple blog engine
 * **[DONE]** Social integration (twitter, facebook, g+?)
 
 
-**TODO for version 0.3**
+**TODO for future versions**
+
 * Detecting changes in folders
 * SQLite database for entries and tags (neccesary?)
 * Choose webserver (lighttpd?, custom?)
-
+* --reconfigure option to generate quill.cfg
+* --reparse option to delete all blog folder (useful when some articles have been deleted)
+* --blog <blogid> option to generate only specified blog (¿?)
+* --upload option to upload blog to server if has been successfully generated (ssh)
 
 
 **Suitable Tags for templates**
