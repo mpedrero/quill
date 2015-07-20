@@ -168,8 +168,8 @@ def main():
 	print "[OK]"
 	
 	print
-	print "Blog complete. Press ENTER key to exit"
-	#~ raw_input()
+	print "Blog complete."
+	quit(0)
 
 
 

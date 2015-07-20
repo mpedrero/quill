@@ -141,10 +141,23 @@ class BlogPostGenerator:
 		if blogSettings.displayAboutMe.lower() == "yes":
 			about = unicode()
 			about = u'<a class="about" href="./about.html" >'+unicode(self.blogMetadata.aboutHeader)+u'</a>'
-			content = {"index": u"./index.html", "rss": u"<a href=feed.xml>rss</a>", "title": self.blogMetadata.blogName, "entries": listOfEntries, "about": about, "pagination": pagination}
+			content = {
+			"index": u"./index.html", 
+			"rss": u"<a href=feed.xml>rss</a>", 
+			"title": self.blogMetadata.blogName, 
+			"description": self.blogMetadata.blogDescription,
+			"entries": listOfEntries, 
+			"about": about, 
+			"pagination": pagination}
 			f.write(renderer.render_path(os.path.join(self.templateFolder, "indexTemplate.html"),content))
 		else:
-			content = {"index": u"./index.html", "rss": u"<a href=feed.xml>rss</a>", "title": self.blogMetadata.blogName, "entries": listOfEntries, "pagination": pagination}
+			content = {
+			"index": u"./index.html", 
+			"rss": u"<a href=feed.xml>rss</a>", 
+			"title": self.blogMetadata.blogName, 
+			"description": self.blogMetadata.blogDescription,
+			"entries": listOfEntries, 
+			"pagination": pagination}
 			f.write(renderer.render_path(os.path.join(self.templateFolder, "indexTemplate.html"),content))
 		
 		

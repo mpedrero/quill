@@ -31,40 +31,11 @@
 }
 
 @font-face {
-  font-family: 'Droid Serif';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Droid Serif'), local('DroidSerif'), url(https://themes.googleusercontent.com/static/fonts/droidserif/v4/0AKsP294HTD-nvJgucYTaIbN6UDyHWBl620a-IRfuBk.woff) format('woff');
-}
-
-@font-face {
-  font-family: 'Droid Serif';
-  font-style: normal;
-  font-weight: 700;
-  src: local('Droid Serif Bold'), local('DroidSerif-Bold'), url(https://themes.googleusercontent.com/static/fonts/droidserif/v4/QQt14e8dY39u-eYBZmppwTqR_3kx9_hJXbbyU8S6IN0.woff) format('woff');
-}
-
-@font-face {
-  font-family: 'Droid Serif';
-  font-style: italic;
-  font-weight: 400;
-  src: local('Droid Serif Italic'), local('DroidSerif-Italic'), url(https://themes.googleusercontent.com/static/fonts/droidserif/v4/cj2hUnSRBhwmSPr9kS5899kZXW4sYc4BjuAIFc1SXII.woff) format('woff');
-}
-
-@font-face {
-  font-family: 'Droid Serif';
-  font-style: italic;
-  font-weight: 700;
-  src: local('Droid Serif Bold Italic'), local('DroidSerif-BoldItalic'), url(https://themes.googleusercontent.com/static/fonts/droidserif/v4/c92rD_x0V1LslSFt3-QEpgRV2F9RPTaqyJ4QibDfkzM.woff) format('woff');
-}
-
-@font-face {
   font-family: 'Source Code Pro';
   font-style: normal;
   font-weight: 400;
   src: local('Source Code Pro'), local('SourceCodePro-Regular'), url(https://themes.googleusercontent.com/static/fonts/sourcecodepro/v4/mrl8jkM18OlOQN8JLgasDxM0YzuT7MdOe03otPbuUS0.woff) format('woff');
 }
-
 
 
 /*******************************************************************************
@@ -118,12 +89,15 @@ html, body {
 /* Selection background color */
 ::selection
 {
-  background-color:#a8d1ff;;
+    background: #D6EDFF;
+    text-shadow: none;
 }
+
 
 ::-moz-selection
 {
-  background-color:#a8d1ff;;
+    background: #D6EDFF;
+    text-shadow: none;
 } 
 
 
@@ -142,8 +116,8 @@ a:visited {
 
 /* Nice transition in Firefox */
 a:hover {
-  color: rgb(87, 163, 232);
-  transition: color 0.2s ease-out;
+  color: #008CCF;
+  transition: color 0.3s ease-out;
 }
 
 
@@ -159,7 +133,7 @@ h1.blog-title {
     font-size: 50px;
     letter-spacing: -1px;
     font-weight: bold;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'PT Serif', serif;
 	color: rgb(58, 65, 69);
 }
 
@@ -168,9 +142,20 @@ h1 {
 	line-height: 1.2em;
 	text-align: center;
 	text-decoration: none;
-	font-family: 'Open Sans';
+	font-family: 'PT Serif', serif;
 	font-weight: bold;
 	font-size: 2.5em;
+}
+
+/* Blog description (h2) */
+
+h2.blog-description {
+    margin: 10px 0 10px 0;
+    font-size: 20px;
+    font-weight: normal;
+    text-align: center;
+    font-family: 'PT Serif', serif;
+	color: rgb(58, 65, 69);
 }
 
 /* Tag header */
@@ -181,7 +166,7 @@ h1 {
 	text-rendering: optimizeLegibility;
 	text-align: center;
 	font-size: 1.2em;
-	font-family:  'Open Sans', serif;
+	font-family:  'PT Sans', sans;
 }
 
 #tag-name-text {
@@ -206,7 +191,7 @@ h1 {
 
 
 
-/* Resizing hearder and footer logo */
+/* Resizing header and footer logo */
 .blog-logo img{
     display: block;
     max-height: 75px;
@@ -259,8 +244,8 @@ a.logo{
 	font-weight: bold;
 	
 	border-bottom: #EBF2F6 1px solid;
-  word-break: break-word;
-  hyphens: auto;
+    word-break: break-word;
+    hyphens: auto;
 }
 
 
@@ -278,13 +263,12 @@ a.logo{
 
 
 .entry-link {
-	font-size: 40px;
-	font-family:  'Open Sans', serif;
-  color: rgb(87, 163, 232)
+  font-size: 36px;
+  font-family:  'PT Serif', serif;
+  color: #3A4145
 
   line-height: 1.2em;
-  letter-spacing: -1px;
-  text-indent: -2px;
+  /*letter-spacing: -1px;*/
 }
 
 .entry-link:link {
@@ -292,20 +276,14 @@ a.logo{
 }
 
 p.entry-date {
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'PT Sans', sans-serif;
 	font-weight: normal;
 	font-size: 15px;
 	color: #9EABB3;  
 	background-color: #fff;
-	margin-bottom: 0.2em;
+	margin-bottom: 0.1em;
 }
 
-
-/* Add white background to all elements inside post (replaces general grey
- * background) */
-#post * {
-	background-color: #fff;
-}
 
 
 /* Control image size to adapt post div */
@@ -525,10 +503,6 @@ p.share_text {
 /* Footer. Currently only contains the logo */
 #footer {
   position: relative;
-  /*clear: both;*/
-  /*bottom:0;*/
-  /*margin-bottom: 0px;*/
-  /*margin-top: 4em;*/
   margin-left: auto;
   margin-right: auto;
   padding: 2em 0px;
@@ -536,9 +510,8 @@ p.share_text {
   font-family: 'Open Sans',sans-serif;
   font-size: 1em;
   line-height: 1.7em;
-  /*color: rgb(187, 199, 204);*/
   text-align: center;
-  background: none repeat scroll 0% 0% rgb(247, 250, 251);
+  background-image: url('back.png');
   text-align: center;
 }
 
