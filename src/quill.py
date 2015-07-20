@@ -29,6 +29,7 @@ class BlogMetadata():
 		self.completeFeed = unicode()
 		self.comments = unicode()
 		self.disqusCode = unicode()
+		self.analyticsCode = unicode()
 		
 		self.tagName = unicode()
 		self.tagHeader = unicode()
@@ -59,6 +60,7 @@ class BlogMetadata():
 		self.postsPerPage = config.get("BlogContent", "PostsPerPage")
 		self.completeFeed = config.get("BlogContent", "CompleteFeed")
 		self.comments = config.get("BlogContent", "Comments")
+		self.analytics = config.get("BlogContent", "Analytics")
 
 		self.tagName = config.get("Misc", "TagName")
 		self.tagHeader = config.get("Misc", "TagHeader")
@@ -93,6 +95,14 @@ def main():
 	else:
 		print "No, skipping..."
 
+	# 1.2. If analytics are enabled, load analytics file to adding it to the posts
+	print "Analytics?"
+	if blogSettings.analytics.lower() == "yes":
+		print "Yes, loading analytics"
+		analyticsFile = open("analytics.txt","r")
+		blogSettings.analyticsCode = analyticsFile.read()
+	else:
+		print "No, skipping..."
 
 	# 2. Analyse postsFolder and search *.md files to process
 	print "Processing posts...",

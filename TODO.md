@@ -8,7 +8,13 @@ Quill - A (very) simple blog engine
 * Integrate Pygments for syntax highlighting
 * [BUG] Program fails when About Me = Yes and no about file
 * [BUG] Program fails when theme has not `fonts/` folder
-
+* Detecting changes in folders
+* SQLite database for entries and tags (neccesary?)
+* Choose webserver (lighttpd?, custom?)
+* --reconfigure option to generate quill.cfg
+* --reparse option to delete all blog folder (useful when some articles have been deleted)
+* --blog <blogid> option to generate only specified blog (¿?)
+* --upload option to upload blog to server if has been successfully generated (ssh)
 
 **TODO for version 0.1:**
 
@@ -33,20 +39,9 @@ Quill - A (very) simple blog engine
 * **[DONE]** Theme with PT and PT Sans
 * **[DONE]** More specific tags to further customisation
 * **[DONE]** Smartypants support
-* Better default theme
-* Google Analytics Support
+* **[DONE]** Google Analytics Support
 * **[DONE]** Social integration (twitter, facebook, g+?)
-
-
-**TODO for future versions**
-
-* Detecting changes in folders
-* SQLite database for entries and tags (neccesary?)
-* Choose webserver (lighttpd?, custom?)
-* --reconfigure option to generate quill.cfg
-* --reparse option to delete all blog folder (useful when some articles have been deleted)
-* --blog <blogid> option to generate only specified blog (¿?)
-* --upload option to upload blog to server if has been successfully generated (ssh)
+* Better default theme
 
 
 **Suitable Tags for templates**

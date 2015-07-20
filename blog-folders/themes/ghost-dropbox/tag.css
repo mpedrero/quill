@@ -1,120 +1,52 @@
 /*******************************************************************************
- * Fonts
- ******************************************************************************/
- 
-@font-face {
-  font-family: 'Open Sans';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Open Sans'), local('OpenSans'), url(https://themes.googleusercontent.com/static/fonts/opensans/v7/cJZKeOuBrn4kERxqtaUH3T8E0i7KZn-EPnyo3HZu7kw.woff) format('woff');
-}
-
-@font-face {
-  font-family: 'Open Sans';
-  font-style: normal;
-  font-weight: 700;
-  src: local('Open Sans Bold'), local('OpenSans-Bold'), url(https://themes.googleusercontent.com/static/fonts/opensans/v7/k3k702ZOKiLJc3WVjuplzHhCUOGz7vYGh680lGh-uXM.woff) format('woff');
-}
-
-@font-face {
-  font-family: 'Open Sans';
-  font-style: italic;
-  font-weight: 400;
-  src: local('Open Sans Italic'), local('OpenSans-Italic'), url(https://themes.googleusercontent.com/static/fonts/opensans/v7/xjAJXh38I15wypJXxuGMBobN6UDyHWBl620a-IRfuBk.woff) format('woff');
-}
-
-@font-face {
-  font-family: 'Open Sans';
-  font-style: italic;
-  font-weight: 700;
-  src: local('Open Sans Bold Italic'), local('OpenSans-BoldItalic'), url(https://themes.googleusercontent.com/static/fonts/opensans/v7/PRmiXeptR36kaC0GEAetxjqR_3kx9_hJXbbyU8S6IN0.woff) format('woff');
-}
-
-@font-face {
-  font-family: 'Droid Serif';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Droid Serif'), local('DroidSerif'), url(https://themes.googleusercontent.com/static/fonts/droidserif/v4/0AKsP294HTD-nvJgucYTaIbN6UDyHWBl620a-IRfuBk.woff) format('woff');
-}
-
-@font-face {
-  font-family: 'Droid Serif';
-  font-style: normal;
-  font-weight: 700;
-  src: local('Droid Serif Bold'), local('DroidSerif-Bold'), url(https://themes.googleusercontent.com/static/fonts/droidserif/v4/QQt14e8dY39u-eYBZmppwTqR_3kx9_hJXbbyU8S6IN0.woff) format('woff');
-}
-
-@font-face {
-  font-family: 'Droid Serif';
-  font-style: italic;
-  font-weight: 400;
-  src: local('Droid Serif Italic'), local('DroidSerif-Italic'), url(https://themes.googleusercontent.com/static/fonts/droidserif/v4/cj2hUnSRBhwmSPr9kS5899kZXW4sYc4BjuAIFc1SXII.woff) format('woff');
-}
-
-@font-face {
-  font-family: 'Droid Serif';
-  font-style: italic;
-  font-weight: 700;
-  src: local('Droid Serif Bold Italic'), local('DroidSerif-BoldItalic'), url(https://themes.googleusercontent.com/static/fonts/droidserif/v4/c92rD_x0V1LslSFt3-QEpgRV2F9RPTaqyJ4QibDfkzM.woff) format('woff');
-}
-
-@font-face {
-  font-family: 'Source Code Pro';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Source Code Pro'), local('SourceCodePro-Regular'), url(https://themes.googleusercontent.com/static/fonts/sourcecodepro/v4/mrl8jkM18OlOQN8JLgasDxM0YzuT7MdOe03otPbuUS0.woff) format('woff');
-}
-
-
-/*******************************************************************************
- * Styles
- ******************************************************************************/
- 
- 
-/*******************************************************************************
  * General styles to apply on all elements
  ******************************************************************************/
- 
- 
-/* Page background */
-* {
-  /*border: 1px solid #f00;*/
-  /*background-color: #eee;*/
+
+body {
+  margin: 0px;
+  background-image: url('back2.png');
 }
 
-#header {
-	
+
+/* This lines keep the footer in place in all pages */
+
+* {
+  margin: 0;
+}
+
+html, body {
+  height: 100%;
 }
 
 /* Selection background color */
 ::selection
 {
-  background-color:#a8d1ff;;
+    background: #D6EDFF;
+    text-shadow: none;
 }
 
 ::-moz-selection
 {
-  background-color:#a8d1ff;;
+    background: #D6EDFF;
+    text-shadow: none;
 } 
-
 
 /* Subtle decoration for links */
 a:link {
-	text-decoration:underline;
-	color: #000;
+	color: #3A4145;
+	text-decoration: none;
 }
-
 
 /* Same decoration for visited links */
 a:visited {
-	color: rgb(58, 65, 69);
+	color: #3A4145;
+	text-decoration: none;
 }
-
 
 /* Nice transition in Firefox */
 a:hover {
-  color: rgb(87, 163, 232);
-  transition: color 0.2s ease-out;
+  color: #008CCF;
+  transition: color 0.3s ease-out;
 }
 
 
@@ -122,46 +54,50 @@ a:hover {
  * Specific styles to apply on certains sections
  ******************************************************************************/
 
-
-/* Blog title (h1) */
-
 h1.blog-title {
     margin: 40px 0 10px 0;
     font-size: 50px;
     letter-spacing: -1px;
     font-weight: bold;
-    font-family: 'Open Sans', sans-serif;
-	color: rgb(58, 65, 69);
+    font-family: 'PT Serif', serif;
+	color: #3A4145;
 }
-
 
 h1 {
 	line-height: 1.2em;
 	text-align: center;
 	text-decoration: none;
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'PT Serif', serif;
 	font-weight: bold;
 	font-size: 2.5em;
 }
 
-/* Tag header */
-
-#tag-header {
-	margin-top: 2em;
-	margin-bottom: 1em;
-	margin-left: 1em;
-	margin-right: 1em;
-
-	text-rendering: optimizeLegibility;
+#tag-header{
+	margin: 1em auto;
+	padding: 0px 1em;
+	max-width: 700px;
 	text-align: center;
-	font-size: 2em;
-	font-family:  'Open Sans', sans-serif;
 }
 
-#tag-name-text {
-	font-weight: bold;
+.tag-header-text{
+	margin: 10px 0 10px 0;
+    font-size: 20px;
+    font-weight: normal;
+    text-align: center;
+    font-family: 'PT Serif', serif;
+	color: #3A4145;
 }
- 
+
+.tag-name-text{
+	margin: 10px 0 10px 0;
+    font-size: 20px;
+    font-weight: bold;
+    font-style: italic;
+    text-align: center;
+    font-family: 'PT Serif', serif;
+	color: #3A4145;
+}
+
 /* Affects to all relevant content in the post (title, date, main text, etc.) */
 #content {
   /* font-size neccessary for unifying base font size among different browsers*/
@@ -169,21 +105,15 @@ h1 {
   text-rendering: optimizeLegibility;
 }
 
-
 /* Margins for header */
 #header {
-  padding-top: 6em;
-  padding-bottom: 3em;
- 
+  padding-top: 2em;
+  padding-bottom: 2em;
+  margin: 0px auto;
   background-image: url('back.png');
-  }
-
-body {
-margin: 0px;
 }
 
-
-/* Resizing hearder and footer logo */
+/* Resizing header and footer logo */
 .blog-logo img{
     display: block;
     max-height: 75px;
@@ -191,7 +121,6 @@ margin: 0px;
     margin: 0 auto;
     line-height: 0;
 }
-
 
 /* Adapt link to adopt the logo size */
 .blog-logo a{
@@ -201,7 +130,6 @@ margin: 0px;
     margin: 0 auto;
     line-height: 0;
 }
-
 
 a.logo{
     display:block;
@@ -220,46 +148,33 @@ a.logo{
   padding-right: 2em;
   padding-bottom: 1em;
   padding-top: 1em;
-  background-color: #fff;
-
 }
 
 /* Each entry containing a href to the post */
 .entry {
-
-	padding-top: 3em;
-	padding-bottom: 3em;
-
-	border-bottom: 1px dotted #CCCCCC;
-
-	text-decoration:none;
+	padding-top: 2em;
+	padding-bottom: 2em;
+	text-decoration: none;
 	font-weight: bold;
-	
 	border-bottom: #EBF2F6 1px solid;
     word-break: break-word;
     hyphens: auto;
-
-	background-color: #fff;
 }
-
 
 .last-entry {
-
 	padding-top: 1em;
 	padding-bottom: 1em;
-
-
 	text-decoration:none;
 	font-weight: bold;
-
-	background-color: #fff;
+	word-break: break-word;
+    hyphens: auto;
 }
 
-
 .entry-link {
-	background-color: #fff;
-	font-size: 40px;
-	font-family:  'Open Sans', serif;
+  font-size: 32px;
+  font-family:  'PT Serif', serif;
+  color: #3A4145;
+  line-height: 1.2em;
 }
 
 .entry-link:link {
@@ -267,252 +182,95 @@ a.logo{
 }
 
 p.entry-date {
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'PT Sans', sans-serif;
 	font-weight: normal;
-	font-size: 15px;
+	font-size: 1em;
 	color: #9EABB3;  
-	background-color: #fff;
-	margin-bottom: 0.2em;
+	margin-bottom: 0.1em;
 }
 
-
-/* Add white background to all elements inside post (replaces general grey
- * background) */
-#post * {
-	background-color: #fff;
-}
-
-
-/* Control image size to adapt post div */
-#post img {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 100%;
-  margin-top: 1em;
-  margin-bottom: 1em;
-  border: 1px solid #000;
-}
-
-
-/* Control embed content (ie: YouTube links for now) */
-#post embed {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 1em;
-  margin-bottom: 1em;
-  max-width: 100%;
-  width: 600px;
-  height: 400px;
-}
-
-
-/* Center date in the post and add a nice dotted line at the bottom */
-#post_date {
+/* Pagination */
+.pagination {
+  position: relative;
+  max-width: 700px;
+  margin: 0rem auto 2rem auto;
+  font-family: 'PT Sans',sans-serif;
+  font-size: 16px;
+  color: rgb(158, 171, 179);
   text-align: center;
-  padding-bottom: 1.5em;
-  border-bottom: 1px dotted #ccc;
+  line-height: 2.5em;
+  padding-left: 2em;
+  padding-right: 2em;
 }
 
-
-p.post_date_text {
-  font-family: 'Open Sans', serif;
-  margin-top: 0px;
-  margin-bottom: 0px;
-  font-size: 0.9em;
-  color: #777;
-  
-  background-color: #fff;
+.pagination a {
+  color: rgb(158, 171, 179);
 }
 
-
-/* Center title and choose a custom font (now is Leto-Bold) */
-#post_title {  
-  margin-top: 0.6em;
-  margin-bottom: 0.5em;
-
-  font-family: 'Open Sans', sans-serif;
-	font-weight: bold;
-  font-size: 2.5em;
-  
-  text-align: center;
+.newer-entries {
+  left: 0px;
 }
 
-
-p.post_title_text {
-  margin-top: 0px;
-  margin-bottom: 0px;
-  
-  background-color: #fff;
+.older-entries {
+  right: 0px;
 }
 
-
-/* Main text of the post. Currently uses Open Sans font from Google Fonts */
-#post_text {
-  margin-top: 1.5em;
-  
-  line-height: 1.5em;
-  
-  font-family: 'Open Sans', serif;
-  font-size: 1em;
+a.older-entries, a.newer-entries {
+    position: absolute;
+    display: inline-block;
+    padding: 0px 1em;
+    border: 2px solid rgb(235, 242, 246);
+    border-radius: 2em;
+    text-decoration: none;
+    transition: border 0.3s ease 0s;
 }
 
-/* Tags of the post (if are enabled) */
-#tags {
-  font-family: 'Open Sans', serif;
-  font-size: 0.9em;
-  /*text-align: center;*/
-  margin-top: 2em;
-  padding-top: 1em;
-  border-top: 1px dotted #ccc;
+a.older-entries {
+    margin-right: 2em;
 }
 
-#post a.tag {
-  
-  color: #444;
-  text-decoration: none;
-  
-  white-space: pre-wrap;
-  word-wrap: break-word;
-  
-  border: solid 1px #bbb;
-  background-color: #eee;
-  
-  margin-bottom:1px;
-  margin-left:2px;
-  margin-right:2px;
-  padding-bottom: 1px;
-  padding-left: 3px;
-  padding-right: 3px;
-  
-  border-radius: 4px;
+a.newer-entries {
+    margin-left: 2em;
 }
 
-/* Nice transition in Firefox */
-#post a.tag:hover {
-  color: #387BBF;
-  transition: color 0.2s ease-out;
+a.older-entries:hover, a.newer-entries:hover {
+    border-color: rgb(158, 171, 179);
 }
 
-
-/* Not used in the template yet. Contains links to Email, Twitter, etc. */
-#share {
-  margin-top: 5em;
-  font-family: sans-serif;
-  text-align: center;
+.page-number {
+  display: inline-block;
+  padding: 2px 0px;
 }
 
-#about {
-	margin-top: 2em;
-	font-family: 'Open Sans', sans-serif;
+/* RSS */
+#rss {
+	font-family: 'PT Sans', sans-serif;
+	padding-top: 1em;
+	margin: 0px, auto;
 }
 
-#about a {
+#rss a {
 	text-decoration: none;
-	font-size: 0.8em;
-	color: #888;
-}
+	color:#3A4145;
 
-p.share_text {
-  margin-top: 0px;
-  margin-bottom: 0px;
+	line-height: 1em;
+	text-align: center;
+	font-size: 0.75em;
 }
-
 
 /* Footer. Currently only contains the logo */
 #footer {
-  margin-top: 4em;
-  margin-bottom: 3em;
-
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 2em 1em 1em 1em;
+  border-top: 1px solid rgb(235, 242, 246);
+  font-family: 'PT Sans',sans-serif;
+  font-size: 1.2em;
+  line-height: 1.2em;
   text-align: center;
-}
-
-
-/*******************************************************************************
- * Code Styles: Inline code, block code (class .block_code) and blockquote
- ******************************************************************************/
- 
- 
-/* Inline code. In Markdown is `hello world` */
-#post_text code{
-  font-family: 'Source Code Pro';
-  font-size: 0.9em;
-  
-  white-space: pre-wrap;
-  word-wrap: break-word;
-  
-  border: solid 1px #bbb;
-  background-color: #eee;
-  
-  margin-bottom:1px;
-  margin-left:2px;
-  margin-right:2px;
-  padding-bottom: 1px;
-  padding-left: 3px;
-  padding-right: 3px;
-  
-  border-radius: 4px;
-}
-
-
-/* Block code. In Markdown is a tabbed text or +4 spaces at line beginning. This
- * rules cancel the more general #post_text code rules above, because they'll be
- * redefined in pre.block_code below */
-#post_text code.block_code {
-  font-family: 'Source Code Pro';
-  font-size: 1em;  
-  
-  line-height: 1.2em;
-  
-  border: none;
-  background-color: inherit;
-  
-  padding: 0px;
-  padding-left: 0px;
-  padding-right: 0px;
-  
-  border-radius: 0px;
-}
-
-
-/* Block code. This is the block containing the code. The rules add a nice 
- * border like inline code */
-#post_text pre.block_code {
-  border: solid 1px #bbb;
-  background-color: #eee;
-  
-  white-space: pre-wrap;
-  word-wrap: break-word;
-  
-  padding-left: 1em;
-  padding-right: 1em;
-  padding-top: 0.5em;
-  padding-bottom: 0.5em;
-  
-  border-radius: 4px;
-}
-
-
-/* Blockquote. Add a gray leftborder and slightlt pad the content */
-#post_text blockquote {
-  word-wrap: break-word;
-  padding-left: 1em;
-  border-left: 3px solid #ccc;
-}
-
-
-
-
-
-
-
-/*******************************************************************************
- * Header styles
- ******************************************************************************/
- 
-#post_text h1 {
-  line-height: 1.2em;
+  background-image: url('back.png');
+  text-align: center;
 }
 
 
@@ -524,12 +282,50 @@ p.share_text {
 
 }
 
+
 /* ==========================================================================
    1. Media Queries - Smaller than 500px
    ========================================================================== */
 
-
 @media only screen and (max-width: 500px) {
+
+#header {
+	padding-top: 2em;
+	padding-bottom: 1em;
+	padding-left: 1em;
+	padding-right: 1em;
+}
+
+.blog-logo img {
+    max-width: 20%;
+}
+
+h1.blog-title {
+	margin-top: 0.5em;
+	font-size:30px;
+}
+
+p.entry-date {
+	line-height: 1.2em;
+}
+
+h2.blog-description {
+	line-height: 1.2em;
+}
+
+.entry-link {
+    font-size: 24px;
+}
+
+.entry {
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+
+.last-entry {
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
 
 #entries {
   max-width: 700px;
@@ -539,23 +335,27 @@ p.share_text {
   padding-right: 0.5em;
   padding-bottom: 1em;
   padding-top: 1em;
-  background-color: #fff;
   word-wrap: break-word;
+}
+
+a.newer-entries, a.older-entries {
+	display: block;
+	position: static;
+    margin: 0px auto;
+    text-align: center;
+    width: 36%;
+}
+
+.page-number {
+  display: block;
 }
 
 #post_title {  
   margin-top: 0.6em;
   margin-bottom: 0.5em;
-
-  font-family: 'Open Sans', sans-serif;
-  font-weight: bold;
-  font-size: 2em;
-  
+  font-size: 24px;
   text-align: center;
-  
-  background-color: #fff;
 }
    
 }
-
 

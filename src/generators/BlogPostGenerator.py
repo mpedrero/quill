@@ -26,6 +26,7 @@ class BlogPostGenerator:
 		shutil.copy2(os.path.join(self.templateFolder,"favicon.png"), self.outputFolder)
 		try:
 			shutil.copy2(os.path.join(self.templateFolder,"back.png"), self.outputFolder)
+			shutil.copy2(os.path.join(self.templateFolder,"back2.png"), self.outputFolder)
 		except:
 			pass
 		
@@ -58,6 +59,7 @@ class BlogPostGenerator:
 			"tagname": self.blogMetadata.tagName+" ", 
 			"etime": post.timeToRead, 
 			"comments": self.blogMetadata.disqusCode,
+			"analytics": self.blogMetadata.analyticsCode,
 			"permalink": post.permalink,
 			"author": post.author,
 			"shTwitter": post.twitterShare,
@@ -72,6 +74,7 @@ class BlogPostGenerator:
 			"tags": post.tagsURL, 
 			"tagname": self.blogMetadata.tagName+" ", 
 			"etime": post.timeToRead,
+			"analytics": self.blogMetadata.analyticsCode,
 			"permalink": post.permalink,
 			"author": post.author,
 			"shTwitter": post.twitterShare,
