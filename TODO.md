@@ -2,7 +2,7 @@ Quill - A (very) simple blog engine
 ===================================
 **TODO for future releases**
 
-* Show a text snippet in index pages
+* Show a text snippet in index pages (summary)
 * User Manual
 * Developer Manual
 * Integrate Pygments for syntax highlighting
@@ -41,6 +41,7 @@ Quill - A (very) simple blog engine
 * **[DONE]** Smartypants support
 * **[DONE]** Google Analytics Support
 * **[DONE]** Social integration (twitter, facebook, g+?)
+* **[DONE]** Erase blog folder before regenerate the blog
 * Better default theme
 
 

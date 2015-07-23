@@ -16,6 +16,14 @@ class BlogPostGenerator:
 		self.outputFolder = blogMetadata.blogFolder
 		self.templateFolder = blogMetadata.themesFolder
 		self.tagsFolder = os.path.join(self.outputFolder,"tags")
+		
+		# Delete possible old files in blog folder
+		filelist = [ f for f in os.listdir(self.outputFolder) ]
+		for f in filelist:
+			try:
+				os.remove(os.path.join(self.outputFolder,f))
+			except:
+				shutil.rmtree(os.path.join(self.outputFolder,f))
 				
 	def loadTheme(self, themeName="default"):
 		self.templateFolder = os.path.join(self.templateFolder,themeName)
