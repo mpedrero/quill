@@ -9,6 +9,7 @@ import slugify # https://github.com/un33k/python-slugify
 import dateutil.parser # pip install python-dateutil
 import urlparse
 import urllib
+import pygments.styles
 
 class MarkdownReader:
 	def __init__(self,postsFolder):
@@ -36,7 +37,21 @@ class MarkdownReader:
 	def read(self, filename, blogSettings):
 		f = codecs.open(filename,'r',"utf-8")
 				
-		md = markdown.Markdown(extensions = ['meta', 'smarty'])	
+		# Configuration dict for Markdown extensions. We MUST check if pygments style exists before we do this, and fallback
+		# to a default style if not
+		if blogSettings.usePygments.lower() == "yes":
+			if blogSettings.pygmentsStyle not in pygments.styles.get_all_styles():
+				print "Style",blogSettings.pygmentsStyle,"is not available in pygments. Using default style."
+				blogSettings.pygmentsStyle = 'default'
+			
+			md = markdown.Markdown(extensions = ['meta', 'smarty', 'codehilite'], extension_configs = { 'codehilite': {
+					'linenums': False,
+					'pygments_style': blogSettings.pygmentsStyle,
+					'noclasses': True
+				}})	
+		else:
+			md = markdown.Markdown(extensions = ['meta', 'smarty'])	
+				
 		mainText = md.convert(f.read())
 		
 		postData = PostData.PostData()

@@ -5,7 +5,7 @@ Quill - A (very) simple blog engine
 * Show a text snippet in index pages (summary)
 * User Manual
 * Developer Manual
-* Integrate Pygments for syntax highlighting
+* **[IN PROGRESS]** Integrate Pygments for syntax highlighting
 * [BUG] Program fails when About Me = Yes and no about file
 * [BUG] Program fails when theme has not `fonts/` folder
 * Detecting changes in folders

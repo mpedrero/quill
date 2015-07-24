@@ -3,40 +3,11 @@
  ******************************************************************************/
  
 @font-face {
-  font-family: 'Open Sans';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Open Sans'), local('OpenSans'), url(https://themes.googleusercontent.com/static/fonts/opensans/v7/cJZKeOuBrn4kERxqtaUH3T8E0i7KZn-EPnyo3HZu7kw.woff) format('woff');
-}
-
-@font-face {
-  font-family: 'Open Sans';
-  font-style: normal;
-  font-weight: 700;
-  src: local('Open Sans Bold'), local('OpenSans-Bold'), url(https://themes.googleusercontent.com/static/fonts/opensans/v7/k3k702ZOKiLJc3WVjuplzHhCUOGz7vYGh680lGh-uXM.woff) format('woff');
-}
-
-@font-face {
-  font-family: 'Open Sans';
-  font-style: italic;
-  font-weight: 400;
-  src: local('Open Sans Italic'), local('OpenSans-Italic'), url(https://themes.googleusercontent.com/static/fonts/opensans/v7/xjAJXh38I15wypJXxuGMBobN6UDyHWBl620a-IRfuBk.woff) format('woff');
-}
-
-@font-face {
-  font-family: 'Open Sans';
-  font-style: italic;
-  font-weight: 700;
-  src: local('Open Sans Bold Italic'), local('OpenSans-BoldItalic'), url(https://themes.googleusercontent.com/static/fonts/opensans/v7/PRmiXeptR36kaC0GEAetxjqR_3kx9_hJXbbyU8S6IN0.woff) format('woff');
-}
-
-@font-face {
   font-family: 'Source Code Pro';
   font-style: normal;
   font-weight: 400;
   src: local('Source Code Pro'), local('SourceCodePro-Regular'), url(https://themes.googleusercontent.com/static/fonts/sourcecodepro/v4/mrl8jkM18OlOQN8JLgasDxM0YzuT7MdOe03otPbuUS0.woff) format('woff');
 }
-
 
  
 /*******************************************************************************
@@ -50,18 +21,14 @@
     text-shadow: none;
 }
 
-
 ::-moz-selection
 {
     background: #D6EDFF;
     text-shadow: none;
 } 
 
-
 /* Page background color and default text color */
 * {
-	/*background: #EEEEEE;*/
-	/*color: #333;*/
 	color: rgb(58, 65, 69);
 }
 
@@ -90,7 +57,6 @@ body {
 /*******************************************************************************
  * Specific styles to apply on certains sections
  ******************************************************************************/
-
  
 /* Affects to all relevant content in the post (title, date, main text, etc.) */
 #content {
@@ -102,13 +68,11 @@ body {
   margin-right: auto;
 }
 
-
 /* Margins for header */
 #header {
   margin-top: 2em;
   margin-bottom: 3em;
 }
-
 
 /* Resizing header and footer logo */
 .blog-logo img{
@@ -119,7 +83,6 @@ body {
     line-height: 0;
 }
 
-
 /* Adapt link to adopt the logo size */
 .blog-logo a{
     display: block;
@@ -129,14 +92,12 @@ body {
     line-height: 0;
 }
 
-
 a.logo{
     display:block;
     margin:auto;
     max-width:75px;
     max-height:75px;  
 }
-
 
 /* content box */
 #post {
@@ -148,7 +109,6 @@ a.logo{
   padding-bottom: 1em;
   padding-top: 1em;
 }
-
 
 /* Control image size to adapt post div */
 #post img {
@@ -162,7 +122,6 @@ a.logo{
   color: #ccc;
 }
 
-
 /* Control embed content (ie: YouTube links for now) */
 #post embed {
   display: block;
@@ -175,12 +134,10 @@ a.logo{
   height: 400px;
 }
 
-
 /* Center date in the post */
 #post_date {
   padding-top: 1.5em;
 }
-
 
 p.post_date_text {
 	font-family: 'PT Sans', sans-serif;
@@ -189,7 +146,6 @@ p.post_date_text {
 	font-size: 1em;
 	color: rgb(158, 171, 179);
 }
-
 
 /* Center title and choose a custom font (now is Leto-Bold) */
 #post_title {  
@@ -201,12 +157,10 @@ p.post_date_text {
   line-height: 1.2em;
 }
 
-
 p.post_title_text {
   margin-top: 0.2em;
   margin-bottom: 0px;
 }
-
 
 /* Main text of the post. Currently uses Open Sans font from Google Fonts */
 #post_text {
@@ -239,7 +193,6 @@ a.tag {
     white-space:nowrap;
     border-radius: 30px;
     transition: border 0.3s ease 0s;
-	
 }
 
 /* Nice transition */
@@ -255,8 +208,6 @@ a.permalink {
   float: right;
   
 }
-
-
 
 /* Footer. Currently only contains the logo */
 #footer {
@@ -281,10 +232,17 @@ span.author {
   font-family: 'PT Sans', sans-serif;
 }
 
+/* Blockquote. Add a gray leftborder and slightlt pad the content */
+#post_text blockquote {
+  word-wrap: break-word;
+  padding-left: 1em;
+  border-left: 3px solid #ccc;
+}
+
+
 /*******************************************************************************
  * Code Styles: Inline code, block code (class .block_code) and blockquote
  ******************************************************************************/
- 
  
 /* Inline code. In Markdown is `hello world` */
 #post_text code{
@@ -294,7 +252,6 @@ span.author {
   white-space: pre-wrap;
   word-wrap: break-word;
   
-  border: solid 1px #eee;
   background-color: #eee;
   
   margin-bottom:1px;
@@ -307,57 +264,49 @@ span.author {
   border-radius: 4px;
 }
 
-
 /* Block code. In Markdown is a tabbed text or +4 spaces at line beginning. This
  * rules cancel the more general #post_text code rules above, because they'll be
  * redefined in pre.block_code below */
-#post_text code.block_code {
-  font-family: 'Source Code Pro', sans-serif;
-  font-size: 1em;  
-  
+#post_text pre.block_code code {
   line-height: 1.2em;
-  
-  border: none;
-  background-color: inherit;
-  
-  padding: 0px;
-  padding-left: 0px;
-  padding-right: 0px;
-  
-  border-radius: 0px;
+  background-color: transparent;
 }
-
 
 /* Block code. This is the block containing the code. The rules add a nice 
  * border like inline code */
 #post_text pre.block_code {
-  border: solid 1px #bbb;
   background-color: #eee;
-  font-size: 0.8em;
-  
-  white-space: pre-wrap;
-  word-wrap: break-word;
-  
-  padding-left: 1em;
-  padding-right: 1em;
-  padding-top: 0.5em;
-  padding-bottom: 0.5em;
-  
+  padding: 1em 0.5em;
   border-radius: 4px;
 }
 
 
-/* Blockquote. Add a gray leftborder and slightlt pad the content */
-#post_text blockquote {
-  word-wrap: break-word;
-  padding-left: 1em;
-  border-left: 3px solid #ccc;
+/*******************************************************************************
+ * Code Styles: Pygments
+ ******************************************************************************/
+ 
+.codehilite pre{
+    font-family: 'Source Code Pro', sans-serif;
+    font-size: 0.9rem;
+    padding: 0.5em;
+    line-height: 1.2em;
+    
+    /* With this lines, code is "boxed" if is too large for the column */
+    display: fixed;
+    max-width: 100%;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+    z-index: 0;
 }
 
-
-
-
-
+div.codehilite {
+  padding: 0px;
+  
+  max-width: 100%;
+  overflow: auto;
+  margin-bottom: 1.6em;
+  border-radius: 4px;
+}
 
 
 /*******************************************************************************
@@ -448,7 +397,6 @@ span.author {
    1. Media Queries - Smaller than 500px
    ========================================================================== */
 
-
 @media only screen and (max-width: 500px) {
 
 #header {
@@ -460,7 +408,6 @@ span.author {
   margin-left: auto;
   margin-right: auto;
   padding:1em;
-  word-wrap: break-word;
 }
 
 #post_title {  
@@ -475,6 +422,7 @@ span.author {
    
 #post_text p {
   margin: 0px 0px 1em 0px;
+  word-wrap: break-word;
 }   
    
 #post_text h1 {
@@ -496,9 +444,6 @@ span.author {
   font-size: 22px;
 }  
 
-
-
-   
 }
 
 

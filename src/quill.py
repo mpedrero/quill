@@ -70,6 +70,8 @@ class BlogMetadata():
 		self.page = config.get("Misc", "Page")
 		self.of = config.get("Misc", "Of")
 		
+		self.usePygments = config.get("SyntaxHighlighting", "UsePygments")
+		self.pygmentsStyle = config.get("SyntaxHighlighting", "PygmentsStyle")
 
 def main():
 	# Variables
